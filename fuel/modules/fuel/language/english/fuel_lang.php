@@ -89,9 +89,9 @@ $lang['auth_log_account_lockout'] = "Account lockout for '%1s' from %2s";
 |--------------------------------------------------------------------------
 */
 $lang['section_dashboard'] = 'Dashboard';
-$lang['dashboard_intro'] = 'Welcome to FUEL CMS.';
+$lang['dashboard_intro'] = 'Welcome!';
 $lang['dashboard_hdr_latest_activity'] = 'Latest Activity';
-$lang['dashboard_hdr_latest_news'] = 'Latest FUEL News';
+$lang['dashboard_hdr_latest_news'] = 'Latest';
 $lang['dashboard_hdr_modified'] = 'Recently Modified Pages';
 $lang['dashboard_hdr_site_docs'] = 'Site Documentation';
 $lang['dashboard_change_pwd'] = 'Change password';

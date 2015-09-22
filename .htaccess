@@ -2,7 +2,7 @@ Options +FollowSymLinks
 
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-	RewriteBase /
+	RewriteBase /devisionarissen.nl/
 
 	<Files .*>
 		Order Deny,Allow

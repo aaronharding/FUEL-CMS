@@ -29,3 +29,15 @@ $config['module_overwrites']['categories']['hidden'] = TRUE; // change to FALSE 
 $config['module_overwrites']['tags']['hidden'] = TRUE; // change to FALSE if you want to use the generic tags module
 
 /*********************** /OVERWRITES ************************************/
+
+$config['modules']['events'] = array(
+    'module_uri' => 'events',
+    'model_name' => 'events_model',
+    'model_location' => '',
+    'display_field' => 'name',
+    'preview_path' => 'event/{slug}',
+    'permission' => 'events',
+    'instructions' => 'Here you can manage the events for the site.',
+    'archivable' => TRUE,
+    'nav_selected' => 'events'
+);

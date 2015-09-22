@@ -120,6 +120,8 @@ $config['layouts']['sitemap_xml'] = array(
 
 $config['layouts']['robots_txt'] = array(
 	'label' => 'robots.txt',
+	'file'      => $config['layouts_path'].'robots_txt.php',
+	'filepath' => 'views/_layouts/robots_txt.php',
 	'fields' => array(
 		'copy' => array(
 			'type' => 'copy',
