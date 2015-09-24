@@ -1,0 +1,79 @@
+/*! Helpers Style Sheet | helpers.css | @author Aaron Harding <aaron.thomas.harding@googlemail.com> */
+
+/*
+ * 	What follows are "blocks", CSS helpers, that will aid in the seamless,
+ * 	crossbrowser, render that you want.
+ *
+ * 	All documentation on what each helper or block does is included above
+ * 	it's declaration.
+ */
+
+/* ==========================================================================
+		Vertically centred content
+   ==========================================================================
+
+ 	Vertically center any content even when the parent has a dynamic height, or the height is not known.
+	
+	* Usage
+
+		1) Create 3 new elements within the parent that has the unknown or dynamic height
+		2) Add content within .vc-content to your heart's content
+
+	* Debug / Known Bugs
+	
+		None?
+
+	* HTML
+	
+		<div id="some-odd-element">
+
+			<div class="vc-container">
+				<div class="vc-middle">
+					<div class="vc-content">Horray I'm centered no matter what #some-odd-element get's up to!!</div>
+				</div>
+			</div>
+
+		</div>
+
+   ========================================================================== */
+
+.vc-container {
+	text-align: center;
+	height: 100%;
+	font-size: 0;
+}
+
+.vc-container:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.vc-middle {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.vc-reset {
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+html.lt-ie8 .vc-container {
+	display: inline-block;
+	top: 0;
+}
+
+html.lt-ie8 .vc-middle {
+	display: inline-block;
+	top: 50%;
+	position: relative;
+}
+
+html.lt-ie8 .vc-reset {
+	display: inline-block;
+	top: -50%;
+	position: relative;
+}

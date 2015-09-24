@@ -172,13 +172,13 @@ $config['editable_asset_filetypes'] = array(
 );
 
 // Max upload files size for assets
-$config['assets_upload_max_size']	= '1000';
+$config['assets_upload_max_size']	= '5000';
 
 // Max width for asset images being uploaded
-$config['assets_upload_max_width']  = '1024';
+$config['assets_upload_max_width']  = '3000';
 
 // Max height for asset images being uploaded
-$config['assets_upload_max_height']  = '768';
+$config['assets_upload_max_height']  = '3000';
 
 // Javascript files (mostly jquery plugins) to be included other then the controller js files
 $config['fuel_javascript'] = array(

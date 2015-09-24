@@ -38,7 +38,6 @@
 |
 */
 
-
 $route['default_controller'] = 'fuel/page_router';
 $route['404_override'] = 'fuel/page_router';
 
@@ -47,8 +46,8 @@ $route['404_override'] = 'fuel/page_router';
 | To modify the sitemap.xml, go to the views/sitemap_xml.php file.
 */ 
 $route['sitemap.xml'] = 'sitemap_xml';
-$route['robots.txt'] = 'robots_txt';
-$route['humans.txt'] = 'humans_txt';
+// $route['robots.txt'] = 'robots_txt';
+// $route['humans.txt'] = 'humans_txt';
 
 include(MODULES_PATH.'/fuel/config/fuel_routes.php');
 

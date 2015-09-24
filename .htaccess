@@ -3,7 +3,7 @@ Options +FollowSymLinks
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteBase /devisionarissen.nl/
-
+	
 	<Files .*>
 		Order Deny,Allow
 		Deny From All
@@ -14,7 +14,6 @@ Options +FollowSymLinks
 
 	# Protect application and system files from being viewed
 	RewriteRule ^(fuel/install/.+|fuel/crons/.+|fuel/data_backup/.+|fuel/codeigniter/.+|fuel/modules/.+|fuel/application/.+) - [F,L]
-
 
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d

