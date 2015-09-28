@@ -15,9 +15,9 @@ class Events_model extends Base_module_model {
 	public $parsed_fields = array('description', 'description_formatted', 'excerpt', 'excerpt_formatted');
 	public $serialized_fields = array(); // fields that contain serialized data. This will automatically serialize before saving and unserialize data upon retrieving
 	public $has_many = array(); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
-	public $belongs_to = array(
-	                           'locations' => 'locations'
-	); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
+	public $belongs_to = array( // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
+		'locations' => 'locations'
+	);
 	public $formatters = array(); // an array of helper formatter functions related to a specific field type (e.g. string, datetime, number), or name (e.g. title, content) that can augment field results
 	public $display_unpublished_if_logged_in = FALSE;
 	public $form_fields_class = '';  // a class that can extend Base_model_fields and manipulate the form_fields method

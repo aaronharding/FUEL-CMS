@@ -15,8 +15,9 @@ class Locations_model extends Base_module_model {
 	public $unique_fields = array(); // fields that are not IDs but are unique. Can also be an array of arrays for compound keys
 	public $parsed_fields = array(); // fields to automatically parse
 	public $serialized_fields = array(); // fields that contain serialized data. This will automatically serialize before saving and unserialize data upon retrieving
-	public $has_many = array(
-	                           'events' => 'events'); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
+	public $has_many = array( // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
+		'events' => 'events'
+	);
 	public $belongs_to = array(); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
 	public $formatters = array(); // an array of helper formatter functions related to a specific field type (e.g. string, datetime, number), or name (e.g. title, content) that can augment field results
 	public $display_unpublished_if_logged_in = FALSE;
