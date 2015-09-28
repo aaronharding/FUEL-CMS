@@ -10,12 +10,12 @@ $vars['page_title'] = fuel_nav(array('render_type' => 'page_title', 'delimiter' 
 $vars['meta_keywords'] = '';
 $vars['meta_description'] = '';
 $vars['js'] = array(
+    'main.js'
 );
 $vars['css'] = array(
-	'reset.css',
-	'defaults.css'
+	'main.css'
 );
-$vars['body_class'] = uri_segment(1).' '.uri_segment(2);
+$vars['body_class'] = trim('unloaded ' . uri_segment(1) . ' ' . uri_segment(2));
 
 // page specific variables
 $pages = array();

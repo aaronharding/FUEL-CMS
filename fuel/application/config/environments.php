@@ -15,5 +15,6 @@
 
 $environments = array(
 				'development' => array('localhost*', '192.*', '*.dev'),
+				'staging' => array('staging.*', '*aharding*'),
 				'production' => array('devisionarissen*', '*devisionarissen')
 				);

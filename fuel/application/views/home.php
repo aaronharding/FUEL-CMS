@@ -4,9 +4,11 @@
 
 <?php echo fuel_var('body', '')?>
 
-<?=$this->load->view('_blocks/posts', array(
+<?php /* $this->load->view('_blocks/posts', array(
 	'post_count' => $frontpage_post_count,
 	'headline' => $frontpage_post_headline
-))?>
+))*/ ?>
+
+hello, world
 
 <?=$this->load->view('_blocks/footer')?>

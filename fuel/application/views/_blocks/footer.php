@@ -1,4 +1,6 @@
-<?php echo js('main').js($js); ?>
+
+	<?=jquery()?>
+	<?php echo js($js); ?>
 
 </body>
 </html>

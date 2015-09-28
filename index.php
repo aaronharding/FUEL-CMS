@@ -80,20 +80,10 @@ if (!empty($environments))
 	}
 }
 
-
 // set default environment if one is not found above
 if (!defined('ENVIRONMENT'))
 {
 	define('ENVIRONMENT', 'development');
-}
-
-// lol
-if(ENVIRONMENT == 'production') {
-	if(isset($_GET['hello'])) {
-		echo getcwd();
-		phpinfo();
-	}
-	die();
 }
 
 /*
@@ -109,12 +99,12 @@ if (defined('ENVIRONMENT'))
 {
 	switch (ENVIRONMENT)
 	{
-		case 'development': case 'testing': 
+		case 'development': case 'staging':
 			ini_set('display_errors', 1);
 			error_reporting(E_ALL);
 		break;
 	
-		case 'staging': case 'production':
+		case 'production':
 			error_reporting(0);
 		break;
 

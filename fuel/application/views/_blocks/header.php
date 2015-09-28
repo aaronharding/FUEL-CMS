@@ -16,12 +16,11 @@
 	<meta name="description" content="<?php echo fuel_var('meta_description')?>">
 
 	<?php
-		echo css('main').css($css);
+		echo css($css);
 
 		if (!empty($is_blog)):
 			echo $CI->fuel->blog->header();
 		endif;
 	?>
-	<?=jquery()?>
 </head>
-<body>	
+<body class="<?php echo fuel_var('body_class', '');?>">	
