@@ -24,7 +24,6 @@ class Home extends CI_Controller {
 		));
 
 		// logic for the event subtitle
-		$upcoming_event->event_subtitle = null;
 		/*
 		if(false || count($upcoming_event->speakers) > 0) {
 			if(count($upcoming_event->speakers) === 1) {
