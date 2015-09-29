@@ -20,9 +20,13 @@ require_once(APPPATH.'helpers/my_helper.php');
 include(APPPATH.'views/_blocks/header.php');
 ?>	
 
-<div id="error_404">
-	<h1><?php echo $heading; ?></h1>
-	<?php echo $message; ?>
-</div>
-
+	<div class="section">
+		<div class="row">
+			<div class="cell cell-full">
+				<h1><?php echo $heading; ?></h1>
+				<?php echo $message; ?>
+			</div>
+		</div>
+	</div>
+	
 <?php include(APPPATH.'views/_blocks/footer.php'); ?>

@@ -3,140 +3,155 @@
 /* ==========================================================================
 	 Base styles: opinionated defaults
 	========================================================================== */
-
-/*
- * 	Remove text-shadow in selection highlight: h5bp.com/i
- * 	These selection rule sets have to be separate.
- * 	Customize the background color to match design.
- */
+	
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	*behavior: url(/boxsizing.htc);
+	margin: 0;
+	padding: 0;
+}
 
 ::-moz-selection {
-	background: #AEC5DF;
-	color: #fff;
+	background: #FFC6A5;
+	color: #353634;
 	text-shadow: none;
 }
 
 ::selection {
-	background: #AEC5DF;
-	color: #fff;
+	background: #FFC6A5;
+	color: #353634;
 	text-shadow: none;
 }
 
-html {
-	font: 16px/1.5em "Helvetica Neue", Helvetica, serif;
-	font-style: normal;
-	font-weight: 400;
-	color: #919191;
-	background: #fff;
-	min-height: 100%;
-	height: auto;
-	height: 100%;
-	-moz-osx-font-smoothing: grayscale;
+/**
+ * root is 16px font-size with 24px line-height (1.5x)
+ */
+
+* {
 	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
-	-ms-font-smoothing: antialiased;
-	-o-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
 }
 
-body {
-	height: 100%;
+html {
+    /*font: 16px/24px 'Inika', Inika, Georgia, serif;*/
+    font: 16px/24px 'ubuntu', ubuntu, sans-serif;
+    font-style: normal;
+	font-weight: 400;
+    color: #353634;
 }
 
-/* ==========================================================================
-	Globals
-   ======================================================================= */
+body { 
+    line-height: 1.78em;
+}
 
-/* 	hey! are you editing this? well make sure to remember that ems are relative
-	to the element's font-size. so 1em = 70px in this case. */
 h1 {
-	font-family: "Helvetica Neue", Helvetica, serif;
-	font-size: 14px;
-	font-size: 0.875rem;
-	line-height: 0.875em;
+	font-size: 60px;
+	font-size: 3.75rem;
+	font-weight: 400;
+	font-style: normal;
+	text-align: center;
 	text-transform: uppercase;
+	color: #2B2B2B;
+	margin-bottom: 0.75em;
 }
 
-/* primary headline */
 h2 {
-	font-family: "Helvetica Neue", Helvetica, serif;
-	font-size: 14px;
-	font-size: 0.875rem;
-	line-height: 1rem;
+	font-size: 40px;
+	font-size: 2.5rem;
+	font-weight: 400;
+	font-style: normal;
+	text-align: left;
+	color: #2B2B2B;
+	margin-bottom: 0.75em;
 }
 
-/* secondary headline */
 h3 {
-	font-family: "Helvetica Neue", Helvetica, serif;
-	font-size: 14px;
-	font-size: 0.875rem;
-	line-height: 1.25rem;
+	font-size: 36px;
+	font-size: 2.25rem;
+	font-weight: 400;
+	font-style: normal;
+	text-align: left;
+	color: #2B2B2B;
+	margin-bottom: 0.75em;
 }
 
-/* tertiary headline */
 h4 {
-	font-family: "Helvetica Neue", Helvetica, serif;
-	font-size: 14px;
-	font-size: 0.875rem;
-	line-height: 1.5rem;
+	font-size: 32px;
+	font-size: 2rem;
+	font-weight: 400;
+	font-style: normal;
+	text-align: left;
+	color: #2B2B2B;
+	margin-bottom: 0.75em;
 }
 
 h5 {
-
+	font-size: 24px;
+	font-size: 1.5rem;
+	font-weight: 400;
+	font-style: normal;
+	text-align: left;
+	color: #2B2B2B;
+	margin-bottom: 0.75em;
 }
 
 h6 {
-
+	font-size: 18px;
+	font-size: 1.125rem;
+	font-weight: 400;
+	font-style: normal;
+	text-align: left;
+	color: #2B2B2B;
+	margin-bottom: 0.75em;
 }
 
-/*
- *	Paragraph tags
- */
+hr {
+	display: block; 
+	height: 1px;
+    border: 0; 
+    border-top: 1px solid #d9d9d9;
+    margin: 0; 
+    padding: 0;	
+}
 
 p {
-	font-size: 11px;
-	font-size: 0.6875rem;
-	line-height: 1em;
-	color: #919191;
+	
 }
 
-/*
- * 	Looking after the anchors
- */
-
 a {
+	color: #E6324B;
 	text-decoration: none;
-	color: #9EC0BB;
-	cursor: pointer;
-	border: 0;
-	outline: 0 !important;
-	font-weight: 600;
+}
+
+a:focus, a:hover {
+	text-decoration: underline;
 }
 
 a:active {
-	color: #4A8D75;
+
 }
 
-a:hover,
-a:focus {
-	color: #4A8D75;
-	text-decoration: none;
+input, select { vertical-align:middle; outline-color: #fff; }
+select, input, textarea { font: 99% sans-serif; }
+
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
+
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+
+img {
+	max-width: 100%;
 }
 
-a.active {
-	color: #4A8D75;
-}
+/* ==========================================================================
+   	Extensions
+   ======================================================================== */
 
-a.active:hover,
-a.active:focus {
-	/*cursor: default;*/
-}
 
-h1 a:focus,
-h1 a:active,
-h1 a.active {
-	color: #000 !important;
-}
 
 /*
  * 	A better looking default horizontal rule

@@ -1,0 +1,33 @@
+.section.logo {
+	height: 50%;
+	min-height: 15.625rem;
+	max-height: 25.0rem;
+}
+
+	.section.logo .cell {
+		text-align: center;
+		float: none;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.section.logo .cell:before {
+		display: inline-block;
+		height: 50%;
+		content: '';
+		font-size: 0;
+	}
+
+.section.upcoming_event {
+	background: #F2E3C6;
+	height: auto;
+	min-height: 12.5rem;
+	padding: 3.75rem 0;
+}
+
+	.upcoming_event-image {
+		text-align: left;
+	}
+
+		.upcoming_event-image img {
+		}

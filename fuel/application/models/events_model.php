@@ -15,10 +15,10 @@ class Events_model extends Base_module_model {
 	public $parsed_fields = array('description', 'description_formatted', 'excerpt', 'excerpt_formatted');
 	public $serialized_fields = array(); // fields that contain serialized data. This will automatically serialize before saving and unserialize data upon retrieving
 	public $has_many = array(
-		'Speakers' => '../../modules/blog/models/blog_users_model'
+		'speakers' => '../../modules/blog/models/blog_users_model'
 	); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
 	public $belongs_to = array(
-		'Locations' => 'locations'
+		'locations' => 'locations'
 	); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
 	public $formatters = array(); // an array of helper formatter functions related to a specific field type (e.g. string, datetime, number), or name (e.g. title, content) that can augment field results
 	public $display_unpublished_if_logged_in = FALSE;
@@ -47,6 +47,9 @@ class Events_model extends Base_module_model {
 	public function form_fields($values = array(), $related = array())
 	{
 		$fields = parent::form_fields($values, $related);
+
+		$fields['timetable']['type'] = 'textarea';
+		
 		return $fields;
 	}
 	

@@ -1,0 +1,16 @@
+/* centers the date to the bottom */
+
+/* first override floated elements since they ignore vertical align */
+.footer .cell.cell-three {
+	float: none;
+	display: inline-block;
+    vertical-align: bottom;
+}
+
+.footer .cell + .cell {
+	text-align: right;
+}
+
+	.footer-date {
+		
+	}
