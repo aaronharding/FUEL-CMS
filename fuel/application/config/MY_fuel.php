@@ -6,10 +6,10 @@
 */
 
 // path to the fuel admin from the web base directory... MUST HAVE TRAILING SLASH!
-$config['fuel_path'] = 'fuel/';
+$config['fuel_path'] = 'login/';
 
 // the name to be displayed on the top left of the admin
-$config['site_name'] = 'eefveldkamp';
+$config['site_name'] = 'De Visionarissen';
 
 // whether the admin backend is enabled or not
 $config['admin_enabled'] = TRUE;
@@ -26,8 +26,7 @@ $config['modules_allowed'] = array(
 		'user_guide',
 		'blog',
 		'examples',
-		'events',
-		'locations',
+		'locations'
 );
 
 // used for system emails
@@ -50,10 +49,10 @@ $config['auto_search_views'] = FALSE;
 $config['assets_upload_max_size']	= 5000;
 
 // max width for asset images being uploaded
-$config['assets_upload_max_width']  = 1024;
+$config['assets_upload_max_width']  = 5000;
 
 // max height for asset images being uploaded
-$config['assets_upload_max_height']  = 768;
+$config['assets_upload_max_height']  = 4000;
 
 // text editor settings  (options are markitup or ckeditor)
 // markitup: allows you to visualize the code in its raw format - not wysiwyg (http://markitup.jaysalvat.com/)

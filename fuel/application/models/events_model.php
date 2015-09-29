@@ -14,15 +14,17 @@ class Events_model extends Base_module_model {
 	public $unique_fields = array(); // fields that are not IDs but are unique. Can also be an array of arrays for compound keys
 	public $parsed_fields = array('description', 'description_formatted', 'excerpt', 'excerpt_formatted');
 	public $serialized_fields = array(); // fields that contain serialized data. This will automatically serialize before saving and unserialize data upon retrieving
-	public $has_many = array(); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
-	public $belongs_to = array( // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
-		'locations' => 'locations'
-	);
+	public $has_many = array(
+		'Speakers' => '../../modules/blog/models/blog_users_model'
+	); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
+	public $belongs_to = array(
+		'Locations' => 'locations'
+	); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
 	public $formatters = array(); // an array of helper formatter functions related to a specific field type (e.g. string, datetime, number), or name (e.g. title, content) that can augment field results
 	public $display_unpublished_if_logged_in = FALSE;
 	public $form_fields_class = '';  // a class that can extend Base_model_fields and manipulate the form_fields method
-	protected $friendly_name = 'Events'; // a friendlier name of the group of objects
-	protected $singular_name = 'event'; // a friendly singular name of the object
+	protected $friendly_name = ''; // a friendlier name of the group of objects
+	protected $singular_name = ''; // a friendly singular name of the object
 
 	public function __construct()
 	{
@@ -31,7 +33,7 @@ class Events_model extends Base_module_model {
 
 	public function list_items($limit = null, $offset = null, $col = 'name', $order = 'asc')
 	{
-		$this->db->select('id, name, start_date, end_date, published', FALSE);
+		$this->db->select('id, name, SUBSTRING(description, 1, 50) AS description, start_date, end_date, date_added, last_updated, published', FALSE);
 		$data = parent::list_items($limit, $offset, $col, $order);
 		return $data;
 	}
@@ -44,7 +46,7 @@ class Events_model extends Base_module_model {
 	
 	public function form_fields($values = array(), $related = array())
 	{
-		$fields = parent::form_fields();
+		$fields = parent::form_fields($values, $related);
 		return $fields;
 	}
 	
