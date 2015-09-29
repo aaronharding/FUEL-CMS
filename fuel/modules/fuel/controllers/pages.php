@@ -100,6 +100,8 @@ class Pages extends Module {
 						if ( ! empty($data))
 						{
 							$msg = lang('module_created', $this->module_name, $data[$this->display_field]);
+							$this->fuel->logs->write($msg);
+
 							$url = fuel_uri('pages/edit/'.$id);
 
 							// save any tab states
@@ -701,7 +703,7 @@ class Pages extends Module {
 		$this->model->archive($id, $archive);
 
 		// save to navigation if config allows it
-		if ($this->input->post('navigation_label'))
+		if ($this->input->post('navigation_label') AND $this->fuel->auth->has_permission('navigation/create'))
 		{
 			$this->fuel->load_model('fuel_navigation');
 
