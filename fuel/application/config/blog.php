@@ -6,7 +6,7 @@
 */
 $config['nav']['blog'] = array(
 	'blog/posts' => lang('module_blog_posts'), 
-	//'blog/categories' => lang('module_blog_categories'),  
+	'blog/categories' => lang('module_blog_categories'),  
 	'blog/comments' => lang('module_blog_comments'), 
 	'blog/links' => lang('module_blog_links'), 
 	'blog/users' => lang('module_blog_authors'), 
