@@ -11,7 +11,7 @@ class Home extends CI_Controller {
 
 		// blog posts
 		$frontpage_post_count = isset($frontpage_post_count) ? $frontpage_post_count : 7;
-		$posts = array();//fuel_model('blog_posts', array('find' => 'all', 'limit' => $frontpage_post_count, 'order' => 'sticky, date_added desc', 'module' => 'blog'));
+		$posts = fuel_model('blog_posts', array('find' => 'all', 'limit' => $frontpage_post_count, 'order' => 'sticky, date_added desc', 'module' => 'blog'));
 		$vars['posts'] = $posts;
 
 		// upcoming event

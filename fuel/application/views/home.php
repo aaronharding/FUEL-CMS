@@ -55,7 +55,6 @@
 
 				<?php if (!empty($posts)) : ?>
 
-					<h2>The Latest from our Blog</h2>
 					<ul>
 					<?php foreach($posts as $post) : ?>
 						<li>
