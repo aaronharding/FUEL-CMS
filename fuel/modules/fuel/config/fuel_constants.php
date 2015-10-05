@@ -67,7 +67,7 @@ foreach ($config['modules_allowed'] as $module)
 
 if ( ! defined('BASE_URL'))
 {
-	$_base_path = $_SERVER['HTTP_HOST'].str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+	$_base_path = $_SERVER['HTTP_HOST'];// . str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 
 	if ( ! empty($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off' OR $_SERVER['SERVER_PORT'] == 443)
 	{

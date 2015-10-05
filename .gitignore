@@ -1,3 +1,5 @@
 .idea
 .DS_Store
 fuel/application/cache/
+sftp-config.json
+.htaccess

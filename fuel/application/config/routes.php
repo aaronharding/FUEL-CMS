@@ -45,7 +45,7 @@ $route['404_override'] = 'fuel/page_router';
 | Uncomment this line if you want to use the automatically generated sitemap based on your navigation.
 | To modify the sitemap.xml, go to the views/sitemap_xml.php file.
 */ 
-$route['sitemap.xml'] = 'sitemap_xml';
+//$route['sitemap.xml'] = 'sitemap_xml';
 // $route['robots.txt'] = 'robots_txt';
 // $route['humans.txt'] = 'humans_txt';
 

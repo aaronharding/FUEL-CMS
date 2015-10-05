@@ -6,7 +6,7 @@
 */
 
 // path to the fuel admin from the web base directory... MUST HAVE TRAILING SLASH!
-$config['fuel_path'] = 'login/';
+$config['fuel_path'] = 'admin/';
 
 // the name to be displayed on the top left of the admin
 $config['site_name'] = 'De Visionarissen';

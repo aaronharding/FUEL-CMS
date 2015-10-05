@@ -15,6 +15,6 @@
 
 $environments = array(
 				'development' => array('localhost*', '192.*', '*.dev'),
-				'staging' => array('staging.*', '*aharding*'),
-				'production' => array('devisionarissen*', '*devisionarissen')
+				'staging' => array('staging.aharding*', 'aharding.co.uk'),
+				'production' => array('devisionarissen.nl')
 				);
