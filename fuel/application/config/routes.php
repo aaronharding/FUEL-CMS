@@ -41,6 +41,10 @@
 $route['default_controller'] = 'home';//fuel/page_router';
 $route['404_override'] = 'fuel/page_router';
 
+$route['events'] = 'event';
+$route['locations'] = 'location';
+$route['authors'] = 'blog/authors';
+
 /*	
 | Uncomment this line if you want to use the automatically generated sitemap based on your navigation.
 | To modify the sitemap.xml, go to the views/sitemap_xml.php file.

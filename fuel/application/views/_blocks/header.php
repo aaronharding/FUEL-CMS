@@ -4,13 +4,13 @@
 <!--[if gt IE 10]><!--> <html itemscope itemtype="http://schema.org/Product" class="no-js"> <!--<![endif]-->
 	<head>
 	<meta charset="utf-8">
-	<!-- ᶘ ᵒᴥᵒᶅ by aharding.co.uk -->
+	<!-- ᶘ ᵒᴥᵒᶅ by Aaron Harding aharding.co.uk -->
  	<title>
 		<?php 
 			if (!empty($is_blog)) :
-				echo $CI->fuel->blog->page_title($page_title, ' : ', 'right');
+				echo $CI->fuel->blog->page_title($page_title, ' - ', 'right');
 			else:
-				echo fuel_var('page_title', '');
+				echo $page_title . ' - ' . fuel_var('page_title', '');
 			endif;
 		?>
 	</title>
