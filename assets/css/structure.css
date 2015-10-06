@@ -44,6 +44,10 @@
 
 }
 
+.section.section-full {
+	background: #DBF2F7;
+}
+
 	.section .row {
 		width: 100%;
 		max-width: 1140px;

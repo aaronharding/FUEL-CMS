@@ -10,6 +10,7 @@ body {
 /* padding here is odd  because i want the logo to sit perfectly in the top left corner :3; */
 .section.header {
 	position: fixed;
+	z-index: 99;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -25,7 +26,9 @@ body {
 		width: 110px;
 		text-align: center;
 		height: 95px;
-		float: left;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
 		.header-logo a {
@@ -54,25 +57,30 @@ body {
 				margin-left: 10px;
 			}
 
-	.header-nav {
+	.section.header .row {
 
 	}
 
-		.header-nav ul {
-			float: right;
+		.header-nav {
+
 		}
 
-		.header-nav li {
-			float: left;
-		}
-
-			.header-nav a {
-				padding: 0 20px;
-				margin-left: 5px;
-				display: block;
-				height: 100%;
+			.header-nav ul {
+				float: right;
 			}
 
-			.header-nav li:last-child a {
-				padding-right: 40px;
+			.header-nav li {
+				float: left;
 			}
+
+				.header-nav a {
+					padding: 0 20px;
+					margin-left: 5px;
+					display: block;
+					height: 100%;
+				}
+
+				.header-nav li:last-child a {
+					/*padding-right: 40px;*/
+					margin-right: -40px;
+				}
