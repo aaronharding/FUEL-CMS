@@ -18,13 +18,13 @@ class Events_model extends Base_module_model {
 		'speakers' => '../../modules/blog/models/blog_users_model'
 	); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
 	public $belongs_to = array(
-		'locations' => 'locations'
+		'Locations' => 'locations'
 	); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
 	public $formatters = array(); // an array of helper formatter functions related to a specific field type (e.g. string, datetime, number), or name (e.g. title, content) that can augment field results
 	public $display_unpublished_if_logged_in = FALSE;
 	public $form_fields_class = ''; // a class that can extend Base_model_fields and manipulate the form_fields method
-	protected $friendly_name = ''; // a friendlier name of the group of objects
-	protected $singular_name = ''; // a friendly singular name of the object
+	protected $friendly_name = 'events'; // a friendlier name of the group of objects
+	protected $singular_name = 'event'; // a friendly singular name of the object
 
 	public function __construct()
 	{
@@ -76,6 +76,11 @@ class Event_model extends Base_module_record {
 	public function get_image_path()
 	{
 		return img_path($this->image);
+	}
+
+	public function get_url()
+	{
+		return "event/" . strtolower(url_title($this->name));
 	}
 }
 ?>

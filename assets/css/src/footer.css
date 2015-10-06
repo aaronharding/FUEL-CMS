@@ -1,5 +1,9 @@
-/* centers the date to the bottom */
+.section.footer {
+	margin-top: 2.5rem;
+	margin-bottom: 1rem;
+}
 
+/* centers the date to the bottom */
 /* first override floated elements since they ignore vertical align */
 .footer .cell.cell-three {
 	float: none;

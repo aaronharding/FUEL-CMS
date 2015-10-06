@@ -31,8 +31,16 @@ $config['module_overwrites']['tags']['hidden'] = TRUE; // change to FALSE if you
 /*********************** /OVERWRITES ************************************/
 
 $config['modules']['locations'] = array(
-	'preview_path' => '', // put in the preview path on the site e.g products/{slug}
-	'model_location' => '', // put in the advanced module name here
+    'module_name' => 'Locations',
+    'module_uri' => 'locations',
+    'model_name' => 'locations_model',
+    'model_location' => '',
+    'display_field' => 'title',
+    'preview_path' => '',
+    'permission' => 'locations',
+    'instructions' => 'Here you can manage the locations for your site.<br>New locations and speakers are created in their respective sections before being assigned to the event.',
+    'archivable' => TRUE,
+    'nav_selected' => 'locations'
 );
 
 $config['modules']['events'] = array(
