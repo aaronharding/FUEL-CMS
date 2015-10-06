@@ -88,8 +88,7 @@ h4 {
 	font-style: normal;
 	text-align: left;
 	color: #2B2B2B;
-	line-height: 2em;
-	margin-bottom: 0.75em;
+	line-height: 1em;
 }
 
 h5 {
@@ -129,7 +128,7 @@ a {
 	color: #E6324B;
 	text-decoration: none;
 	outline: none;
-	outline: 0;
+	outline: 0 !important;
 }
 
 a:focus, a:hover {
@@ -150,6 +149,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 
 img {
 	max-width: 100%;
+	outline: 0;
 }
 
 /* ==========================================================================

@@ -22,16 +22,16 @@
 		font-size: 0;
 	}
 
-.section.upcoming_event {
-	background: #DBF2F7;
+.section.home-upcoming_event {
 	height: auto;
 	min-height: 12.5rem;
 	padding: 1.5rem 0 3rem 0;
 	position: relative;
 	z-index: 2;
+	background: #DBF2F7;
 }
 
-	.upcoming_event-image {
+	.home-upcoming_event-image {
 		text-align: left;
 		float: left;
 		width: 44%;
@@ -39,16 +39,16 @@
 		margin: 0.66em 1.5rem 0.5rem 0;
 	}
 
-	.upcoming_event-timetable-time {
+	.home-upcoming_event-timetable-time {
 		overflow: hidden;
 		margin-bottom: 0.75em;
 	}
 
-		.upcoming_event-timetable-time h6 {
+		.home-upcoming_event-timetable-time h6 {
 			float: left;
 		}
 
-		.upcoming_event-timetable-time blockquote {
+		.home-upcoming_event-timetable-time blockquote {
 			display: block;
 			padding-left: 6rem;
 		}
