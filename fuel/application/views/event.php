@@ -20,7 +20,9 @@
 				<h6><?=$event->description?></h6>
 			</div>
 		<?php else: ?>
-
+			<div class="cell cell-full">
+				<h6><?=$event->description?></h6>
+			</div>
 		<?php endif; ?>
 	</div>
 </div>
@@ -28,14 +30,6 @@
 <div class="section main event">
 	<div class="row">
 		<div class="cell cell-six">
-
-			<div class="event-timetable">
-				<h4>Timetable</h4>
-				<?php $this->load->view('_blocks/event-timetable', array(
-					'timetable_formatted' => $event->timetable_formatted,
-					'class' => 'event-timetable-time'
-				)); ?>
-			</div>
 
 			<?php if(count($event->locations) > 0): ?>
 				<?php foreach($event->locations as $location): ?>
@@ -62,6 +56,15 @@
 					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
+
+			<div class="event-timetable">
+				<h4>Timetable</h4>
+				<?php $this->load->view('_blocks/event-timetable', array(
+					'timetable_formatted' => $event->timetable_formatted,
+					'class' => 'event-timetable-time'
+				)); ?>
+			</div>
+			
 		</div>
 		<div class="cell cell-two">
 			<?php $this->load->view('_blocks/sidebar'); ?>

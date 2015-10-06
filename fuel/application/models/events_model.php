@@ -18,7 +18,7 @@ class Events_model extends Base_module_model {
 		'speakers' => '../../modules/blog/models/blog_users_model'
 	); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
 	public $belongs_to = array(
-		'Locations' => 'locations'
+		'locations' => 'locations'
 	); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
 	public $formatters = array(); // an array of helper formatter functions related to a specific field type (e.g. string, datetime, number), or name (e.g. title, content) that can augment field results
 	public $display_unpublished_if_logged_in = FALSE;
@@ -41,6 +41,11 @@ class Events_model extends Base_module_model {
 	public function on_before_clean($values)
 	{
 		$values = parent::on_before_clean($values);
+
+		// auto update slug
+		if (empty($values['slug']) && !empty($values['name']))
+			$values['slug'] = url_title($values['name'], 'dash', TRUE);
+
 		return $values;
 	}
 	
@@ -49,6 +54,10 @@ class Events_model extends Base_module_model {
 		$fields = parent::form_fields($values, $related);
 
 		$fields['timetable']['type'] = 'textarea';
+
+		$fields['slug']['comment'] = 'If no slug is provided, one will be provided for you';
+
+		$fields['image']['comment'] = 'You can remove the image by emptying the text field and saving.';
 		
 		return $fields;
 	}
@@ -83,7 +92,50 @@ class Event_model extends Base_module_record {
 
 	public function get_url()
 	{
-		return "events/" . strtolower(url_title($this->name));
+		return "events/" . $this->slug;
+	}
+
+	// turn timetable raw text into nice parts
+	public function get_timetable_formatted()
+	{
+		// first split raw text newlines into an array
+		$times = explode("\n", $this->timetable);
+		foreach($times as $key => &$time) {
+
+			// skip empty values, just in case
+			if(empty($time) || trim($time) === "") {
+				unset($times[$key]);
+				continue;
+			}
+
+			// trim whitespace and explode string into another array from the comma ,
+			$time = preg_split('/\s*,\s*/', trim($time), 2);  
+		}
+		return $times;
+	}
+
+	// make nice authors with clickable url
+	public function get_speakers_formatted_with_url()
+	{
+		$speakers = array();
+		if(count($this->speakers) > 0) {
+			foreach ($this->speakers as $speaker) {
+				array_push($speakers, $speaker->get_clickable_name());
+			}
+		}
+		return $speakers;
+	}
+
+	// make nice authors
+	public function get_speakers_formatted()
+	{
+		$speakers = array();
+		if(count($this->speakers) > 0) {
+			foreach ($this->speakers as $speaker) {
+				array_push($speakers, $speaker->name);
+			}
+		}
+		return $speakers;
 	}
 
 }

@@ -10,7 +10,7 @@
 ))*/ ?>
 
 	<?php if (!empty($upcoming_event)) : ?>
-	<div class="section upcoming_event">
+	<div class="section home-upcoming_event">
 		<div class="row">
 			<div class="cell cell-full">
 				<a href="<?=$upcoming_event->get_url()?>"><h2><?=$upcoming_event->name?></a></h2>
@@ -19,18 +19,14 @@
 		<div class="row">
 			<div class="cell cell-five">
 				<?php if(!empty($upcoming_event->image)): ?>
-					<img class="upcoming_event-image" src="assets/images/<?=$upcoming_event->image?>">
+					<img class="home-upcoming_event-image" src="assets/images/<?=$upcoming_event->image?>">
 				<?php endif; ?>
 				<h6><?=$upcoming_event->description?></h6>
-			</div><div class="cell cell-three upcoming_event-timetable">
-				<?php if(!empty($upcoming_event->timetable_formatted)): ?>
-					<?php foreach($upcoming_event->timetable_formatted as $time): ?>
-						<div class="upcoming_event-timetable-time">
-							<?php if (isset($time[0]) || array_key_exists(0, $time)): ?><h6><?=$time[0]?></h6>					<?php endif; ?>
-							<?php if (isset($time[0]) || array_key_exists(1, $time)): ?><blockquote><?=$time[1]?></blockquote>	<?php endif; ?>
-						</div>
-					<?php endforeach; ?>
-				<?php endif; ?>
+			</div><div class="cell cell-three home-upcoming_event-timetable">
+				<?php $this->load->view('_blocks/event-timetable', array(
+					'timetable_formatted' => $upcoming_event->timetable_formatted,
+					'class' => 'home-upcoming_event-timetable-time'
+				)); ?>
 			</div>
 		</div>
 		<?php if(!empty($upcoming_event->speakers_formatted)): ?>
@@ -59,7 +55,7 @@
 					</ul>
 				 
 				<?php else: // empty $posts ?>
-					<h2>..</h2>
+					&nbsp;
 				<?php endif; // empty $posts ?>
 
 			</div><div class="cell cell-two">

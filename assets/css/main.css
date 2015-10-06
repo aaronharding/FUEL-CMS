@@ -3,7 +3,9 @@
 @import url('structure.css');
 @import url('helpers.css');
 
+@import url('event.css');
+@import url('location.css');
+
 @import url('footer.css');
 @import url('header.css');
-@import url('event.css');
 @import url('home.css');

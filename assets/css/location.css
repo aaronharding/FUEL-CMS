@@ -1,0 +1,54 @@
+.section.location-introduction {
+	background: #DBF2F7;
+    padding: 1.5rem 0 3rem 0;
+    position: relative;
+}
+
+.section.location-title h2 {
+	margin-bottom: 2rem;
+}
+
+.section.location.main {
+	margin-top: 3rem;
+}
+
+.location-content {
+	margin-bottom: 3rem;
+}
+
+.location-location {
+	margin-bottom: 3rem;
+}
+
+	.location-location h6 {
+		margin-top: 0.5em;
+	}
+
+.location-events {
+	margin-bottom: 3rem;
+}
+
+	.location-events h4 {
+		margin-bottom: 1em;
+	}
+
+	.location-event + .location-event {
+		margin-top: 1em;
+	}
+
+		.location-event p + p {
+			margin-top: 1em;
+		}
+
+		.location-event-title {
+			overflow: hidden;
+			margin-bottom: 1rem;
+		}
+
+		.location-event-title h5 {
+			float: left;
+		}
+
+		.location-event-title p {
+			text-align: right;
+		}

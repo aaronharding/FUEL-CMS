@@ -15,7 +15,7 @@ class Locations_model extends Base_module_model {
 	public $parsed_fields = array(); // fields to automatically parse
 	public $serialized_fields = array(); // fields that contain serialized data. This will automatically serialize before saving and unserialize data upon retrieving
 	public $has_many = array( // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
-		'Events' => 'events'
+		'events' => 'events'
 	);
 	public $belongs_to = array(); // keys are model, which can be a key value pair with the key being the module and the value being the model, module (if not specified in model parameter), relationships_model, foreign_key, candidate_key
 	public $formatters = array(); // an array of helper formatter functions related to a specific field type (e.g. string, datetime, number), or name (e.g. title, content) that can augment field results
@@ -46,6 +46,13 @@ class Locations_model extends Base_module_model {
 		$fields['lat']['label'] = 'Latitude';
 		$fields['address'] = array('type' => 'textarea', 'maxlength' => '255', 'cols' => 40, 'rows' => 5, 'height' => 50, 'class' => '');
 		$fields['lng']['label'] = 'Longitude';
+
+		$fields['lng']['comment'] = 'If both Latitude & Longitude fields are set, the Google Map will refer to these points. Otherwise it will use the address.';
+		$fields['lat']['comment'] = $fields['lng']['comment'];
+
+		$fields['address']['comment'] = 'This is also the address sent to Google Maps to get the location.';
+
+		$fields['image']['comment'] = 'You can remove the image by emptying the text field and saving.';
 
 		return $fields;
 	}
@@ -79,5 +86,38 @@ class Location_model extends Base_module_record {
 	public function get_url()
 	{
 		return "locations/" . strtolower(url_title($this->title));
+	}
+
+	public function get_google_map_address()
+	{
+		return str_replace(" ", "+", $this->address);
+	}
+
+	/*
+		var_dump($past   < $today);         // bool(true)
+		var_dump($future < $today);         // bool(false)
+
+		var_dump($today == $past);          // bool(false)
+		var_dump($today == new DateTime()); // bool(true)
+		var_dump($today == $future);        // bool(false)
+
+		var_dump($past   > $today);         // bool(false)
+		var_dump($future > $today);         // bool(true)
+	 */
+	public function get_current_events()
+	{
+		// upcoming event
+		$today = date("Y-m-d H:i:s");
+		$events = array();
+		foreach($this->events as $event) {
+			// if the start date is in the future
+			if($event->end_date > $today) {
+				array_push($events, $event);
+			// else if the start date is in the paste and end date is in the future
+			} else if($event->start_date < $today && $event->end_date > $today) {
+				array_push($events, $event);
+			}
+		}
+		return $events;
 	}
 }

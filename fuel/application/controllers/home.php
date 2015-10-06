@@ -14,41 +14,24 @@ class Home extends CI_Controller {
 		$posts = fuel_model('blog_posts', array('find' => 'all', 'limit' => $frontpage_post_count, 'order' => 'sticky, date_added desc', 'module' => 'blog'));
 		$vars['posts'] = $posts;
 
-		// upcoming event
+		// upcoming or current event
 		$today = date("Y-m-d H:i:s");
 		$upcoming_event = fuel_model('events', array(
 			'find' => 'one',
+			// find all events with end date's in the future (as in they haven't ended yet)
+			// and sort by start_date desc, so the event that started first will be shown
+			// oh and keep sticky events always on top
 			'order' => 'sticky, start_date desc',
-			'where' => "start_date >= '$today'",
+			'where' => "end_date >= '$today'",
 			'module' => 'events'
 		));
-
-		// turn timetable raw text into nice parts
-		// first split raw text newlines into an array
-		$times = explode("\n", $upcoming_event->timetable);
-		foreach($times as $key => &$time) {
-			// skip empty values, just in case
-			if(empty($time) || trim($time) === "") {
-				unset($times[$key]);
-				continue;
-			}
-			// trim whitespace and explode string into another array from the comma ,
-			$time = preg_split('/\s*,\s*/', trim($time), 2);  
-		}
-		$upcoming_event->timetable_formatted = $times;
-
-		// make nice authors
-		if(count($upcoming_event->speakers) > 0) {
-			$speakers = array();
-			foreach ($upcoming_event->speakers as $speaker) {
-				array_push($speakers, $speaker->get_clickable_name());
-			}
-			$upcoming_event->speakers_formatted = $speakers;
-		}
-
+        
+        $upcoming_event->timetable_formatted = $upcoming_event->get_timetable_formatted();
+        $upcoming_event->speakers_formatted = $upcoming_event->get_speakers_formatted_with_url();
+		
 		$vars['upcoming_event'] = $upcoming_event;
 
-		// misc
+		// let the header know that this is the homepage
 		$vars['is_homepage'] = true;
 
 		$this->fuel->pages->render('home', $vars);

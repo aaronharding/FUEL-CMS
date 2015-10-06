@@ -6,22 +6,32 @@ class Locations extends CI_Controller {
 		parent::__construct();
 	}
 
-	function index($slug = null) {
-		
+	function index() {
+
 		$vars = array();
+		$this->fuel->pages->render('locations', $vars);
+	}
 
-		var_dump($slug);
+	function single($slug = null) {
 
-		$slug = uri_segment(2);
-
-		var_dump($slug);
-		die();
-
-		if($slug):
-			$vars['slug'] = $slug;
-			$this->fuel->pages->render('location', $vars);
-		else:
-			$this->fuel->pages->render('locations', $vars);
+		// quick check to map sure there is a slug, otherwise redirect to index
+		if(!$slug):
+			return $this->index();
 		endif;
+
+		$location = fuel_model('locations', array(
+			'find' => 'one',
+			'where' => "slug = '{$slug}'",
+			'module' => 'locations'
+		));
+
+		if (empty($location)) :
+			return $this->index();
+		endif;
+
+		$vars = array();
+		$vars['location'] = $location;
+
+		$this->fuel->pages->render('location', $vars);
 	}
 }

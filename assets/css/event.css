@@ -1,0 +1,53 @@
+.section.event-introduction {
+	background: #DBF2F7;
+    padding: 1.5rem 0 3rem 0;
+    position: relative;
+}
+
+.section.event-title h2 {
+	margin-bottom: 2rem;
+}
+
+.section.event.main {
+	margin-top: 3rem;
+}
+
+.event-location {
+	margin-bottom: 3rem;
+}
+
+	.event-location h6 {
+		margin-top: 0.5em;
+	}
+
+	.event-location h4 {
+		margin-bottom: 1em;
+	}
+
+.event-speakers {
+	margin-bottom: 3rem;
+}
+
+	.event-speakers h4 {
+		margin-bottom: 1em;
+	}
+
+.event-timetable {
+
+}
+
+	.event-timetable h4 {
+		margin-bottom: 1.5rem;
+	}
+
+	.event-timetable-time + .event-timetable-time {
+		margin-top: 1.5rem;
+	}
+
+	.event-timetable-time h6 {
+		float: left;
+	}
+
+	.event-timetable-time blockquote {
+		padding-left: 9em;
+	}

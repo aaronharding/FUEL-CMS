@@ -41,9 +41,11 @@
 $route['default_controller'] = 'home';//fuel/page_router';
 $route['404_override'] = 'fuel/page_router';
 
-$route['events'] = 'event';
-$route['locations'] = 'location';
-$route['authors'] = 'blog/authors';
+$route['events'] = 'events/index';
+$route['locations'] = 'locations/index';
+
+$route['events/(:any)'] = 'events/single/$1';
+$route['locations/(:any)'] = 'locations/single/$1';
 
 /*	
 | Uncomment this line if you want to use the automatically generated sitemap based on your navigation.

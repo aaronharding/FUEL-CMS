@@ -18,6 +18,8 @@
 	<meta name="keywords" content="<?php echo fuel_var('meta_keywords')?>">
 	<meta name="description" content="<?php echo fuel_var('meta_description')?>">
 
+	<base href="/">
+
 	<?php
 		echo css($css);
 
@@ -46,13 +48,17 @@
 				<img src="/assets/images/logo.png" alt="De Visionarissen">
 			</a>
 		</div>
-		<div class="header-nav">
-			<ul>
-				<li><a href="/events">Events</a></li>
-				<li><a href="/locations">Locations</a></li>
-				<li><a href="/authors">Authors</a></li>
-				<li><a href="/blog">Blog</a></li>
-			</ul>
+		<div class="row">
+			<div class="cell cell-full">
+				<div class="header-nav">
+					<ul>
+						<li><a href="/events">Events</a></li>
+						<li><a href="/locations">Locations</a></li>
+						<li><a href="/blog/authors">Authors</a></li>
+						<li><a href="/blog">Blog</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 
