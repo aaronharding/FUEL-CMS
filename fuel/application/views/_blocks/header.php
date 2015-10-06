@@ -26,19 +26,34 @@
 		endif;
 	?>
 </head>
-<body class="<?php echo fuel_var('body_class', '');?>">
+<body class="<?php echo fuel_var('body_class', '');?><?php if(!empty($is_homepage) && $is_homepage): echo " homepage"; endif; ?>">
 
-<?php if(!empty($is_homepage)): ?>
+<?php if(!empty($is_homepage) && $is_homepage): ?>
 
 	<div class="section logo">
 		<div class="row">
 			<div class="cell cell-full">
-				logo
+				
 			</div>
 		</div>
 	</div>
 
 <?php else: // homepage check ?>
 
+	<div class="section header">
+		<div class="header-logo">
+			<a href="/">
+				<img src="/assets/images/logo.png" alt="De Visionarissen">
+			</a>
+		</div>
+		<div class="header-nav">
+			<ul>
+				<li><a href="/events">Events</a></li>
+				<li><a href="/locations">Locations</a></li>
+				<li><a href="/authors">Authors</a></li>
+				<li><a href="/blog">Blog</a></li>
+			</ul>
+		</div>
+	</div>
 
 <?php endif; ?>

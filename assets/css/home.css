@@ -38,3 +38,17 @@
 		height: auto;
 		margin: 0.66em 1.5rem 0.5rem 0;
 	}
+
+	.upcoming_event-timetable-time {
+		overflow: hidden;
+		margin-bottom: 0.75em;
+	}
+
+		.upcoming_event-timetable-time h6 {
+			float: left;
+		}
+
+		.upcoming_event-timetable-time blockquote {
+			display: block;
+			padding-left: 6rem;
+		}

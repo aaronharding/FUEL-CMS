@@ -2,12 +2,6 @@
 
 <?=$this->load->view('_blocks/header')?>
 
-<div class="section">
-	<div class="row">
-		<div class="cell cell-full"></div>
-	</div>
-</div>
-
 <?php echo fuel_var('body', '')?>
 
 <?php /* $this->load->view('_blocks/posts', array(
@@ -19,33 +13,33 @@
 	<div class="section upcoming_event">
 		<div class="row">
 			<div class="cell cell-full">
-				<h2><?=$upcoming_event->name?></h2>
-				<?php if(isset($upcoming_event->event_subtitle)): ?>
-					<h5>Speaker<?php if(count($upcoming_event->speakers) > 1) :?>s<?php endif; ?> <?=$upcoming_event->event_subtitle?></h5>
-				<?php endif; ?>
+				<a href="<?=$upcoming_event->get_url()?>"><h2><?=$upcoming_event->name?></a></h2>
 			</div>
 		</div>
 		<div class="row">
-			<?php if(!empty($upcoming_event->image)): ?>
-
-				<div class="cell cell-three upcoming_event-image">
-					<img src="assets/images/<?=$upcoming_event->image?>">
-				</div><div class="cell cell-four">
-					<h6><?=$upcoming_event->description?></h6>
-				</div><div class="cell cell-one">
-					<h6><?=$upcoming_event->timetable?><h6>
-				</div>
-
-			<?php else: ?>
-
-				<div class="cell cell-six">
-					<h6><?=$upcoming_event->description?></h6>
-				</div><div class="cell cell-two">
-					<h6><?=$upcoming_event->timetable?></h6>
-				</div>
-
-			<?php endif; ?>
+			<div class="cell cell-five">
+				<?php if(!empty($upcoming_event->image)): ?>
+					<img class="upcoming_event-image" src="assets/images/<?=$upcoming_event->image?>">
+				<?php endif; ?>
+				<h6><?=$upcoming_event->description?></h6>
+			</div><div class="cell cell-three upcoming_event-timetable">
+				<?php if(!empty($upcoming_event->timetable_formatted)): ?>
+					<?php foreach($upcoming_event->timetable_formatted as $time): ?>
+						<div class="upcoming_event-timetable-time">
+							<?php if (isset($time[0]) || array_key_exists(0, $time)): ?><h6><?=$time[0]?></h6>					<?php endif; ?>
+							<?php if (isset($time[0]) || array_key_exists(1, $time)): ?><blockquote><?=$time[1]?></blockquote>	<?php endif; ?>
+						</div>
+					<?php endforeach; ?>
+				<?php endif; ?>
+			</div>
 		</div>
+		<?php if(!empty($upcoming_event->speakers_formatted)): ?>
+		<div class="row">
+			<div class="cell cell-full">
+				With: <?php echo implode(', ', $upcoming_event->speakers_formatted); ?>
+			</div>
+		</div>
+		<?php endif; ?>
 	</div>
 	<?php endif; // upcoming event ?>
 

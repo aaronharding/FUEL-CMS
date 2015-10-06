@@ -62,6 +62,9 @@ class Events_model extends Base_module_model {
 }
 
 class Event_model extends Base_module_record {
+
+	public $timetable_formatted = array();
+	public $speakers_formatted = array();
 	
 	public function get_start_date_formatted($format = 'F')
 	{
@@ -82,5 +85,6 @@ class Event_model extends Base_module_record {
 	{
 		return "event/" . strtolower(url_title($this->name));
 	}
+
 }
 ?>

@@ -23,6 +23,29 @@ class Home extends CI_Controller {
 			'module' => 'events'
 		));
 
+		// turn timetable raw text into nice parts
+		// first split raw text newlines into an array
+		$times = explode("\n", $upcoming_event->timetable);
+		foreach($times as $key => &$time) {
+			// skip empty values, just in case
+			if(empty($time) || trim($time) === "") {
+				unset($times[$key]);
+				continue;
+			}
+			// trim whitespace and explode string into another array from the comma ,
+			$time = preg_split('/\s*,\s*/', trim($time), 2);  
+		}
+		$upcoming_event->timetable_formatted = $times;
+
+		// make nice authors
+		if(count($upcoming_event->speakers) > 0) {
+			$speakers = array();
+			foreach ($upcoming_event->speakers as $speaker) {
+				array_push($speakers, $speaker->get_clickable_name());
+			}
+			$upcoming_event->speakers_formatted = $speakers;
+		}
+
 		$vars['upcoming_event'] = $upcoming_event;
 
 		// misc

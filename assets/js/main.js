@@ -8,3 +8,7 @@ function onScroll() {
 		}
 	}
 }
+
+$(document).ready(function() {
+    $('body').removeClass('unloaded');
+});

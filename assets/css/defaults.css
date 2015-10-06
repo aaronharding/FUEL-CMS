@@ -51,7 +51,7 @@ body {
 h1 {
 	font-size: 60px;
 	font-size: 3.75rem;
-	font-weight: 400;
+	font-weight: 200;
 	font-style: normal;
 	text-align: center;
 	text-transform: uppercase;
@@ -61,30 +61,30 @@ h1 {
 }
 
 h2 {
-	font-size: 40px;
+	font-size: 46px;
 	font-size: 2.5rem;
-	font-weight: 400;
+	font-weight: 200;
 	font-style: normal;
 	text-align: left;
 	color: #2B2B2B;
-	line-height: 1.5em;
+	line-height: 1.43em;
 }
 
 h3 {
-	font-size: 36px;
-	font-size: 2.25rem;
-	font-weight: 400;
+	font-size: 40px;
+	font-size: 2.5rem;
+	font-weight: 200;
 	font-style: normal;
 	text-align: left;
 	color: #2B2B2B;
-	line-height: 2em;
+	line-height: 40px;
 	margin-bottom: 0.75em;
 }
 
 h4 {
 	font-size: 32px;
 	font-size: 2rem;
-	font-weight: 400;
+	font-weight: 200;
 	font-style: normal;
 	text-align: left;
 	color: #2B2B2B;
@@ -93,25 +93,23 @@ h4 {
 }
 
 h5 {
-	font-size: 24px;
-	font-size: 1.5rem;
-	font-weight: 400;
+	font-size: 22px;
+	font-size: 1.38rem;
+	font-weight: 200;
 	font-style: normal;
 	text-align: left;
 	color: #2B2B2B;
-	line-height: 2em;
-	margin-bottom: 0.75em;
+	line-height: 1.45em;
 }
 
 h6 {
 	font-size: 18px;
 	font-size: 1.125rem;
-	font-weight: 400;
+	font-weight: 200;
 	font-style: normal;
 	text-align: left;
 	color: #2B2B2B;
-	line-height: 2em;
-	margin-bottom: 0.75em;
+	line-height: 1.56em;
 }
 
 hr {
@@ -130,6 +128,8 @@ p {
 a {
 	color: #E6324B;
 	text-decoration: none;
+	outline: none;
+	outline: 0;
 }
 
 a:focus, a:hover {

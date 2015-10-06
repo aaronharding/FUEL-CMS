@@ -34,6 +34,7 @@ function rafCheck() {
     }
     requestAnimationFrame(rafCheck);
 }
+
 $(document).ready(function() {
     requestAnimationFrame(rafCheck);
     scroll = true;
