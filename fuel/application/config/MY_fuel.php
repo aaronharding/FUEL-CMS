@@ -39,8 +39,8 @@ $config['default_pwd'] = 'admin';
 // If it is an array, then it will loop through the array using the keys to match against a regular expression:
 // $config['max_page_params'] = array('about/news/' => 1);
 $config['max_page_params'] = array(
-	'event' => 1,
-	'location' => 1
+	'events' => 1,
+	'locations' => 1
 );
 
 // will auto search view files. 

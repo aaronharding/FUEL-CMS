@@ -75,4 +75,9 @@ class Locations_model extends Base_module_model {
 class Location_model extends Base_module_record {
 	
 	// put your record model code here
+
+	public function get_url()
+	{
+		return "locations/" . strtolower(url_title($this->title));
+	}
 }

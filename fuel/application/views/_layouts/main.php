@@ -1,7 +1,12 @@
 <?php $this->load->view('_blocks/header')?>
 	
-	<section id="main_inner">
-		<?php echo fuel_var('body', 'This is a default layout. To change this layout go to the fuel/application/views/_layouts/main.php file.'); ?>
-	</section>
+	<div class="section layout-main">
+		<div class="row">
+			<div class="cell cell-full">
+				<h2><?php echo fuel_var('heading', ''); ?></h2>
+				<p><?php echo fuel_var('body', ''); ?></p>
+			</div>
+		</div>
+	</div>
 	
 <?php $this->load->view('_blocks/footer')?>

@@ -83,7 +83,7 @@ class Event_model extends Base_module_record {
 
 	public function get_url()
 	{
-		return "event/" . strtolower(url_title($this->name));
+		return "events/" . strtolower(url_title($this->name));
 	}
 
 }

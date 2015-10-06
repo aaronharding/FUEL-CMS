@@ -1,10 +1,10 @@
 <?php 
 // used for development and testing
-$config['dev_email'] = '';
+$config['dev_email'] = 'aaron.thomas.harding@googlemail.com';
 
 
 // date format used with date helpers
-date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('Europe/Amsterdam');
 $config['date_format'] = 'm/d/Y';
 $config['date_format_verbose'] = 'F j, Y';
 $config['time_format'] = 'g:ia';

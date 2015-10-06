@@ -4,7 +4,9 @@
 
 <div class="section">
 	<div class="row">
-		<div class="cell cell-full"><?php echo fuel_var('body', 'location')?></div>
+		<div class="cell cell-full">
+			<h2>Location</h2>
+		</div>
 	</div>
 </div>
 
