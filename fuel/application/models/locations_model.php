@@ -120,4 +120,9 @@ class Location_model extends Base_module_record {
 		}
 		return $events;
 	}
+
+	function get_clickable_title()
+    {
+        return "<a href=\"" . $this->get_url() . "\">{$this->title}</a>";
+    }
 }

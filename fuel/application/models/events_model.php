@@ -95,6 +95,11 @@ class Event_model extends Base_module_record {
 		return "events/" . $this->slug;
 	}
 
+	function get_clickable_name()
+    {
+        return "<a href=\"" . $this->get_url() . "\">{$this->name}</a>";
+    }
+
 	// turn timetable raw text into nice parts
 	public function get_timetable_formatted()
 	{
@@ -114,28 +119,46 @@ class Event_model extends Base_module_record {
 		return $times;
 	}
 
-	// make nice authors with clickable url
-	public function get_speakers_formatted_with_url()
+	// make nice authors
+	public function get_speakers_formatted($with_url = false)
 	{
 		$speakers = array();
 		if(count($this->speakers) > 0) {
 			foreach ($this->speakers as $speaker) {
-				array_push($speakers, $speaker->get_clickable_name());
+				if($with_url) {
+					array_push($speakers, $speaker->get_clickable_name());
+				} else {
+					array_push($speakers, $speaker->name);
+				}
 			}
 		}
 		return $speakers;
 	}
 
-	// make nice authors
-	public function get_speakers_formatted()
+	// make nice locations
+	public function get_locations_formatted($with_url = false)
 	{
-		$speakers = array();
-		if(count($this->speakers) > 0) {
-			foreach ($this->speakers as $speaker) {
-				array_push($speakers, $speaker->name);
+		$locations = array();
+		if(count($this->locations) > 0) {
+			foreach ($this->locations as $location) {
+				if($with_url) {
+					array_push($locations, $location->get_clickable_title());
+				} else {
+					array_push($locations, $location->title);
+				}
 			}
 		}
-		return $speakers;
+		return $locations;
+	}
+
+	public function get_description_first_sentence($strict = false, $end = '.?!')
+	{
+		$description = $this->description;
+		preg_match("/^[^{$end}]+[{$end}]/", $description, $result);
+	    if (empty($result)) {
+	        return ($strict ? false : $description);
+	    }
+	    return $result[0];
 	}
 
 }

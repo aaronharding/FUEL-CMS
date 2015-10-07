@@ -67,7 +67,7 @@
 			
 		</div>
 		<div class="cell cell-two">
-			<?php $this->load->view('_blocks/sidebar'); ?>
+			<?php $this->load->view('_blocks/sidebar', $sidebar); ?>
 		</div>
 	</div>
 </div>

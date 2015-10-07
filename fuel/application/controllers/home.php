@@ -11,8 +11,24 @@ class Home extends CI_Controller {
 
 		// blog posts
 		$frontpage_post_count = isset($frontpage_post_count) ? $frontpage_post_count : 7;
-		$posts = fuel_model('blog_posts', array('find' => 'all', 'limit' => $frontpage_post_count, 'order' => 'sticky, date_added desc', 'module' => 'blog'));
+		$posts = fuel_model('blog_posts', array(
+			'find' => 'all',
+			'limit' => $frontpage_post_count,
+			'order' => 'sticky,
+				date_added desc',
+			'module' => 'blog'
+		));
 		$vars['posts'] = $posts;
+
+		// recent comments
+		$recent_comments = fuel_model('blog_comments', array(
+			'find' => 'all',
+			'limit' => 5,
+			'order' => 'sticky,
+				date_added desc',
+			'module' => 'blog'
+		));
+		$vars['recent_comments'] = $recent_comments;
 
 		// upcoming or current event
 		$today = date("Y-m-d H:i:s");
@@ -26,14 +42,18 @@ class Home extends CI_Controller {
 			'module' => 'events'
 		));
         
-        $upcoming_event->timetable_formatted = $upcoming_event->get_timetable_formatted();
-        $upcoming_event->speakers_formatted = $upcoming_event->get_speakers_formatted_with_url();
-		
+        $upcoming_event->timetable_formatted = $upcoming_event->timetable_formatted;
+        $upcoming_event->speakers_formatted = $upcoming_event->get_speakers_formatted(true);
 		$vars['upcoming_event'] = $upcoming_event;
 
-		// let the header know that this is the homepage
-		$vars['is_homepage'] = true;
+		// set up sidebar
+		$sidebar_model = $this->sidebar_model;
+		$vars['sidebar'] = array();
+		$vars['sidebar']['is_homepage'] = true;
+		$vars['sidebar']['recent_posts'] = $sidebar_model->recent_posts;
+		$vars['sidebar']['recent_comments'] = $sidebar_model->recent_comments;
 
 		$this->fuel->pages->render('home', $vars);
+
 	}
 }

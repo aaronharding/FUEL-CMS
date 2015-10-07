@@ -13,7 +13,7 @@
 	<div class="section home-upcoming_event">
 		<div class="row">
 			<div class="cell cell-full">
-				<a href="<?=$upcoming_event->get_url()?>"><h2><?=$upcoming_event->name?></a></h2>
+				<h2><a href="<?=$upcoming_event->get_url()?>"><?=$upcoming_event->name?></a></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -59,7 +59,7 @@
 				<?php endif; // empty $posts ?>
 
 			</div><div class="cell cell-two">
-				right
+				<?php $this->load->view('_blocks/sidebar', $sidebar); ?>
 			</div>
 		</div>
 	</div>
