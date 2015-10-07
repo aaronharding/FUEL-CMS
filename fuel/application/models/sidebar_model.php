@@ -6,17 +6,18 @@ class Sidebar_model extends Base_module_record {
 
 	public function get_recent_posts()
 	{
-		$recent_posts = array("Lorem ipsum dolor sit amet, consectetur adipisicing elit.", "Error, magni nostrum voluptate dolorem.", "Accusantium provident saepe tempora repellat totam veritatis corporis unde quae doloremque, eius quasi dolorem quos, impedit eligendi!");
+		$recent_posts = array();
+		$recent_posts = $this->_CI->fuel->blog->get_recent_posts(3);
 		return $recent_posts;
 	}
 
 	public function get_recent_comments()
 	{
-		$recent_comments = array(
-			"Joe on A Phenomenological Reading of Miscarriage",
-			"Bill on Manifest in Behaviour",
-			"Dave on Cartesian Conceptions? Sellars (and Husserl) on Perceptual Consciousn…"
-		);
+		$recent_comments = array();
+		$recent_comments = $this->_CI->fuel->blog->get_recent_comments(3);
+		foreach ($recent_comments as &$comment) {
+			$comment->post_link_title = $comment->get_post()->link_title;
+		}
 		return $recent_comments;
 	}
 
@@ -43,6 +44,33 @@ class Sidebar_model extends Base_module_record {
 		else:
 			return $event;
 		endif;
+	}
+
+	public function get_meta()
+	{
+		$meta = array();
+		return $meta;
+	}
+
+	public function get_sidebar($is_homepage = false, $event_id = null)
+	{
+		$sidebar = array();
+
+		$sidebar['is_homepage'] = $is_homepage;
+		$sidebar['recent_posts'] = $this->get_recent_posts();
+		$sidebar['recent_comments'] = $this->get_recent_comments();
+		$sidebar['meta'] = $this->get_meta();
+
+		if(!$is_homepage) {
+			$sidebar['upcoming_event'] = $this->get_upcoming_event($event_id);
+		}
+
+		return $sidebar;
+	}
+
+	public function __construct()
+	{
+		parent::__construct();
 	}
 
 }

@@ -3,7 +3,7 @@
 	<div class="section">
 		<div class="row">
 			<div class="cell cell-full">
-				<h1><?php echo fuel_var('heading'); ?></h1>
+				<h2><?php echo fuel_var('heading'); ?></h2>
 				<?php echo fuel_var('body', ''); ?>
 			</div>
 		</div>

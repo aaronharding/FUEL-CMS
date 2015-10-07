@@ -36,7 +36,7 @@
 			</div>
 
 			<div class="location-location">
-			<?php $this->load->view('_blocks/event-location', array(
+			<?php $this->load->view('_blocks/location-map', array(
 				'address' => $location->google_map_address,
 				'lat' => $location->lat,
 				'lng' => $location->lng,
@@ -47,22 +47,13 @@
 			</div>
 
 			<?php if(!empty($location->current_events)): ?>
-				<div class="location-events">
-					<h4>Events at this location</h4>
-					<?php foreach($location->current_events as $event): ?>
-						<div class="location-event">
-							<div class="location-event-title">
-								<h5><a href="<?=$event->get_url()?>"><?=$event->name?></a></h5>
-								<p><?=$event->date_range?></p>
-							</div>
-							<p><?=$event->description?></p>
-							<p><a href="<?=$event->get_url()?>">More information</a></p>
-						</div>
-					<?php endforeach; ?>
-				</div>
+				<?php $this->load->view('_blocks/events', array(
+					'title' => 'Events at this location',
+					'events' => $location->current_events,
+					'class' => 'location'
+				)); ?>
 			<?php endif; ?>
-		</div>
-		<div class="cell cell-two">
+		</div><div class="cell cell-two">
 			<?php $this->load->view('_blocks/sidebar', $sidebar); ?>
 		</div>
 	</div>

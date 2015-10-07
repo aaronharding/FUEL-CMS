@@ -9,13 +9,13 @@ $vars['layout'] = 'main';
 $vars['page_title'] = fuel_nav(array('render_type' => 'page_title', 'delimiter' => ' - ', 'order' => 'desc', 'home_link' => 'De Visionarissen'));
 $vars['meta_keywords'] = '';
 $vars['meta_description'] = '';
-$vars['js'] = ENVIRONMENT === "production" ? array(
+$vars['js'] = ENVIRONMENT === "nothing_set_up_yet" ? array(
     'dist/devisionarissen.js'
 ) : array(
 	'windowScroll.js',
 	'main.js'
 );
-$vars['css'] = ENVIRONMENT === "production" ? array(
+$vars['css'] = ENVIRONMENT === "nothing_set_up_yet" ? array(
     'dist/devisionarissen.css'
 ) : array(
 	'main.css'

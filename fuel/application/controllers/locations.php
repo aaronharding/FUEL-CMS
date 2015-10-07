@@ -9,7 +9,20 @@ class Locations extends CI_Controller {
 	function index() {
 
 		$vars = array();
-		$this->fuel->pages->render('locations', $vars);
+
+		// locations
+		$locations = fuel_model('locations', array(
+			'find' => 'all',
+			'module' => 'locations'
+		));
+		$vars['locations'] = $locations;
+
+		// sidebar stuff!
+		$sidebar_model = $this->sidebar_model;
+		$vars['sidebar'] = $sidebar_model->get_sidebar(false);
+
+		return $this->fuel->pages->render('locations', $vars);
+
 	}
 
 	function single($slug = null) {
@@ -31,6 +44,10 @@ class Locations extends CI_Controller {
 
 		$vars = array();
 		$vars['location'] = $location;
+
+		// sidebar stuff!
+		$sidebar_model = $this->sidebar_model;
+		$vars['sidebar'] = $sidebar_model->get_sidebar();
 
 		$this->fuel->pages->render('location', $vars);
 	}

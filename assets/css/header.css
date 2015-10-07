@@ -7,7 +7,7 @@ body {
 		margin-top: 0;
 	}
 
-/* padding here is odd  because i want the logo to sit perfectly in the top left corner :3; */
+/* padding here is odd because i want the logo to sit perfectly in the top left corner :3 */
 .section.header {
 	position: fixed;
 	z-index: 99;
@@ -20,7 +20,16 @@ body {
 	padding: 0;
     background: #fff;
     border-bottom: 1px solid #e7e7e7;
+	-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+	transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+	.section.header.header-hidden {
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+		-webkit-transition: -webkit-transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+		transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+	}
 
 	.header-logo {
 		width: 110px;

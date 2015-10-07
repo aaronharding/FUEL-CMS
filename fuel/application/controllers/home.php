@@ -42,16 +42,12 @@ class Home extends CI_Controller {
 			'module' => 'events'
 		));
         
-        $upcoming_event->timetable_formatted = $upcoming_event->timetable_formatted;
         $upcoming_event->speakers_formatted = $upcoming_event->get_speakers_formatted(true);
 		$vars['upcoming_event'] = $upcoming_event;
 
 		// set up sidebar
 		$sidebar_model = $this->sidebar_model;
-		$vars['sidebar'] = array();
-		$vars['sidebar']['is_homepage'] = true;
-		$vars['sidebar']['recent_posts'] = $sidebar_model->recent_posts;
-		$vars['sidebar']['recent_comments'] = $sidebar_model->recent_comments;
+		$vars['sidebar'] = $sidebar_model->get_sidebar(true);
 
 		$this->fuel->pages->render('home', $vars);
 

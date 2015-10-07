@@ -24,7 +24,7 @@
 				<h6><?=$upcoming_event->description?></h6>
 			</div><div class="cell cell-three home-upcoming_event-timetable">
 				<?php $this->load->view('_blocks/event-timetable', array(
-					'timetable_formatted' => $upcoming_event->timetable_formatted,
+					'timetable_formatted' => $upcoming_event->get_timetable_formatted(),
 					'class' => 'home-upcoming_event-timetable-time'
 				)); ?>
 			</div>
@@ -47,10 +47,9 @@
 
 					<ul>
 					<?php foreach($posts as $post) : ?>
-						<li>
-					    	<h4><a href="<?php echo $post->url; ?>"><?php echo $post->title; ?></a></h4>
-					    <?php echo $post->get_excerpt(200, 'Read More'); ?>
-						</li>
+						<?php $this->load->view('_blocks/post', array(
+							'post' => $post
+						)); ?>
 					<?php endforeach; // $posts as $post ?>
 					</ul>
 				 

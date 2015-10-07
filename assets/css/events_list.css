@@ -1,0 +1,28 @@
+.events_list {
+	margin-bottom: 3rem;
+}
+
+	.events_list h4 {
+		margin-bottom: 1em;
+	}
+
+	.events_list-event + .events_list-event {
+		margin-top: 1em;
+	}
+
+		.events_list-event p + p {
+			margin-top: 1em;
+		}
+
+		.events_list-event-title {
+			overflow: hidden;
+			margin-bottom: 1rem;
+		}
+
+		.events_list-event-title h5 {
+			float: left;
+		}
+
+		.events_list-event-title p {
+			text-align: right;
+		}

@@ -6,6 +6,11 @@
 @import url('event.css');
 @import url('location.css');
 
+@import url('events_list.css');
+@import url('locations_list.css');
+
+@import url('post.css');
+
 @import url('footer.css');
 @import url('header.css');
 @import url('sidebar.css');

@@ -1,0 +1,17 @@
+.post {
+
+}
+
+	.post + .post {
+		margin-top: 3rem;
+	}
+
+	.post h4 {
+		margin-bottom: 1em;
+	}
+
+	.post-sub {
+		font-size: 12px;
+		font-size: 0.75rem;
+		margin-top: 1em;
+	}

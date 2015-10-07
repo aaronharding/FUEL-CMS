@@ -1,9 +1,9 @@
 <div class="sidebar">
 	<div class="sidebar-item sidebar-search search">
-		<form action="">
+		<form action="blog/search" method="GET">
 			<label for="search-input"><h5>Search</h5></label>
 
-			<input type="text" value="" name="search-input" id="search-input" placeholder="Search De Visionarissen">
+			<input type="text" value="" name="q" id="q" placeholder="Search De Visionarissen">
 			<input type="submit" id="search-submit" value="Submit">
 		</form>
 	</div>
@@ -15,7 +15,7 @@
 			<ul>
 				<?php foreach ($recent_posts as $post): ?>
 					<li>
-						<p><a href=""><?=$post?></a> by Joe</p>
+						<p><?=$post->link_title?></a> by <?=$post->author_name?></p>
 					</li>
 				<?php endforeach; ?>
 			</ul>
@@ -28,7 +28,7 @@
 			<ul>
 				<?php foreach ($recent_comments as $comment): ?>
 					<li>
-						<p><?=$comment?></p>
+						<p><?=$comment->author_name?> on <?=$comment->post_link_title?></p>
 					</li>
 				<?php endforeach; ?>
 			</ul>
@@ -47,7 +47,13 @@
 	<div class="sidebar-item sidebar-meta meta">
 		<h5>Meta</h5>
 		<ul>
-			<li>Log in</li>
+			<?php if($this->fuel->auth->is_logged_in()): ?>
+				<li><a href="/admin/logout">Log out</a></li>
+			<?php else: ?>
+				<li><a href="/admin">Log in</a></li>
+			<?php endif; ?>
+			<li><a href="/sitemap.xml">Sitemap</a></li>
+			<!-- <li><a href="/rss.xml">RSS</a></li> -->
 		</ul>
 	</div>
 

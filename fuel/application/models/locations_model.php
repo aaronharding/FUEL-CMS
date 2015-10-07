@@ -88,6 +88,17 @@ class Location_model extends Base_module_record {
 		return "locations/" . strtolower(url_title($this->title));
 	}
 
+	function get_clickable_title()
+    {
+        return $this->get_clickable($this->title);
+    }
+
+    function get_clickable($text = null)
+    {
+    	if($text === null) $text = $this->title;
+        return "<a href=\"" . $this->get_url() . "\">$text</a>";
+    }
+
 	public function get_google_map_address()
 	{
 		return str_replace(" ", "+", $this->address);
@@ -120,9 +131,4 @@ class Location_model extends Base_module_record {
 		}
 		return $events;
 	}
-
-	function get_clickable_title()
-    {
-        return "<a href=\"" . $this->get_url() . "\">{$this->title}</a>";
-    }
 }

@@ -22,9 +22,11 @@ include(APPPATH.'views/_blocks/header.php');
 
 	<div class="section">
 		<div class="row">
-			<div class="cell cell-full">
-				<h1><?php echo $heading; ?></h1>
+			<div class="cell cell-six">
+				<h2><?php echo $heading; ?></h2>
 				<?php echo $message; ?>
+			</div>
+			<div class="cell cell-six">
 			</div>
 		</div>
 	</div>

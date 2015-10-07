@@ -3,3 +3,4 @@
 fuel/application/cache/
 sftp-config.json
 .htaccess
+node_modules/

@@ -1,0 +1,27 @@
+{
+  "name": "devisionarissen",
+  "version": "1.0.0",
+  "description": "De Visionarissen Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaronharding/FUEL-CMS.git"
+  },
+  "keywords": [
+    "de",
+    "visionarissen",
+    "philosophy"
+  ],
+  "author": "Aaron Harding",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronharding/FUEL-CMS/issues"
+  },
+  "homepage": "https://github.com/aaronharding/FUEL-CMS",
+  "devDependencies": {
+    "gulp-minify-css": "^1.2.1"
+  }
+}

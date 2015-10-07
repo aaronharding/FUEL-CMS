@@ -9,7 +9,19 @@ class Events extends CI_Controller {
 	function index() {
 
 		$vars = array();
-		$this->fuel->pages->render('events', $vars);
+
+		// events
+		$events = fuel_model('events', array(
+			'find' => 'all',
+			'module' => 'events'
+		));
+		$vars['events'] = $events;
+
+		// sidebar stuff!
+		$sidebar_model = $this->sidebar_model;
+		$vars['sidebar'] = $sidebar_model->get_sidebar(false);
+
+		return $this->fuel->pages->render('events', $vars);
 	}
 
 	function single($slug = null) {
@@ -32,17 +44,13 @@ class Events extends CI_Controller {
 		$vars = array();
 
 		// get nice things for event
-        $event->timetable_formatted = $event->timetable_formatted;
         $event->speakers_formatted = $event->get_speakers_formatted(true);
 		$vars['event'] = $event;
 
 		// sidebar stuff!
 		$sidebar_model = $this->sidebar_model;
-		$vars['sidebar'] = array();
-		$vars['sidebar']['recent_posts'] = $sidebar_model->recent_posts;
-		$vars['sidebar']['recent_comments'] = $sidebar_model->recent_comments;
-		$vars['sidebar']['upcoming_event'] = $sidebar_model->get_upcoming_event($event->id);
+		$vars['sidebar'] = $sidebar_model->get_sidebar(false, $event->id);
 
-		$this->fuel->pages->render('event', $vars);
+		return $this->fuel->pages->render('event', $vars);
 	}
 }

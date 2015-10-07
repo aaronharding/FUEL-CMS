@@ -24,31 +24,15 @@
 		margin-top: 0.5em;
 	}
 
-.location-events {
-	margin-bottom: 3rem;
+@media (max-width: 700px) {
+
+	.section.main .cell {
+		width: 100%;
+		float: none;
+	}
+
+		.section.main .sidebar {
+			margin-top: 3rem;
+		}
+
 }
-
-	.location-events h4 {
-		margin-bottom: 1em;
-	}
-
-	.location-event + .location-event {
-		margin-top: 1em;
-	}
-
-		.location-event p + p {
-			margin-top: 1em;
-		}
-
-		.location-event-title {
-			overflow: hidden;
-			margin-bottom: 1rem;
-		}
-
-		.location-event-title h5 {
-			float: left;
-		}
-
-		.location-event-title p {
-			text-align: right;
-		}

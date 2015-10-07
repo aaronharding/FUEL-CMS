@@ -1,7 +1,9 @@
+.section.main {
+	margin-top: 3rem;
+}
+
 .section.logo {
-	height: 50%;
-	min-height: 15.625rem;
-	max-height: 25.0rem;
+	height: 25.0rem;
 	position: relative;
 	z-index: 1;
 	background: url(/assets/images/logo.png) center center no-repeat;
@@ -52,3 +54,30 @@
 			display: block;
 			padding-left: 6rem;
 		}
+
+@media (max-width: 800px) {
+
+	.section.home-upcoming_event .cell {
+		width: 100%;
+		float: none;
+	}
+
+		.section.home-upcoming_event .home-upcoming_event-timetable {
+			margin-top: 2.rem;
+			margin-bottom: 2rem;
+		}
+
+}
+
+@media (max-width: 700px) {
+
+	.section.main .cell {
+		width: 100%;
+		float: none;
+	}
+
+		.section.main .sidebar {
+			margin-top: 3rem;
+		}
+
+}
