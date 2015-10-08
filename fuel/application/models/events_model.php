@@ -74,6 +74,11 @@ class Event_model extends Base_module_record {
 
 	public $timetable_formatted = array();
 	public $speakers_formatted = array();
+	public $locations_formatted = array();
+
+	public $timetable_formatted_cache = array();
+	public $speakers_formatted_cache = array();
+	public $locations_formatted_cache = array();
 	
 	public function get_start_date_formatted($format = 'F')
 	{
@@ -103,6 +108,10 @@ class Event_model extends Base_module_record {
 	// turn timetable raw text into nice parts
 	public function get_timetable_formatted()
 	{
+		if(!empty($this->timetable_formatted_cache)) {
+			return $this->timetable_formatted_cache;
+		}
+
 		// first split raw text newlines into an array
 		$times = explode("\n", $this->timetable);
 		foreach($times as $key => &$time) {
@@ -116,12 +125,18 @@ class Event_model extends Base_module_record {
 			// trim whitespace and explode string into another array from the comma ,
 			$time = preg_split('/\s*,\s*/', trim($time), 2);  
 		}
+
+		$this->timetable_formatted_cache = $times;
 		return $times;
 	}
 
 	// make nice authors
 	public function get_speakers_formatted($with_url = false)
 	{
+		if(!empty($this->speakers_formatted_cache)) {
+			return $this->speakers_formatted_cache;
+		}
+
 		$speakers = array();
 		if(count($this->speakers) > 0) {
 			foreach ($this->speakers as $speaker) {
@@ -132,12 +147,18 @@ class Event_model extends Base_module_record {
 				}
 			}
 		}
+
+		$this->speakers_formatted_cache = $speakers;
 		return $speakers;
 	}
 
 	// make nice locations
 	public function get_locations_formatted($with_url = false)
 	{
+		if(!empty($this->locations_formatted_cache)) {
+			return $this->locations_formatted_cache;
+		}
+
 		$locations = array();
 		if(count($this->locations) > 0) {
 			foreach ($this->locations as $location) {
@@ -148,6 +169,8 @@ class Event_model extends Base_module_record {
 				}
 			}
 		}
+
+		$this->locations_formatted_cache = $locations;
 		return $locations;
 	}
 

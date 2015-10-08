@@ -33,6 +33,10 @@
 	background: #DBF2F7;
 }
 
+	.home-upcoming_event-description p {
+		margin-top: 1em;
+	}
+
 	.home-upcoming_event-image {
 		text-align: left;
 		float: left;

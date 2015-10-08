@@ -93,10 +93,10 @@ class Location_model extends Base_module_record {
         return $this->get_clickable($this->title);
     }
 
-    function get_clickable($text = null)
+    function get_clickable($text = null, $suffix = "")
     {
     	if($text === null) $text = $this->title;
-        return "<a href=\"" . $this->get_url() . "\">$text</a>";
+        return "<a href=\"{$this->get_url()}{$suffix}\">$text</a>";
     }
 
 	public function get_google_map_address()
@@ -117,15 +117,38 @@ class Location_model extends Base_module_record {
 	 */
 	public function get_current_events()
 	{
+		$now = date("Y-m-d H:i:s");
+		$events = array();
+		foreach($this->events as $event) {
+			// if the start date is in the past or now and end date is in the future or now
+			if($event->start_date <= $now && $event->end_date >= $now) {
+				array_push($events, $event);
+			}
+		}
+		return $events;
+	}
+
+	public function get_past_events()
+	{
+		$now = date("Y-m-d H:i:s");
+		$events = array();
+		foreach($this->events as $event) {
+			// if the end date is in the past
+			if(true || $event->end_date < $now) {
+				array_push($events, $event);
+			}
+		}
+		return $events;
+	}
+
+	public function get_future_events()
+	{
 		// upcoming event
-		$today = date("Y-m-d H:i:s");
+		$now = date("Y-m-d H:i:s");
 		$events = array();
 		foreach($this->events as $event) {
 			// if the start date is in the future
-			if($event->end_date > $today) {
-				array_push($events, $event);
-			// else if the start date is in the paste and end date is in the future
-			} else if($event->start_date < $today && $event->end_date > $today) {
+			if($event->end_date > $now) {
 				array_push($events, $event);
 			}
 		}

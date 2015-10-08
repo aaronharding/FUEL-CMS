@@ -18,10 +18,14 @@
 			</div>
 			<div class="cell cell-five">
 				<h6><?=$event->description?></h6>
+				<p>at <?=implode(', ', $event->get_locations_formatted(true))?></p>
+				<p>with <?=implode(', ', $event->get_speakers_formatted(true))?></p>
 			</div>
 		<?php else: ?>
 			<div class="cell cell-full">
 				<h6><?=$event->description?></h6>
+				<p><?=implode(', ', $event->locations_formatted)?></p>
+				<p><?=$event->speakers_formatted?></p>
 			</div>
 		<?php endif; ?>
 	</div>

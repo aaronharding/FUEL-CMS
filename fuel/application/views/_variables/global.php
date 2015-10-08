@@ -13,6 +13,8 @@ $vars['js'] = ENVIRONMENT === "nothing_set_up_yet" ? array(
     'dist/devisionarissen.js'
 ) : array(
 	'windowScroll.js',
+	'vendor/jquery.transit.min.js',
+	'classes/HideAndShow.js',
 	'main.js'
 );
 $vars['css'] = ENVIRONMENT === "nothing_set_up_yet" ? array(

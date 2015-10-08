@@ -1,8 +1,12 @@
-.section.event-introduction {
+.event-introduction {
 	background: #DBF2F7;
-    padding: 1.5rem 0 3rem 0;
+    padding: 3rem 0 3rem 0;
     position: relative;
 }
+
+	.event-introduction p {
+		margin-top: 1em;
+	}
 
 .section.event-title h2 {
 	margin-bottom: 2rem;

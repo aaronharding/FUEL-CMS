@@ -128,11 +128,15 @@ a {
 	color: #E6324B;
 	text-decoration: none;
 	outline: none;
-	outline: 0 !important;
+	outline: 0;
 }
 
-a:focus, a:hover {
+a:hover {
 	text-decoration: underline;
+}
+
+a:focus {
+	outline: 0;
 }
 
 a:active {

@@ -18,10 +18,18 @@
 		</div>
 		<div class="row">
 			<div class="cell cell-five">
-				<?php if(!empty($upcoming_event->image)): ?>
-					<img class="home-upcoming_event-image" src="assets/images/<?=$upcoming_event->image?>">
-				<?php endif; ?>
-				<h6><?=$upcoming_event->description?></h6>
+				<div class="home-upcoming_event-description">
+					<?php if(!empty($upcoming_event->image)): ?>
+						<img class="home-upcoming_event-image" src="assets/images/<?=$upcoming_event->image?>">
+					<?php endif; ?>
+					<h6><?=$upcoming_event->description?></h6>
+					<?php if(count($upcoming_event->locations) > 0): ?>
+						<p>at <?=implode(', ', $upcoming_event->get_locations_formatted(true))?></p>
+					<?php endif; ?>
+					<?php if(count($upcoming_event->speakers) > 0): ?>
+						<p>with <?=implode(', ', $upcoming_event->get_speakers_formatted(true))?></p>
+					<?php endif; ?>
+				</div>
 			</div><div class="cell cell-three home-upcoming_event-timetable">
 				<?php $this->load->view('_blocks/event-timetable', array(
 					'timetable_formatted' => $upcoming_event->get_timetable_formatted(),
@@ -29,13 +37,14 @@
 				)); ?>
 			</div>
 		</div>
-		<?php if(!empty($upcoming_event->speakers_formatted)): ?>
+		<?php /* if(!empty($upcoming_event->speakers_formatted)): ?>
 		<div class="row">
 			<div class="cell cell-full">
-				With: <?php echo implode(', ', $upcoming_event->speakers_formatted); ?>
+				<p>at <?=implode(', ', $upcoming_event->get_locations_formatted(true))?></p>
+				<p>with <?=implode(', ', $upcoming_event->get_speakers_formatted(true))?></p>
 			</div>
 		</div>
-		<?php endif; ?>
+		<?php endif; */ ?>
 	</div>
 	<?php endif; // upcoming event ?>
 

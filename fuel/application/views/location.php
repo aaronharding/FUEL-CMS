@@ -48,11 +48,21 @@
 
 			<?php if(!empty($location->current_events)): ?>
 				<?php $this->load->view('_blocks/events', array(
-					'title' => 'Events at this location',
+					'title' => 'What\'s going on',
 					'events' => $location->current_events,
-					'class' => 'location'
+					'class' => 'current_events'
 				)); ?>
 			<?php endif; ?>
+
+			<?php if(!empty($location->past_events)): ?>
+				<h5 class="past_events"><a href="#" data-replacetext="Hide past events">View past events</a></h5>
+				<?php $this->load->view('_blocks/events', array(
+					'title' => '',
+					'events' => $location->past_events,
+					'class' => 'past_events'
+				)); ?>
+			<?php endif; ?>
+
 		</div><div class="cell cell-two">
 			<?php $this->load->view('_blocks/sidebar', $sidebar); ?>
 		</div>
