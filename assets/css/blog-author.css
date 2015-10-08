@@ -24,7 +24,11 @@
 
 }
 
-	.blog-author h4 {
+	.blog-author .blog-author-title {
+		margin-bottom: 1em;
+	}
+
+	.blog-author .blog-author-posts-post h4 {
 		margin-bottom: 1em;
 	}
 

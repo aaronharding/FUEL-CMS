@@ -58,7 +58,7 @@ class Events_model extends Base_module_model {
 		$fields['slug']['comment'] = 'If no slug is provided, one will be provided for you';
 
 		$fields['image']['comment'] = 'You can remove the image by emptying the text field and saving.';
-		
+
 		return $fields;
 	}
 	

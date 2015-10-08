@@ -93,7 +93,7 @@ $config['keyboard_shortcuts'] = array(
 );
 
 // Dashboard modules to include
-$config['dashboards'] = array('fuel');
+$config['dashboards'] = array('blog', 'fuel');
 
 // Dashboard rss
 $config['dashboard_rss'] = 'http://www.getfuelcms.com/blog/feed/rss';
@@ -158,7 +158,7 @@ $config['language_default_option'] = NULL;
 $config['fuel_assets_path'] = 'fuel/modules/{module}/assets/';
 
 // Excludes certain folders from being viewed
-$config['assets_excluded_dirs'] = array('js', 'css', 'cache', 'swf', 'captchas');
+$config['assets_excluded_dirs'] = array('docs', 'pdf', 'pdfs', 'pdf', 'js', 'css', 'cache', 'swf', 'captchas');
 
 // Allow subfolders to be created in the assets folder if they don't exist'
 $config['assets_allow_subfolder_creation'] = TRUE;
