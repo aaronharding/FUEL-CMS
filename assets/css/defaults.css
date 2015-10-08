@@ -143,14 +143,6 @@ a:active {
 
 }
 
-input, select { vertical-align:middle; outline-color: #fff; }
-select, input, textarea { font: 99% sans-serif; }
-
-input[type="radio"] { vertical-align: text-bottom; }
-input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
-
-label, input[type=button], input[type=submit], button { cursor: pointer; }
-
 img {
 	max-width: 100%;
 	outline: 0;
@@ -240,6 +232,51 @@ input[type=week]:focus
 select {
 	
 }
+
+select, input, textarea { font: 99% sans-serif; }
+
+input, select {
+	vertical-align:middle;
+	outline-color: #fff;
+    font-family: Lucida Sans, Lucida Grande, Lucida Sans Unicode, sans-serif;
+}
+
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
+
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+
+input[type=text] {
+    height: 2.7em;
+    line-height: 2.7em;
+    padding: 0 0.8em;
+    border-radius: 3px;
+}
+
+textarea {
+    padding: 0.8em;
+    border-radius: 3px;
+}
+
+input[type=submit] {
+	height: 2.7em;
+	line-height: 2.5em;
+	padding: 0 2em;
+	display: block;
+	text-align: center;
+	line-height: 2.7em;
+	color: #000;
+	background: #c3e37a;
+	border-radius: 3px;
+    border: 0;
+}
+
+	input[type=submit]:hover,
+	input[type=submit]:active,
+	input[type=submit]:focus {
+		background: #b8dd64
+	}
+
 
 /**
  * 	Lists!

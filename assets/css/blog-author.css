@@ -1,0 +1,33 @@
+.blog-author-detail {
+	background: #DBF2F7;
+    padding: 2rem 0 2rem 0;
+}
+
+	.blog-author-detail img {
+		width: 100%;
+		height: auto;
+	}
+
+	.blog-author-detail-meta { 
+		margin-top: 2em;
+	}
+
+	.blog-author-detail-about {
+
+	}
+
+		.blog-author-detail-about p + p {
+			margin-top: 1em;
+		}
+
+.blog-author {
+
+}
+
+	.blog-author h4 {
+		margin-bottom: 1em;
+	}
+
+	.blog-author li + li {
+		margin-top: 1em;
+	}

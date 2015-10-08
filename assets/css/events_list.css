@@ -27,3 +27,11 @@
 	.events_list-event p + p {
 		margin-top: 1em;
 	}
+
+	.events_list-event-meta {
+		margin-top: 1.5em;
+	}
+
+		.events_list-event-meta p + p {
+			margin-top: 0.5em;
+		}

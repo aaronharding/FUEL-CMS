@@ -17,11 +17,11 @@ $config['assets_folders'] = array(
 	'images' => 'images/',
 	'css' => 'css/',
 	'js' => 'js/',
-	'pdf' => 'pdf/',
+	//'pdf' => 'pdf/',
 	'swf' => 'swf/',
 	'media' => 'media/',
 	'captchas' => 'captchas/',
-	'docs' => 'docs/'
+//	'docs' => 'docs/'
 	);
 
 // makes paths to assets absolute

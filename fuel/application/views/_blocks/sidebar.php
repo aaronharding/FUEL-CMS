@@ -1,11 +1,12 @@
 <div class="sidebar">
-	<div class="sidebar-item sidebar-search search">
-		<form action="blog/search" method="GET">
-			<label for="search-input"><h5>Search</h5></label>
+	
+	<div id="right">
+		<?php // echo $this->fuel->blog->sidemenu(array('search', 'authors', 'tags', 'categories', 'links', 'archives'))?>
+	</div>
 
-			<input type="text" value="" name="q" id="q" placeholder="Search De Visionarissen">
-			<input type="submit" id="search-submit" value="Submit">
-		</form>
+	<div class="sidebar-item sidebar-search search">
+		<label for="q"><h5>Search</h5></label>
+		<?php echo $this->fuel->blog->sidemenu(array('search')); ?>
 	</div>
 
 	<?php if(isset($recent_posts) && !empty($recent_posts)): ?>

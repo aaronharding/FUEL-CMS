@@ -1,0 +1,13 @@
+.blog-authors-author {
+
+}
+
+	.blog-authors-author-odd img {
+		float: left;
+		margin-right: 40px;
+	}
+
+	.blog-authors-author-even img {
+		float: right;
+		margin-left: 40px;
+	}

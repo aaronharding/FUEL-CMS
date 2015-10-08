@@ -158,10 +158,10 @@ class Fuel_admin extends Fuel_base_library {
 				'images' => 'images/',
 				'css' => 'css/',
 				'js' => 'js/',
-				'pdf' => 'pdf/',
+				//'pdf' => 'pdf/',
 				'media' => 'media/',
 				'swf' => 'swf/',
-				'docs' => 'docs/',
+//				'docs' => 'docs/',
 			);
 
 		$this->CI->asset->assets_path = 'assets/';

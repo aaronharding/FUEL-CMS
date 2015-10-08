@@ -3,7 +3,8 @@
 	<?php foreach($events as $event): ?>
 		<?php $this->load->view('_blocks/event', array(
 			'event' => $event,
-			'class' => $class
+			'class' => $class,
+			'is_events_page' => isset($is_events_page) ? $is_events_page : false
 		)); ?>
 	<?php endforeach; ?>
 </div>	

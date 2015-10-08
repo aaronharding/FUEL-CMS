@@ -134,7 +134,7 @@ class Location_model extends Base_module_record {
 		$events = array();
 		foreach($this->events as $event) {
 			// if the end date is in the past
-			if(true || $event->end_date < $now) {
+			if($event->end_date < $now) {
 				array_push($events, $event);
 			}
 		}

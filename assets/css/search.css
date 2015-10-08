@@ -1,0 +1,9 @@
+form input.q {
+	display: block;
+    width: 100%;
+    max-width: 250px;
+}
+
+form input.search-submit {
+	margin-top: 1.2em;
+}

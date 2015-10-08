@@ -12,8 +12,8 @@ var HideAndShow = (function(){
 		this.originalText = this.textContainer.html();
 		this.replaceText = this.textContainer.attr('data-replacetext');
 
-		this.speedShow = 350;
-		this.speedHide = 500;
+		this.speedShow = 200;
+		this.speedHide = 350;
 
 		this.easingShow = 'cubic-bezier(0.23, 1, 0.32, 1)';
 		this.easingHide = 'cubic-bezier(0.23, 1, 0.32, 1)';
@@ -42,16 +42,32 @@ var HideAndShow = (function(){
 		this.textContainer.html(this.replaceText);
 
 		var to = this.element[0].scrollHeight;
-		this.element.stop().transition({
-			'height': to
-		}, this.speedShow, this.easingShow);
+
+		if(this.element.attr('data-hideandshow') !== 'initialised') {
+			Array.prototype.forEach.call(this.element.children(), function(element, index){
+				var element = $(element);
+				element.css('opacity', 0);
+				setTimeout(function(){
+					this.transition({
+						'opacity': 1
+					}, this.speedShow, this.easingShow);
+				}.bind(element), (Math.random() * 100) + (index * 100));
+			});
+			this.element.attr('data-hideandshow', 'initialised');
+			this.element.stop().css('height', to);
+		} else {
+			this.element.stop().css({
+				'height': to
+			});//, this.speedShow, this.easingShow);
+		}
+
 	};
 
 	HideAndShow.prototype.onHide = function() {
 
 		this.textContainer.html(this.originalText);
 
-		this.element.stop().transition({
+		this.element.stop().css({
 			'height': 0
 		}, this.speedHide, this.easingHide);
 	};

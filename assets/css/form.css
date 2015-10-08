@@ -1,0 +1,28 @@
+.form {
+
+}
+
+	.form td {
+		padding-top: 1em;
+	}
+
+	.form td.label {
+		padding-right: 2em;
+	}
+
+	#captcha {
+		max-width: 100px;
+	}
+
+		.captcha_text {
+			padding-top: 1em;
+			display: block;
+		}
+
+	td.required {
+		padding-top: 2em;
+	}
+
+	span.required {
+		padding-left: 5px;
+	}

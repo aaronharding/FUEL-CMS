@@ -1,16 +1,16 @@
-.post {
+.post_list {
 
 }
 
-	.post + .post {
+	.post_list + .post_list {
 		margin-top: 3rem;
 	}
 
-	.post h4 {
+	.post_list h4 {
 		margin-bottom: 1em;
 	}
 
-	.post-sub {
+	.post_list-sub {
 		font-size: 12px;
 		font-size: 0.75rem;
 		margin-top: 1em;

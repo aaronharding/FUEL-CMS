@@ -1,0 +1,29 @@
+.blog-search {
+
+}
+
+	.blog-search p + p {
+		margin-top: 1em;
+	}
+
+	.blog-search form {
+		margin-top: 1rem;
+	}
+
+	.blog-search-search_result + .blog-search-search_result {
+		margin-top: 3rem;
+	}
+
+	.blog-search-search_result h4 {
+		margin-bottom: 1em;
+	}
+
+		.blog-search-result_result-meta {
+			font-size: 12px;
+			font-size: 0.75rem;
+			margin-top: 1em;
+		}
+
+		.blog-search-result_result-meta p + p {
+			margin-top: 0;
+		}

@@ -52,20 +52,23 @@
 		<div class="row">
 			<div class="cell cell-six">
 
-				<?php if (!empty($posts)) : ?>
+				<div class="posts">
+					<?php if (!empty($posts)) : ?>
 
-					<ul>
-					<?php foreach($posts as $post) : ?>
-						<?php $this->load->view('_blocks/post', array(
-							'post' => $post
-						)); ?>
-					<?php endforeach; // $posts as $post ?>
-					</ul>
-				 
-				<?php else: // empty $posts ?>
-					&nbsp;
-				<?php endif; // empty $posts ?>
-
+						<ul>
+						<?php foreach($posts as $post) : ?>
+							<?php $this->load->view('_blocks/post', array(
+								'post' => $post
+							)); ?>
+						<?php endforeach; // $posts as $post ?>
+						</ul>
+					 
+					<?php else: // empty $posts ?>
+						<div class="posts-no_posts">
+							<p><!-- There are no posts available. --></p>
+						</div>
+					<?php endif; // empty $posts ?>
+				</div>
 			</div><div class="cell cell-two">
 				<?php $this->load->view('_blocks/sidebar', $sidebar); ?>
 			</div>

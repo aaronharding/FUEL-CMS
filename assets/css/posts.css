@@ -1,0 +1,39 @@
+.posts {
+
+}
+	
+    .post + .post,
+    .post + span + .post {
+        margin-top: 3rem;
+    }
+
+    .post h4 {
+        margin-bottom: 1em;
+    }
+
+    .post-sub {
+        font-size: 12px;
+        font-size: 0.75rem;
+        margin-top: 1em;
+    }
+
+	.posts-archive {
+		margin-top: 4rem;
+	}
+
+	.post-comment_form {
+		margin-bottom: 3rem;
+	}
+
+	.post-navigation {
+		overflow: hidden;
+	}
+
+		.post-navigation div {
+			float: left;
+			width: 50%;
+		}
+
+		.post-navigation-next {
+			text-align: right;
+		}

@@ -18,7 +18,8 @@
 				<?php $this->load->view('_blocks/events', array(
 					'title' => null,
 					'events' => $events,
-					'class' => 'events'
+					'class' => 'events',
+					'is_events_page' => true
 				)); ?>
 			<?php else: // empty $events ?>
 				<h4>There are currently no events.</h4>

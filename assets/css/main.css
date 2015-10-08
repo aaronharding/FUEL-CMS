@@ -1,18 +1,31 @@
+/* generic things: resets, helpers, etc. */
 @import url('reset.css');
 @import url('defaults.css');
 @import url('structure.css');
 @import url('helpers.css');
 
+/* pages */
 @import url('event.css');
 @import url('location.css');
 @import url('events.css');
+@import url('home.css');
+@import url('blog-post.css');
+@import url('blog-author.css');
+@import url('blog-authors.css');
+@import url('blog-archives.css');
+@import url('blog-search.css');
 
+/* more blocky things */
 @import url('events_list.css');
 @import url('locations_list.css');
+@import url('post_list.css');
+@import url('comments_list.css');
+@import url('comment_form.css');
+@import url('form.css');
+@import url('posts.css');
+@import url('search.css');
 
-@import url('post.css');
-
+/* parts of the site */
 @import url('footer.css');
 @import url('header.css');
 @import url('sidebar.css');
-@import url('home.css');

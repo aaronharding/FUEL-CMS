@@ -19,35 +19,9 @@
 
 }
 
-	.search input[type=text] {
-		display: block;
-		height: 2.7em;
-		line-height: 2.7em;
-		padding: 0 0.8em;
-		width: 100%;
-		max-width: 250px;
-		border-radius: 3px;
+	.sidebar-search form {
+		margin-top: 0;
 	}
-
-	.search input[type=submit] {
-		margin-top: 1.2em;
-		height: 2.7em;
-		line-height: 2.5em;
-		padding: 0 2em;
-		display: block;
-		text-align: center;
-		line-height: 2.7em;
-		color: #000;
-		background: #c3e37a;
-		border-radius: 3px;
-		border: 0;
-	}
-
-		.search input[type=submit]:hover,
-		.search input[type=submit]:active,
-		.search input[type=submit]:focus {
-			background: #b8dd64
-		}
 
 .sidebar-recent_conversations {
 	
