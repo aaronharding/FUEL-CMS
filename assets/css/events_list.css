@@ -2,27 +2,28 @@
 	margin-bottom: 3rem;
 }
 
-	.events_list h4 {
+	.events_list-events-title {
 		margin-bottom: 1em;
 	}
 
-	.events_list-event + .events_list-event {
-		margin-top: 1em;
+	.events_list-event-title {
+		overflow: hidden;
 	}
 
-		.events_list-event p + p {
-			margin-top: 1em;
-		}
-
-		.events_list-event-title {
-			overflow: hidden;
-			margin-bottom: 1rem;
-		}
-
-		.events_list-event-title h5 {
+		.events_list-event-title h4 {
 			float: left;
+			margin-bottom: 1em;
 		}
 
 		.events_list-event-title p {
 			text-align: right;
 		}
+
+	/* spacing between each event */
+	.events_list-event + .events_list-event {
+		margin-top: 1em;
+	}
+
+	.events_list-event p + p {
+		margin-top: 1em;
+	}
