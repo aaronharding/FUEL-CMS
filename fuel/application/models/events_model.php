@@ -100,10 +100,37 @@ class Event_model extends Base_module_record {
 		return "events/" . $this->slug;
 	}
 
-	function get_clickable_name()
+	function get_clickable_name($popover = true)
     {
-        return "<a href=\"" . $this->get_url() . "\">{$this->name}</a>";
+    	if($popover == true)
+    		return '<a data-popover="' . htmlspecialchars(json_encode($this->popover_data), ENT_QUOTES, 'UTF-8') .'" href="'.$this->get_url().'">'.$this->name.'</a>';
+       	else
+    		return "<a href=\"" . $this->get_url() . "\">{$this->name}</a>";
     }
+
+	function get_popover_data()
+	{
+		return array(
+			'name' => $this->name,
+			'url' => $this->url,
+			'image' => 'assets/images/' . $this->image,
+			'text' => $this->get_date_range(),
+			'data' => $this->popover_text
+		);
+	}
+
+	function get_popover_text()
+	{
+		$data = array();
+
+		$speakers = array( 'title' => 'with ' . implode(', ', $this->get_speakers_formatted(true, false)));
+		$locations = array( 'title' => 'at ' . implode(', ', $this->get_locations_formatted(true, false)));
+
+		array_push($data, $speakers);
+		array_push($data, $locations);
+
+		return $data;
+	}
 
 	// turn timetable raw text into nice parts
 	public function get_timetable_formatted()
@@ -131,7 +158,7 @@ class Event_model extends Base_module_record {
 	}
 
 	// make nice authors
-	public function get_speakers_formatted($with_url = false)
+	public function get_speakers_formatted($with_url = false, $popover = true)
 	{
 		if(!empty($this->speakers_formatted_cache)) {
 			return $this->speakers_formatted_cache;
@@ -141,7 +168,7 @@ class Event_model extends Base_module_record {
 		if(count($this->speakers) > 0) {
 			foreach ($this->speakers as $speaker) {
 				if($with_url) {
-					array_push($speakers, $speaker->get_clickable_name());
+					array_push($speakers, $speaker->get_clickable_name($popover));
 				} else {
 					array_push($speakers, $speaker->name);
 				}
@@ -153,7 +180,7 @@ class Event_model extends Base_module_record {
 	}
 
 	// make nice locations
-	public function get_locations_formatted($with_url = false)
+	public function get_locations_formatted($with_url = false, $popover = true)
 	{
 		if(!empty($this->locations_formatted_cache)) {
 			return $this->locations_formatted_cache;
@@ -163,7 +190,7 @@ class Event_model extends Base_module_record {
 		if(count($this->locations) > 0) {
 			foreach ($this->locations as $location) {
 				if($with_url) {
-					array_push($locations, $location->get_clickable_title());
+					array_push($locations, $location->get_clickable_title($popover));
 				} else {
 					array_push($locations, $location->title);
 				}

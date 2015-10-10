@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
- 	<title><?=$page_title?></title>
+ 	<title>De Visionarissen</title>
 	<?=css('fuel.min', FUEL_FOLDER)?>
 	<?php if (!empty($css)) : ?>
 	<?=$css?>
@@ -22,9 +22,9 @@
 <body>
 <div id="login">
 		
-		<div class="login_logo">
+		<!-- <div class="login_logo">
 			<span class="hidden">FUEL CMS</span>
-		</div>
+		</div> -->
 
 		<div id="login_notification" class="notification">
 			<?=$notifications?>

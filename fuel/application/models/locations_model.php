@@ -90,18 +90,61 @@ class Location_model extends Base_module_record {
 
 	function get_clickable_title()
     {
-        return $this->get_clickable($this->title);
+        return $this->get_clickable($this->title, "", true);
+    }
+    
+    function get_clickable($text = null, $suffix = "", $popover = true)
+    {
+    	if($text === null)
+    		$text = $this->title;
+
+    	if($popover == true)
+    		return '<a data-popover="' . htmlspecialchars(json_encode($this->popover_data), ENT_QUOTES, 'UTF-8') .'" href="'.$this->get_url().'">'.$text.'</a>';
+    	else
+        	return "<a href=\"{$this->get_url()}{$suffix}\">$text</a>";
     }
 
-    function get_clickable($text = null, $suffix = "")
-    {
-    	if($text === null) $text = $this->title;
-        return "<a href=\"{$this->get_url()}{$suffix}\">$text</a>";
-    }
+	function get_popover_data()
+	{
+		return array(
+			'name' => $this->title,
+			'url' => $this->url,
+			'image' => 'assets/images/' . $this->image,
+			'text' => $this->address . '<br>' . $this->get_excerpt_first_sentence(),
+			'data' => array(
+				
+			)
+		);
+	}
+
+	function get_popover_text($limit = 3)
+	{
+		$posts = array();
+		$count = 0;
+		foreach ($this->get_posts() as $key => $post) {
+			$count++;
+			if($count > $limit) break;
+
+			array_push($posts, array(
+				'title' => $post->link_title
+			));
+		}
+		return $posts;
+	}
 
 	public function get_google_map_address()
 	{
 		return str_replace(" ", "+", $this->address);
+	}
+
+	public function get_excerpt_first_sentence($strict = false, $end = '.?!')
+	{
+		$excerpt = $this->excerpt;
+		preg_match("/^[^{$end}]+[{$end}]/", $excerpt, $result);
+	    if (empty($result)) {
+	        return ($strict ? false : $excerpt);
+	    }
+	    return $result[0];
 	}
 
 	/*

@@ -25,6 +25,9 @@
 @import url('posts.css');
 @import url('search.css');
 
+/* special things */
+@import url('popover.css');
+
 /* parts of the site */
 @import url('footer.css');
 @import url('header.css');

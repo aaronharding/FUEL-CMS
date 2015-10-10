@@ -384,7 +384,7 @@ if (!function_exists('date_range_string'))
 		$format['same_month'] = array('F j', 'j, Y');
 		$format['same_year'] = array('F j', 'F j, Y');
 		$format['default'] = 'F j, Y';
-		$format['joiner'] = '-';
+		$format['joiner'] = ' — ';
 
 		$format = array_merge($format, $params);
 

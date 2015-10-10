@@ -16,7 +16,7 @@
 			<ul>
 				<?php foreach ($recent_posts as $post): ?>
 					<li>
-						<p><?=$post->link_title?></a> by <?=$post->author_link?></p>
+						<p><?=$post->link_title?></a> by <?=$post->author_link?></span></p>
 					</li>
 				<?php endforeach; ?>
 			</ul>

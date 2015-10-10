@@ -33,7 +33,8 @@
 			</div><div class="cell cell-three home-upcoming_event-timetable">
 				<?php $this->load->view('_blocks/event-timetable', array(
 					'timetable_formatted' => $upcoming_event->get_timetable_formatted(),
-					'class' => 'home-upcoming_event-timetable-time'
+					'class' => 'home-upcoming_event-timetable-time',
+					'date_range' => $upcoming_event->date_range
 				)); ?>
 			</div>
 		</div>
@@ -55,6 +56,11 @@
 				<div class="posts">
 					<?php if (!empty($posts)) : ?>
 
+						<?=$this->fuel->blog->block('posts', array(
+							'posts' => $posts,
+							'is_preview' => true
+						))?>
+						<?php /*
 						<ul>
 						<?php foreach($posts as $post) : ?>
 							<?php $this->load->view('_blocks/post', array(
@@ -62,6 +68,8 @@
 							)); ?>
 						<?php endforeach; // $posts as $post ?>
 						</ul>
+
+						*/ ?>
 					 
 					<?php else: // empty $posts ?>
 						<div class="posts-no_posts">

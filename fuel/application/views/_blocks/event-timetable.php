@@ -1,3 +1,8 @@
+<?php if(isset($date_range)): ?>
+	<div class="<?=$class?>-date_range">
+		<h5><?=$date_range?></h5>
+	</div>
+<?php endif ;?>
 <?php if(!empty($timetable_formatted)): ?>
 	<?php foreach($timetable_formatted as $time): ?>
 		<div class="<?=$class?>">

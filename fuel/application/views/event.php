@@ -39,7 +39,8 @@
 				<h4>Timetable</h4>
 				<?php $this->load->view('_blocks/event-timetable', array(
 					'timetable_formatted' => $event->get_timetable_formatted(),
-					'class' => 'event-timetable-time'
+					'class' => 'event-timetable-time',
+					'date_range' => $event->date_range
 				)); ?>
 			</div>
 

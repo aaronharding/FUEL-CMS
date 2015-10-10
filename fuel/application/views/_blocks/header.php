@@ -4,16 +4,19 @@
 <!--[if gt IE 10]><!--> <html itemscope itemtype="http://schema.org/Product" class="no-js"> <!--<![endif]-->
 	<head>
 	<meta charset="utf-8">
+	
 	<!-- ᶘ ᵒᴥᵒᶅ by Aaron Harding aharding.co.uk -->
- 	<title>
-		<?php 
-			if (!empty($is_blog)) :
+
+ 	<title><?php 
+			if (!empty($is_blog)):
 				echo $CI->fuel->blog->page_title($page_title, ' - ', 'right');
 			else:
-				echo $page_title . ' - ' . fuel_var('page_title', '');
+				if($page_title == 'De Visionarissen')//fuel_var('page_title'))
+					echo $page_title;
+				else
+					echo $page_title;//fuel_var('page_title', '');
 			endif;
-		?>
-	</title>
+		?></title>
 
 	<meta name="keywords" content="<?php echo fuel_var('meta_keywords')?>">
 	<meta name="description" content="<?php echo fuel_var('meta_description')?>">
@@ -66,7 +69,7 @@
 <div class="section header<?php if(!empty($is_homepage) && $is_homepage): echo " header-hidden"; endif; ?>">
 	<div class="header-logo">
 		<a href="/">
-			<img src="/assets/images/logo.png" alt="De Visionarissen">
+			<img src="/assets/img/logo.png" alt="De Visionarissen">
 		</a>
 	</div>
 	<div class="row">

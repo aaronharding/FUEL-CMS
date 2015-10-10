@@ -26,6 +26,7 @@
 
 	<?=jquery()?>
 	<?php echo js($js); ?>
+	<?=js('comment_reply', BLOG_FOLDER)?>
 
 </body>
 </html>
