@@ -88,9 +88,9 @@ class Location_model extends Base_module_record {
 		return "locations/" . strtolower(url_title($this->title));
 	}
 
-	function get_clickable_title()
+	function get_clickable_title($popover = true)
     {
-        return $this->get_clickable($this->title, "", true);
+        return $this->get_clickable($this->title, "", $popover);
     }
     
     function get_clickable($text = null, $suffix = "", $popover = true)

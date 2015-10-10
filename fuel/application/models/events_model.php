@@ -160,7 +160,7 @@ class Event_model extends Base_module_record {
 	// make nice authors
 	public function get_speakers_formatted($with_url = false, $popover = true)
 	{
-		if(!empty($this->speakers_formatted_cache)) {
+		if(!empty($this->speakers_formatted_cache) && !$popover) {
 			return $this->speakers_formatted_cache;
 		}
 
@@ -182,7 +182,7 @@ class Event_model extends Base_module_record {
 	// make nice locations
 	public function get_locations_formatted($with_url = false, $popover = true)
 	{
-		if(!empty($this->locations_formatted_cache)) {
+		if(!empty($this->locations_formatted_cache) && !$popover) {
 			return $this->locations_formatted_cache;
 		}
 
