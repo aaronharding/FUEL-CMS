@@ -1,0 +1,6 @@
+.avatar {
+	float: left;
+	max-width: 56px;
+	border-radius: 56px;
+	height: auto;
+}

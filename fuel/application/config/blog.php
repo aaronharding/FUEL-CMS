@@ -38,7 +38,7 @@ $config['blog']['akismet_api_key'] = '';
 $config['blog']['multiple_comment_submission_time_limit'] = '';
 $config['blog']['comments_time_limit'] = '';
 $config['blog']['cache_ttl'] = 3600;
-$config['blog']['asset_upload_path'] = 'images/blog/';
+$config['blog']['asset_upload_path'] = 'images/';
 $config['blog']['per_page'] = 15;
 $config['blog']['page_title_separator'] = '&laquo;';
 $config['blog']['multiple_authors'] = FALSE;
@@ -101,9 +101,9 @@ $config['blog']['captcha'] = array(
 				'img_width'	 => 120,
 				'img_height' => 26,
 				'expiration' => 600, // 10 minutes
-				'bg_color' => '#4b4b4b',
-				'char_color' => '#ffffff,#cccccc,#ffffff,#999999,#ffffff,#cccccc',
-				'line_color' => '#ff9900,#414141,#ea631d,#aaaaaa,#f0a049,#ff9900'
+				'bg_color' => '#ffffff',
+				'char_color' => '#E6324B,#E6324B,#E6324B,#353634,#353634,#353634',
+				'line_color' => '#FF91A0,#8BA947,#b8dd64,#FFC6A5,#8A967D,#8A967D'
 			);
 
 // comment form 

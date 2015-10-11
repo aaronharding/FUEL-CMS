@@ -27,6 +27,7 @@
 
 /* special things */
 @import url('popover.css');
+@import url('avatar.css');
 
 /* parts of the site */
 @import url('footer.css');

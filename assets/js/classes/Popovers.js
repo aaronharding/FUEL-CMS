@@ -3,9 +3,9 @@ var Popovers = (function(){
 	function Popovers() {
 		this.onHover = this.onHover.bind(this);
 		this.create = this.create.bind(this);
+		this.shouldStartCountdown = this.shouldStartCountdown.bind(this);
 		this.setCountdown = this.setCountdown.bind(this);
 		this.clearCountdown = this.clearCountdown.bind(this);
-		this.mouseListen = this.mouseListen.bind(this);
 		this.kill = this.kill.bind(this);
 
 		this.window = $(window);
@@ -33,19 +33,50 @@ var Popovers = (function(){
 		}.bind(this));
 	}
 
+	Popovers.prototype.shouldStartCountdown = function(e, ignoreDirection) {
+
+		// will ignore the closing of the pop up if matched against a direction
+		if(ignoreDirection) {
+			var y = e.offsetY;
+			switch(ignoreDirection) {
+			case '-y':
+				// tests is user is coming out at the bottom by seeing the offset Y against the pop over height (aka -y)
+				if(y >= this.popover.height) {
+					return false;
+				}
+				break;
+			case 'y':
+				// see if user is coming out at the top (aka +y)
+				if(y <= 0) {
+					return false;
+				}
+				break;
+			}
+		}
+		return this.setCountdown();
+	};
+
 	Popovers.prototype.onHover = function(e) {
 		e.preventDefault();
-
-		if(this.current === e.currentTarget) {
+ 
+		if(
+			// checks if the pop up already active is the one wanted to be popped up
+			this.current === e.currentTarget
+			// checks if the targeted element isn't already inside a popover
+			|| $(e.currentTarget).parents('[data-popover]').length
+		)
+		{
 			return false;
 		}
 
-		// kill the current opened one
+		// removes current element
 		this.kill(this.currentElement);
 
 		this.current = e.currentTarget;
 		this.$current = $(e.currentTarget);
 
+		var data = JSON.parse(this.$current.attr('data-popover'));
+		var x = Math.round(this.current.getBoundingClientRect().left) - (this.popover.width / 2) + (this.$current.width() / 2);
 		if(e.clientY < this.popover.height + this.popover.margin + 110) {
 			this.upsideDown = true;
 			var y = Math.round(this.current.getBoundingClientRect().top) + this.window.scrollTop() + this.$current.height() + this.popover.margin;// - this.popover.height - this.popover.margin;
@@ -54,48 +85,45 @@ var Popovers = (function(){
 			var y = Math.round(this.current.getBoundingClientRect().top) + this.window.scrollTop() - this.popover.height - this.popover.margin;
 		}
 
-		this.create(
-			e.currentTarget,
-			JSON.parse(this.$current.attr('data-popover')),
-			Math.round(this.current.getBoundingClientRect().left) - (this.popover.width / 2) + (this.$current.width() / 2),
-			y
-		);
+		this.$current.on('mouseleave', function(e){
+			this.shouldStartCountdown(e, this.upsideDown ? '-y' : 'y');
+		}.bind(this));
+		this.$current.on('mouseenter', function(e){
+			this.clearCountdown();
+		}.bind(this));
 
-		this.createdMousePos = {
-			x: e.pageX,
-			y: e.pageY
-		}
-		this.mouseListen();
+		this.create(e.currentTarget, data, x, y);
 
 		return false;
 	};
 
 	Popovers.prototype.create = function(currentTarget, data, x, y) {
-		var element = $(document.createElement('div'));
+		var currentElement = $(document.createElement('div'));
 		var url = $(currentTarget).attr('href');
 
-		element.addClass('popover');
-		element.css({
+		// binding things
+		currentElement.on('mouseleave', function(e){
+			this.shouldStartCountdown(e, this.upsideDown ? 'y' : '-y');
+		}.bind(this));
+		currentElement.on('mouseenter', function(e){
+			this.clearCountdown();
+		}.bind(this));
+
+		// view things
+		currentElement.addClass('popover');
+		currentElement.css({
 			left: x,
 			top: y
 		});
-
-		element.on('mouseleave', function(){
-			if(this.count === null) {
-				this.setCountdown(0);
-			}
-		}.bind(this));
-		element.on('mouseenter', this.clearCountdown);
-		this.$current.on('mouseenter', this.clearCountdown);
 		
-		// element.append( $(document.createElement('div')).addClass('popover-close').on('click', this.kill) );
+		// currentElement.append( $(document.createElement('div')).addClass('popover-close').on('click', this.kill) );
 		
-		element.append( $(document.createElement('a')).addClass('popover-image').css({
+		currentElement.append( $(document.createElement('a')).addClass('popover-image').css({
 			'background-image': data.image ? 'url(' + data.image + ')' : '#DBF2F7'
 		}).attr('href', url) );
 
 		if(data.name)
-			element.append( $(document.createElement('h6')).html(data.name) );
+			currentElement.append( $(document.createElement('h6')).html(data.name) );
 
 		var bodyHolder = $(document.createElement('div')).addClass('popover-body');
 
@@ -110,44 +138,17 @@ var Popovers = (function(){
 			bodyHolder.append(dataHolder);
 		}
 
-		element.append(bodyHolder);
+		currentElement.append(bodyHolder);
 
-		$('body').append(element);
+		$('body').append(currentElement);
 		setTimeout(function(){
-			element.addClass('popover-in');
+			currentElement.addClass('popover-in');
 		}.bind(this), 32);
 
-		this.currentElement = element;
+		this.currentElement = currentElement;
 	};
 
-	Popovers.prototype.mouseListen = function() {
-		this.mouseListening = true;
-		requestAnimationFrame(function mouseListenStep(){
-			if(this.mouseListening && this.count === null) {
-				if(this.createdMousePos.x 		 - this.currentMousePos.x >  this.popover.width) {
-					this.setCountdown(1);
-				} else if(this.currentMousePos.x - this.createdMousePos.x >  this.popover.width) {
-					this.setCountdown(2);
-				} else if(!this.upsideDown && this.currentMousePos.y - this.createdMousePos.y > this.popover.margin) {
-					this.setCountdown(3);
-				} else if(this.upsideDown && this.createdMousePos.y - this.currentMousePos.y > this.popover.margin) {
-					this.setCountdown(4);
-				}
-				requestAnimationFrame(mouseListenStep.bind(this));
-			}
-		}.bind(this));
-	};
-
-	Popovers.prototype.setCountdown = function(calledfrom) {
-
-		// checks if the user is coming out from the top or bottom
-		if(calledfrom.offsetY) {
-			if(!this.upsideDown && calledfrom.offsetY >= this.popover.height)
-				return;
-			else if(this.upsideDown && calledfrom.offsetY < 0)
-				return;
-		}
-
+	Popovers.prototype.setCountdown = function() {
 		if(this.count === null) {
 			this.count = setTimeout(function(){
 				this.kill(this.currentElement);
@@ -155,18 +156,19 @@ var Popovers = (function(){
 		}
 	};
 
-	Popovers.prototype.clearCountdown = function() {
-		if(this.count)
+	Popovers.prototype.clearCountdown = function(e) {
+		if(this.count) {
 			clearTimeout(this.count);
+		}
 		this.count = null;
 	};
 
-	Popovers.prototype.kill = function(element) {
+	Popovers.prototype.kill = function(elementToKill) {
 
 		this.clearCountdown();
 
-		if(element && element !== null) {
-			element.stop().unbind().fadeOut(this.outSpeed, function(){
+		if(elementToKill && elementToKill !== null) {
+			elementToKill.stop().unbind().fadeOut(this.outSpeed, function(){
 				$(this).unbind().remove();
 			});
 		}
