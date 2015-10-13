@@ -8,14 +8,14 @@
 	display: table;
 }
 
-.footer .cell {
+.footer.section .cell {
 	display: table-cell;
 	width: 50%;
 	float: none;
 	position: relative;
 }
 
-.footer .cell + .cell {
+.footer.section .cell + .cell {
 	text-align: right;
 }
 

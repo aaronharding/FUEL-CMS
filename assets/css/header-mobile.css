@@ -1,0 +1,11 @@
+.header-nav a {
+	padding: 0 0.5em;
+}
+
+.header-logo {
+	width: 75px;
+}
+
+.header-logo img {
+	margin-left: 0;
+}

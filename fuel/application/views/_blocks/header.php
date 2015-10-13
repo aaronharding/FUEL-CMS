@@ -5,7 +5,7 @@
 	<head>
 	<meta charset="utf-8">
 	
-	<!-- ᶘ ᵒᴥᵒᶅ by Aaron Harding aharding.co.uk -->
+	<!-- ᶘ ᵒᴥᵒᶅ by Aaron Harding http://aharding.co.uk/ -->
 
  	<title><?php 
 			if (!empty($is_blog)):
@@ -20,11 +20,13 @@
 
 	<meta name="keywords" content="<?php echo fuel_var('meta_keywords')?>">
 	<meta name="description" content="<?php echo fuel_var('meta_description')?>">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
 	<base href="/">
 
 	<?php
-		echo css($css);
+		echo css($css['main']);
+		echo css($css['device']);	
 
 		if (!empty($is_blog)):
 			echo $CI->fuel->blog->header();
@@ -49,7 +51,11 @@
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 
-	<script>var DV = DV || {};<?php if(!empty($is_homepage)): ?>DV.is_homepage = <?=$is_homepage?><?php endif; ?></script>
+	<script>
+		var DV = DV || {};
+		DV.device = '<?=$device?>';
+		<?php if(!empty($is_homepage)): ?>DV.is_homepage = <?=$is_homepage?><?php endif; ?>
+	</script>
 
 </head>
 <body class="<?php echo fuel_var('body_class', '');?><?php if(!empty($is_homepage) && $is_homepage): echo " homepage"; endif; ?>">
@@ -75,12 +81,15 @@
 	<div class="row">
 		<div class="cell cell-full">
 			<div class="header-nav">
-				<ul>
+				<?php
+					echo fuel_nav();
+				?>
+				<!-- <ul>
 					<li><a href="/events">Events</a></li>
 					<li><a href="/locations">Locations</a></li>
 					<li><a href="/blog/authors">Authors</a></li>
 					<li><a href="/blog">Blog</a></li>
-				</ul>
+				</ul> -->
 			</div>
 		</div>
 	</div>

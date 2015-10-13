@@ -72,6 +72,14 @@
 	    font-size: 0.75rem;
 	}
 
+		/*.popover.popover-without_image .popover-body {
+			margin-top: 0;
+		}
+
+		.popover.popover-without_image h6 {
+			color: #E6324B;
+		}*/
+
 	.popover p {
 		padding-top: 0.5em;
 		padding-left: 1em;
@@ -85,6 +93,7 @@
 		.popover li {
 			list-style: disc;
 			margin-left: 2.5em;
+			margin-right: 1.5em;
 		}
 
 		.popover li + li {

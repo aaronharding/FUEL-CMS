@@ -77,8 +77,8 @@ class Event_model extends Base_module_record {
 	public $locations_formatted = array();
 
 	public $timetable_formatted_cache = array();
-	public $speakers_formatted_cache = array();
-	public $locations_formatted_cache = array();
+	public $speakers_formatted_cache = array('p' => array(), 'n' => array());
+	public $locations_formatted_cache = array('p' => array(), 'n' => array());
 	
 	public function get_start_date_formatted($format = 'F')
 	{
@@ -100,12 +100,15 @@ class Event_model extends Base_module_record {
 		return "events/" . $this->slug;
 	}
 
-	function get_clickable_name($popover = true)
+	function get_clickable_name($popover = true, $text = null)
     {
-    	if($popover == true)
-    		return '<a data-popover="' . htmlspecialchars(json_encode($this->popover_data), ENT_QUOTES, 'UTF-8') .'" href="'.$this->get_url().'">'.$this->name.'</a>';
+    	if($text === null)
+    		$text = $this->name;
+
+    	if($popover === true)
+    		return '<a data-popover="' . htmlspecialchars(json_encode($this->popover_data), ENT_QUOTES, 'UTF-8') .'" href="'.$this->get_url().'">'.$text.'</a>';
        	else
-    		return "<a href=\"" . $this->get_url() . "\">{$this->name}</a>";
+    		return "<a href=\"" . $this->get_url() . "\">{$text}</a>";
     }
 
 	function get_popover_data()
@@ -154,14 +157,15 @@ class Event_model extends Base_module_record {
 		}
 
 		$this->timetable_formatted_cache = $times;
+
 		return $times;
 	}
 
 	// make nice authors
 	public function get_speakers_formatted($with_url = false, $popover = true)
 	{
-		if(!empty($this->speakers_formatted_cache) && !$popover) {
-			return $this->speakers_formatted_cache;
+		if(!empty($this->speakers_formatted_cache[$popover ? 'p' : 'n'])) {
+			//return $this->speakers_formatted_cache[$popover ? 'p' : 'n'];
 		}
 
 		$speakers = array();
@@ -175,15 +179,16 @@ class Event_model extends Base_module_record {
 			}
 		}
 
-		$this->speakers_formatted_cache = $speakers;
+		$this->speakers_formatted_cache[$popover ? 'p' : 'n'] = $speakers;
+
 		return $speakers;
 	}
 
 	// make nice locations
 	public function get_locations_formatted($with_url = false, $popover = true)
 	{
-		if(!empty($this->locations_formatted_cache) && !$popover) {
-			return $this->locations_formatted_cache;
+		if(!empty($this->locations_formatted_cache[$popover ? 'p' : 'n'])) {
+			//return $this->locations_formatted_cache[$popover ? 'p' : 'n'];
 		}
 
 		$locations = array();
@@ -197,7 +202,8 @@ class Event_model extends Base_module_record {
 			}
 		}
 
-		$this->locations_formatted_cache = $locations;
+		$this->speakers_formatted_cache[$popover ? 'p' : 'n'] = $locations;
+
 		return $locations;
 	}
 

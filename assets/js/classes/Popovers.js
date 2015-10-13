@@ -40,8 +40,8 @@ var Popovers = (function(){
 			var y = e.offsetY;
 			switch(ignoreDirection) {
 			case '-y':
-				// tests is user is coming out at the bottom by seeing the offset Y against the pop over height (aka -y)
-				if(y >= this.popover.height) {
+				// tests is user is coming out at the bottom by seeing the offset Y against the target's height
+				if(y >= $(e.target).height()) {
 					return false;
 				}
 				break;
@@ -62,6 +62,8 @@ var Popovers = (function(){
 		if(
 			// checks if the pop up already active is the one wanted to be popped up
 			this.current === e.currentTarget
+			// if on mobile
+			|| DV.device === 'mobile'
 			// checks if the targeted element isn't already inside a popover
 			|| $(e.currentTarget).parents('[data-popover]').length
 		)
@@ -75,9 +77,15 @@ var Popovers = (function(){
 		this.current = e.currentTarget;
 		this.$current = $(e.currentTarget);
 
+		// test if no already on page
+		if(this.$current.attr('href') == window.location.href) {
+			return;
+		}
+
 		var data = JSON.parse(this.$current.attr('data-popover'));
 		var x = Math.round(this.current.getBoundingClientRect().left) - (this.popover.width / 2) + (this.$current.width() / 2);
 		if(e.clientY < this.popover.height + this.popover.margin + 110) {
+			console.log('upsideDown!');
 			this.upsideDown = true;
 			var y = Math.round(this.current.getBoundingClientRect().top) + this.window.scrollTop() + this.$current.height() + this.popover.margin;// - this.popover.height - this.popover.margin;
 		} else {
@@ -109,6 +117,9 @@ var Popovers = (function(){
 			this.clearCountdown();
 		}.bind(this));
 
+		// check to make sure the popover isn't off screen
+		x = (x < 0 ? 0 : x);
+
 		// view things
 		currentElement.addClass('popover');
 		currentElement.css({
@@ -117,18 +128,19 @@ var Popovers = (function(){
 		});
 		
 		// currentElement.append( $(document.createElement('div')).addClass('popover-close').on('click', this.kill) );
-		
-		currentElement.append( $(document.createElement('a')).addClass('popover-image').css({
-			'background-image': data.image ? 'url(' + data.image + ')' : '#DBF2F7'
-		}).attr('href', url) );
+		currentElement.append( $(document.createElement('a')).addClass('popover-image').css(
+			data.image.indexOf('.') !== -1 ? {'background-image': 'url(' + data.image + ')'} : {'background': '#E6324B'}
+		).attr('href', url) );
 
-		if(data.name)
+		if(data.name) {
 			currentElement.append( $(document.createElement('h6')).html(data.name) );
+		}
 
 		var bodyHolder = $(document.createElement('div')).addClass('popover-body');
 
-		if(data.text)
+		if(data.text) {
 			bodyHolder.append($(document.createElement('p')).html(data.text));
+		}
 
 		if(typeof data.data === "object" && data.data.length) {
 			var dataHolder = $(document.createElement('ul'));
@@ -152,7 +164,7 @@ var Popovers = (function(){
 		if(this.count === null) {
 			this.count = setTimeout(function(){
 				this.kill(this.currentElement);
-			}.bind(this), 150);
+			}.bind(this), 16);
 		}
 	};
 

@@ -19,7 +19,8 @@
 					'title' => null,
 					'locations' => $locations,
 					'class' => 'locations',
-					'show_map' => false
+					'show_map' => false,
+					'title_links' => true
 				)); ?>
 			<?php else: // empty $locations ?>
 				<h4>There are currently no locations.</h4>

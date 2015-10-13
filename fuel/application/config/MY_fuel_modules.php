@@ -56,3 +56,15 @@ $config['modules']['events'] = array(
     'nav_selected' => 'events'
 );
 
+$config['modules']['access_tokens'] = array(
+    'module_name' => 'Access Tokens',
+    'module_uri' => 'access_tokens',
+    'model_name' => 'access_tokens_model',
+    'model_location' => '',
+    'display_field' => 'name',
+    'preview_path' => '',
+    'permission' => 'access_tokens',
+    'instructions' => 'Here you can manage the examples for your site.',
+    'archivable' => TRUE,
+    'nav_selected' => 'access_tokens'
+);

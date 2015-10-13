@@ -7,6 +7,7 @@ class Home extends CI_Controller {
 	}
 
 	function index() {
+
 		$vars = array();
 
 		// blog posts

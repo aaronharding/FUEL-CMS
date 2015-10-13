@@ -1,1 +1,10 @@
-@import url('helpers.css');
+/* hello */
+
+@import url('structure-mobile.css');
+@import url('footer-mobile.css');
+@import url('header-mobile.css');
+
+
+html {
+	font-size: 12px;
+}

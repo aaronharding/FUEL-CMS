@@ -22,7 +22,7 @@ class Sidebar_model extends Base_module_record {
 	}
 
 	// remove below line comment 
-	public function get_upcoming_event($id = 0)//null)
+	public function get_upcoming_event($id = null)
 	{
 		// upcoming or current event
 		$today = date("Y-m-d H:i:s");
@@ -32,14 +32,14 @@ class Sidebar_model extends Base_module_record {
 			// and sort by start_date desc, so the event that started first will be shown
 			// oh and keep sticky events always on top
 			'order' => 'sticky, start_date desc',
-			'where' => "end_date >= '$today'",
+			'where' => "end_date >= '{$today}'",
 			'module' => 'events',
 			'return_method' => 'object'
 		));
 
 		// return empty array if nothing was found
 		// or if the upcoming event is on the same page as the event 
-		if(empty($event) || $id !== null && $event->id != $id):
+		if(empty($event) || ($id != null) || ($event->id != $id)):
 			return array();
 		else:
 			return $event;

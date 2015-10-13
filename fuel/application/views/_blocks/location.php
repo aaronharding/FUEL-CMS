@@ -1,5 +1,9 @@
 <div class="locations_list-location <?=$class?>-location">
-	<h4><?=$location->title?></h4>
+	<?php if($title_links): ?>
+		<h4><?=$location->get_clickable($location->title, '', false)?></h4>
+	<?php else: ?>
+		<h4><?=$location->title?></h4>
+	<?php endif; ?>
 	<p><?=$location->excerpt?></p>
 	<?php if($show_map): ?>
 		<p><?php echo $location->get_clickable("More information"); ?></p>
@@ -12,6 +16,6 @@
 			'height' => 400
 		)); ?>
 	<?php else: ?>
-		<p><?php echo $location->get_clickable("More information and directions"); ?></p>
+		<p><?php echo $location->get_clickable("More information and directions", '', false); ?></p>
 	<?php endif; ?>
 </div>	

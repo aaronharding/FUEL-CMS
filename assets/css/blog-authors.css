@@ -1,17 +1,23 @@
 .blog-authors-author {
-
+	overflow: hidden;
 }
+
+	.blog-authors-author + .blog-authors-author {
+		margin-top: 3rem;
+	}
 
 	.blog-authors-author img {
 		max-width: 33%;
+		width: 15rem;
+		height: auto;
 	}
 
 	.blog-authors-author-odd img {
 		float: left;
-		margin-right: 40px;
+		margin-right: 2.5rem;
 	}
 
 	.blog-authors-author-even img {
 		float: right;
-		margin-left: 40px;
+		margin-left: 2.5rem;
 	}

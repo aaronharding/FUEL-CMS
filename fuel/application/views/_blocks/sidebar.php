@@ -1,8 +1,8 @@
 <div class="sidebar">
 	
-	<div id="right">
+	<!-- <div id="right">
 		<?php // echo $this->fuel->blog->sidemenu(array('search', 'authors', 'tags', 'categories', 'links', 'archives'))?>
-	</div>
+	</div> -->
 
 	<div class="sidebar-item sidebar-search search">
 		<label for="q"><h5>Search</h5></label>
@@ -16,7 +16,7 @@
 			<ul>
 				<?php foreach ($recent_posts as $post): ?>
 					<li>
-						<p><?=$post->link_title?></a> by <?=$post->author_link?></span></p>
+						<p><?=$post->link_title?></a> by <?php echo $post->author_link; ?></span></p>
 					</li>
 				<?php endforeach; ?>
 			</ul>
@@ -45,13 +45,24 @@
 		</div>
 	<?php endif; ?>
 
+	<div class="sidebar-item sidebar-archive">
+		<h5>Archives</h5>
+		<?php echo $this->fuel->blog->sidemenu(array('archives')); ?>
+	</div>
+
+	<div class="sidebar-item sidebar-archive">
+		<h5>Authors</h5>
+		<?php echo $this->fuel->blog->sidemenu(array('authors')); ?>
+	</div>
+
 	<div class="sidebar-item sidebar-meta meta">
 		<h5>Meta</h5>
 		<ul>
 			<?php if($this->fuel->auth->is_logged_in()): ?>
+				<li><a href="/admin">Dashboard</a></li>
 				<li><a href="/admin/logout">Log out</a></li>
 			<?php else: ?>
-				<li><a href="/admin">Log in</a></li>
+				<li><a href="/admin">Dashboard</a></li>
 			<?php endif; ?>
 			<li><a href="/sitemap.xml">Sitemap</a></li>
 			<!-- <li><a href="/rss.xml">RSS</a></li> -->

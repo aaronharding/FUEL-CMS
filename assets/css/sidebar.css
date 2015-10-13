@@ -48,3 +48,9 @@
 	.sidebar-recent_posts li + li {
 		margin-top: 0.5em;
 	}
+
+/* a small hack to fix the sidebar gap */
+
+.section.main > .row > .cell.cell-six {
+	padding-right: 60px;
+}

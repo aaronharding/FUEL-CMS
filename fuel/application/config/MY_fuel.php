@@ -26,7 +26,8 @@ $config['modules_allowed'] = array(
 		'user_guide',
 		'blog',
 		'examples',
-		'locations'
+		'locations',
+		'access_tokens'
 );
 
 // used for system emails

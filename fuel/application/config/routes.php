@@ -47,6 +47,8 @@ $route['locations'] = 'locations/index';
 $route['events/(:any)'] = 'events/single/$1';
 $route['locations/(:any)'] = 'locations/single/$1';
 
+$route['access_tokens/authed/([a-z]+)\/?'] = 'access_tokens/index/$1';
+
 /*	
 | Uncomment this line if you want to use the automatically generated sitemap based on your navigation.
 | To modify the sitemap.xml, go to the views/sitemap_xml.php file.

@@ -81,8 +81,6 @@ class Locations_model extends Base_module_model {
 
 class Location_model extends Base_module_record {
 	
-	// put your record model code here
-
 	public function get_url()
 	{
 		return "locations/" . strtolower(url_title($this->title));
@@ -99,7 +97,7 @@ class Location_model extends Base_module_record {
     		$text = $this->title;
 
     	if($popover == true)
-    		return '<a data-popover="' . htmlspecialchars(json_encode($this->popover_data), ENT_QUOTES, 'UTF-8') .'" href="'.$this->get_url().'">'.$text.'</a>';
+    		return '<a data-popover="' . htmlspecialchars(json_encode($this->popover_data), ENT_QUOTES, 'UTF-8') .'" href="'.$this->get_url().$suffix.'">'.$text.'</a>';
     	else
         	return "<a href=\"{$this->get_url()}{$suffix}\">$text</a>";
     }
@@ -111,9 +109,7 @@ class Location_model extends Base_module_record {
 			'url' => $this->url,
 			'image' => 'assets/images/' . $this->image,
 			'text' => $this->address . '<br>' . $this->get_excerpt_first_sentence(),
-			'data' => array(
-				
-			)
+			'data' => array()
 		);
 	}
 

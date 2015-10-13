@@ -9,13 +9,27 @@
 	.post-content-meta {
 		margin-top: 2em;
 		margin-bottom: 3em;
-		height: 56px;
-		line-height: 56px;
+		min-height: 3.5rem;
+		line-height: 3.5rem;
 	}
 
-		.post-content-meta-avatar {
-			margin-right: 1.5em;
+		.post-content-meta a {
+			float: left;
 		}
+
+		.post-content-meta-avatar {
+			/*margin-right: 1.5em;*/
+			/*float: left;*/
+		}
+
+		.post-content-meta p {
+			margin-left: 4.5rem;
+			/*float: left;*/
+		}
+
+			.post-content-meta p a {
+				float: none;
+			}
 
 	.post-comments {
 		margin-bottom: 3rem;

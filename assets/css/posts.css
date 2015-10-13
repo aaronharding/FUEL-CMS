@@ -42,6 +42,10 @@
 
 	}
 
+		.post-sub p {
+			margin-left: 4.5rem;
+		}
+
 		.post-sub-avatar {
-			margin-right: 1.5em;
+			/*margin-right: 1.5em;*/
 		}

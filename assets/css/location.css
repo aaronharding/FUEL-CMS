@@ -20,6 +20,10 @@
 	margin-bottom: 3rem;
 }
 
+	.location-location iframe {
+		width: 100%;
+	}
+
 	.location-location h6 {
 		margin-top: 0.5em;
 	}
