@@ -6,10 +6,12 @@ var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 // var minifyHtml = require('gulp-minify-html');
 // var rev = require('gulp-rev');
-var watch = require('gulp-watch');
+// var watch = require('gulp-watch');
 
 var src = {
 	css: [ 'assets/css/main.css' ],
+	mobile: [ 'assets/css/mobile.css' ],
+	desktop: [ 'assets/css/desktop.css' ],
 	js: [ '!assets/js/jquery.js', '!assets/js/swfobject.js', '!assets/js/dist/*.js', 'assets/js/**/*.js' ]
 };
 
@@ -20,13 +22,21 @@ var dest = {
 
 gulp.task('build', function() {
 	gulp.src(src.css)
-		.pipe(watch(src.css))
 		.pipe(minifyCss({compatibility: 'ie8', roundingPrecision: -1, keepSpecialComments: 1}))
 		.pipe(concat('hello.css'))
 		.pipe(gulp.dest(dest.css));
 
+	gulp.src(src.mobile)
+		.pipe(minifyCss({compatibility: 'ie8', roundingPrecision: -1, keepSpecialComments: 1}))
+		.pipe(concat('mobile.css'))
+		.pipe(gulp.dest(dest.css));
+
+	gulp.src(src.desktop)
+		.pipe(minifyCss({compatibility: 'ie8', roundingPrecision: -1, keepSpecialComments: 1}))
+		.pipe(concat('desktop.css'))
+		.pipe(gulp.dest(dest.css));
+
 	gulp.src(src.js)
-		.pipe(watch(src.js))
 		.pipe(uglify({
 			output: {
 				// max_line_len: 80
