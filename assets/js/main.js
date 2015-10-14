@@ -1,4 +1,4 @@
-var logoSection = $('.section.logo'),
+var logoSection = $('.logo-image'),
 	scrollTop = 0;
 
 function onScroll() {

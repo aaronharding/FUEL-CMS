@@ -62,12 +62,8 @@
 
 <?php if(!empty($is_homepage) && $is_homepage): ?>
 
-	<div class="section logo">
-		<div class="row">
-			<div class="cell cell-full">
-				
-			</div>
-		</div>
+	<div class="logo">
+		<div class="logo-image"></div>
 	</div>
 
 <?php endif; ?>
@@ -75,7 +71,7 @@
 <div class="section header<?php if(!empty($is_homepage) && $is_homepage): echo " header-hidden"; endif; ?>">
 	<div class="header-logo">
 		<a href="/">
-			<img src="/assets/img/logo.png" alt="De Visionarissen">
+			<img src="/assets/img/clouds-fs8.png" alt="De Visionarissen" width="42" height="30">
 		</a>
 	</div>
 	<div class="row">

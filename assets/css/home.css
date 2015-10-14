@@ -2,27 +2,45 @@
 	margin-top: 3rem;
 }
 
-.section.logo {
+.logo {
 	height: 25.0rem;
 	position: relative;
 	z-index: 1;
-	background: url(/assets/img/logo.png) center center no-repeat;
-	background-size: 16em;
+	/*background: url(/assets/img/logo.png) center center no-repeat;
+	background-size: 16em;*/
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#487fde+0,98c7fc+100 */
+	background: #487fde; /* Old browsers */
+	background: -moz-linear-gradient(top,  #487fde 0%, #98c7fc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#487fde), color-stop(100%,#98c7fc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #487fde 0%,#98c7fc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #487fde 0%,#98c7fc 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #487fde 0%,#98c7fc 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #487fde 0%,#98c7fc 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#487fde', endColorstr='#98c7fc',GradientType=0 ); /* IE6-9 */
 }
 
-	.section.logo .cell {
+	/*.logo .cell {
 		text-align: center;
 		float: none;
 		display: inline-block;
 		vertical-align: middle;
 	}
 
-	.section.logo .cell:before {
+	.logo .cell:before {
 		display: inline-block;
 		height: 50%;
 		content: '';
 		font-size: 0;
-	}
+	}*/
+
+		.logo-image {
+			/*width: 501px;
+			height: 357px;*/
+			margin: 0 auto;
+			height: 100%;
+			background: url(/assets/img/clouds_p-fs8.png) center center no-repeat;
+			background-size: 22rem;
+		}
 
 .section.home-upcoming_event {
 	height: auto;
@@ -30,11 +48,11 @@
 	padding: 1.5rem 0 3rem 0;
 	position: relative;
 	z-index: 2;
-	background: #DBF2F7;
+	background: #EDF1F7;
 }
 
 	.home-upcoming_event h2 {
-		margin-bottom: 0.5em;
+		margin-bottom: 0.11em;
 	}
 
 	.home-upcoming_event-description p {

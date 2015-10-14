@@ -129,7 +129,7 @@ var Popovers = (function(){
 		
 		// currentElement.append( $(document.createElement('div')).addClass('popover-close').on('click', this.kill) );
 		currentElement.append( $(document.createElement('a')).addClass('popover-image').css(
-			data.image.indexOf('.') !== -1 ? {'background-image': 'url(' + data.image + ')'} : {'background': '#E6324B'}
+			data.image.indexOf('.') !== -1 ? {'background-image': 'url(' + data.image + ')'} : {'background': '#487fde'}
 		).attr('href', url) );
 
 		if(data.name) {

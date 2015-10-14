@@ -104,7 +104,7 @@ $config['blog']['captcha'] = array(
 				'img_height' => 26,
 				'expiration' => 600, // 10 minutes
 				'bg_color' => '#ffffff',
-				'char_color' => '#E6324B,#E6324B,#E6324B,#353634,#353634,#353634',
+				'char_color' => '#487fde,#487fde,#487fde,#353634,#353634,#353634',
 				'line_color' => '#FF91A0,#8BA947,#b8dd64,#FFC6A5,#8A967D,#8A967D'
 			);
 
