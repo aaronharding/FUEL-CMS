@@ -13,6 +13,10 @@
 @import url('defaults.css');
 @import url('helpers.css');
 
+/* vendor packages */
+@import url('slick/slick.css');
+@import url('slick/slick-theme.css');
+
 /* pages */
 @import url('event.css');
 @import url('location.css');

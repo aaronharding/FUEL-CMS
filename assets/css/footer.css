@@ -1,28 +1,55 @@
-.section.footer {
-	margin-top: 2.5rem;
+.footer {
+	margin-top: 3rem;
 	margin-bottom: 1rem;
 }
 
 /* centers the date to the bottom */
-.section.footer .row {
+.footer-meta .row {
 	display: table;
 }
 
-.footer.section .cell {
+.footer-meta .cell {
 	display: table-cell;
 	width: 50%;
 	float: none;
 	position: relative;
 }
 
-.footer.section .cell + .cell {
+.footer-meta .cell + .cell {
 	text-align: right;
 }
 
-	.footer-date {
+	.footer-meta-date {
 		position: absolute;
 		bottom: 0;
 		right: 0;
 		width: 100%;
 		text-align: right;
+	}
+
+/* instagram stuff */
+.section.footer .row.footer-instagram {
+
+}
+
+	.footer-instagram h5 {
+		margin-bottom: 1em;
+	}
+
+	.footer-instagram .slider {
+		height: 150px;
+		margin-bottom: 1.38em;
+	}
+
+	.footer-instagram-image {
+		width: 190px;
+	}
+
+	.footer-instagram-image a {
+		display: block;
+		width: 150px;
+	}
+
+	.footer-instagram-image img[src=""] {
+		opacity: 0;
 	}

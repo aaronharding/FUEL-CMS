@@ -323,7 +323,7 @@ if (!function_exists('asset_filesize'))
  */	
 if (!function_exists('jquery'))
 {
-	function jquery($version = '1.7.1', $default = 'jquery')
+	function jquery($version = '2.1.4', $default = 'jquery')
 	{
 		$CI = _get_assets();
 		return $CI->asset->jquery($version, $default);

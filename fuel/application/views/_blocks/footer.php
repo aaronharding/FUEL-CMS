@@ -1,11 +1,21 @@
 	
 	<div class="section footer">
-		<div class="row">
-			<div class="cell cell-half footer-instagram">
-				<?php // echo $this->footer_images_model->get_render(); ?>
+		<div class="row footer-instagram">
+			<div class="cell cell-full">
+				<h5><a href="https://instagram.com/de_visionarissen/" target="_blank">Instagram</a></h5>
+				<div class="slider">
+					<?php foreach($this->footer_images_model->get_images()->data as $image): ?>
+						<?php if($image->type !== "image"): continue; endif ;?>
+						<div class="footer-instagram-image">
+							<?php
+								echo "<a href=\"{$image->link}\" target=\"_blank\"><img src=\"{$image->images->thumbnail->url}\" alt=\"{$image->caption->text}\"></a>";
+							?>
+						</div>
+					<?php endforeach; ?>
+				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row footer-meta">
 			<div class="cell cell-half">
 
 				<?php if(isset($global_contact_email) && $global_contact_email !== ""): ?><p>c: <a href="mailto:<?=$global_contact_email?>"><?=$global_contact_email?></a></p><?php endif; ?>
@@ -13,9 +23,7 @@
 
 			<!-- keep this white space between these div elements on the line below! -->
 			</div><div class="cell cell-half">
-				<?php 
-				?>
-				<div class="footer-date">&copy; <?=$datePretty?> De Visionarissen</div>
+				<div class="footer-meta-date">&copy; <?=$datePretty?> De Visionarissen</div>
 			</div>
 		</div>
 	</div>

@@ -25,6 +25,7 @@ $vars['js'] = array();
 $vars['js']['main'] = (ENVIRONMENT === "production") ? array('dist/hello.js') : array(
 	'windowScroll.js',
 	'vendor/jquery.transit.min.js',
+	'vendor/slick.js',
 	'classes/HideAndShow.js',
 	'classes/Popovers.js',
 	'main.js'

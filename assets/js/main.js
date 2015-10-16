@@ -1,5 +1,15 @@
-var logoSection = $('.logo-image'),
+var logoSection = $('.logo-image, .logo-text'),
 	scrollTop = 0;
+
+var slickProps = {
+	dots: false,
+	infinite: true,
+	slidesToShow: 1,
+	speed: 350,
+	variableWidth: true,
+	autoplaySpeed: 2000,
+	autoplay: true
+};
 
 function onScroll() {
 	scrollTop = $(window).scrollTop();
@@ -27,5 +37,7 @@ $(document).ready(function() {
     $('body').removeClass('unloaded');
 
     var pastEvents = new HideAndShow($('h5.past_events'));
+
+    $('.slider').slick(slickProps);
     
 });

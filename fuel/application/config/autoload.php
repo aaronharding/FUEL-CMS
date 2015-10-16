@@ -112,7 +112,8 @@ $autoload['language'] = array();
 */
 
 $autoload['model'] = array(
-	'sidebar_model'
+	'sidebar_model',
+	'footer_images_model'
 );
 
 

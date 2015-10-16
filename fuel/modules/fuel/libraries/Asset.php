@@ -645,7 +645,7 @@ class Asset {
 	 * @param	string	local asset path to default version
 	 * @return	string
 	 */	
-	public function jquery($version = '1.7.1', $default = 'jquery')
+	public function jquery($version = '2.1.4', $default = 'jquery')
 	{
 		$js = '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>';
 		$js .= '<script>window.jQuery || document.write(\'<script src="'.js_path($default).'"><\/script>\');</script>';

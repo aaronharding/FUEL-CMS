@@ -3,9 +3,9 @@
 }
 
 .logo {
-	height: 25.0rem;
 	position: relative;
 	z-index: 1;
+	padding-bottom: 2em;
 	/*background: url(/assets/img/logo.png) center center no-repeat;
 	background-size: 16em;*/
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#487fde+0,98c7fc+100 */
@@ -37,10 +37,40 @@
 			/*width: 501px;
 			height: 357px;*/
 			margin: 0 auto;
-			height: 100%;
+			height: 25.0rem;
 			background: url(/assets/img/clouds_p-fs8.png) center center no-repeat;
 			background-size: 22rem;
 		}
+
+	.logo-text {
+		color: #fff;
+		text-align: center;
+	}
+
+	.logo-text h2 {
+		color: #fff;
+		text-align: center;
+		margin-bottom: 0.5em;
+	}
+
+		.logo-text h2 span {
+			position: relative;
+		}
+
+		.logo-text h2 span:after {
+			position: absolute;
+			bottom: 0;
+			left: 5%;
+			right: 5%;
+			height: 2px;
+			background: #fff;
+			content: '';
+		}
+
+	.logo-text h6 {
+		color: #fff;
+		text-align: center;
+	}
 
 .section.home-upcoming_event {
 	height: auto;

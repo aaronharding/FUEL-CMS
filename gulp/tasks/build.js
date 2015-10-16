@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
 // var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var gutil = require('gulp-util');
 // var minifyHtml = require('gulp-minify-html');
 // var rev = require('gulp-rev');
 // var watch = require('gulp-watch');
@@ -37,11 +38,7 @@ gulp.task('build', function() {
 		.pipe(gulp.dest(dest.css));
 
 	gulp.src(src.js)
-		.pipe(uglify({
-			output: {
-				// max_line_len: 80
-			}
-		}))
+		.pipe(uglify().on('error', gutil.log))
 		.pipe(concat('hello.js'))
 		.pipe(gulp.dest(dest.js));
 });

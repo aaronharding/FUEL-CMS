@@ -64,6 +64,10 @@
 
 	<div class="logo">
 		<div class="logo-image"></div>
+		<div class="logo-text">
+			<h2><span>De Visionarissen</span></h2>
+			<h6><?=$frontpage_subtitle?></h6>
+		</div>
 	</div>
 
 <?php endif; ?>
@@ -71,7 +75,7 @@
 <div class="section header<?php if(!empty($is_homepage) && $is_homepage): echo " header-hidden"; endif; ?>">
 	<div class="header-logo">
 		<a href="/">
-			<img src="/assets/img/clouds-fs8.png" alt="De Visionarissen" width="42" height="30">
+			<img src="/assets/img/clouds-fs8.png" alt="De Visionarissen" width="42" height="30"> <span>De Visionarissen</span>
 		</a>
 	</div>
 	<div class="row">

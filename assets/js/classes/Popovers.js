@@ -197,4 +197,4 @@ var Popovers = (function(){
 
 	return new Popovers;
 
-})();
+}).call(this);

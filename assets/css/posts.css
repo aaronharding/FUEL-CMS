@@ -42,10 +42,18 @@
 
 	}
 
+		.post-sub a + p {
+			padding-top: 0.38rem;
+		}
+
 		.post-sub p {
-			margin-left: 4.5rem;
+			/*margin-left: 4.5rem;*/
 		}
 
 		.post-sub-avatar {
-			/*margin-right: 1.5em;*/
+			margin-right: 1.5em;
+		}
+
+		.post-sub-avatar_text {
+
 		}

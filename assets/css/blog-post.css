@@ -31,6 +31,10 @@
 				float: none;
 			}
 
+			.post-content-meta a + p {
+				padding-top: 0.8em;
+			}
+
 	.post-comments {
 		margin-bottom: 3rem;
 	}

@@ -74,4 +74,4 @@ var HideAndShow = (function(){
 
 	return HideAndShow;
 
-})();
+}).call(this);

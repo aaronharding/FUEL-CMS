@@ -5,12 +5,12 @@ require_once(FUEL_PATH.'models/base_module_model.php');
 class Access_Tokens_model extends Base_module_model {
 
 	// settings
-	public $redirect_uri = "http://devisionarissen.dev/access_token/authed/";
 	public $instagram = array(
 		'url' => 'https://api.instagram.com/oauth/access_token',
-		'client_id' => null,
-		'client_secret' => null,
-		'redirect_uri' => 'http://devisionarissen.dev/access_token/instagram'
+		'user_id' => '2208964526',
+		'client_id' => 'a05d9f724f964b42a6da2b974f5367c4',
+		'client_secret' => 'ee1358c6509449e398a459460f24aa9f',
+		'redirect_uri' => 'http://devisionarissen.dev/access_tokens/authed/instagram'
 	);
  
  	// construct
@@ -22,13 +22,27 @@ class Access_Tokens_model extends Base_module_model {
     // short hand to get a token
 	public function get_token($name = 'instagram')
 	{
-		return $this->access_tokens_model->find_one(array(
-			'name' => $name
-		), '', 'array');
+		if(isset($this->$name)) {
+			$params = $this->$name;
+		} else {
+			die('Nope');
+		}
+
+		$record = $this->access_tokens_model->find_one(array(
+			'name' => $name,
+			'user_id' => $params['user_id']
+		));
+		return $record->access_token;
 	}
 
 	public function index($name = 'instagram', $code = null)
 	{
+		if(isset($this->$name)) {
+			$params = $this->$name;
+		} else {
+			die('Nope');
+		}
+
 		// try and get code from get variable
 		// (usually sent along by instagram, etc.)
 		if(!$code) {
@@ -37,7 +51,7 @@ class Access_Tokens_model extends Base_module_model {
 
 		// fast forward if no data was met
 		if(!$code) {
-			header("Location: https://instagram.com/oauth/authorize/?client_id={$this->$name['client_id']}&redirect_uri={$this->redirect_uri}{$name}");
+			header("Location: https://instagram.com/oauth/authorize/?client_id={$params['client_id']}&redirect_uri={$params['redirect_uri']}&response_type=code");
 			die();
 		}
 
@@ -45,9 +59,7 @@ class Access_Tokens_model extends Base_module_model {
 
 		// switch for access token names
 		if($name == 'instagram') {
-
-			// build up url to swap $code for an access token
-			$params = $this->$name;
+			// build up url
 			$params['grant_type'] = 'authorization_code';
 			$params['code'] = $code;
 
@@ -61,17 +73,21 @@ class Access_Tokens_model extends Base_module_model {
 			curl_close($ch);
 
 			$json = json_decode($data, true);
-			die($data);
 			$access_token = isset($json['access_token']) ? $json['access_token'] : null;
 		}
+		// else if ($name == 'facebook') {
+			// ...
+		// }
 
 		// and update
 		if($access_token) {
-			$this->access_tokens_model->update(array(
-				'access_token' => $access_token
-			), array(
-				'name' => $name
+			echo "Got access token. Adding in for $name and {$params['user_id']}.";
+			$record = $this->access_tokens_model->find_one(array(
+				'name' => $name,
+				'user_id' => $params['user_id']
 			));
+			$record->access_token = $access_token;
+			$record->save();
 		}
 	}
 }

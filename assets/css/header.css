@@ -42,6 +42,7 @@ body {
 		position: absolute;
 		top: 0;
 		left: 0;
+		/*font-weight: 600*/
 	}
 
 		.header-logo a {
@@ -68,6 +69,11 @@ body {
 				height: auto;
 				vertical-align: middle;
 				margin-left: 0.63rem;
+				margin-right: 0.63rem;
+			}
+
+			.header-logo span {
+				
 			}
 
 	.section.header .row {
