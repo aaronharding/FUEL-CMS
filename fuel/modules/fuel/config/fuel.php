@@ -33,7 +33,7 @@
 */
 
 // The name of the site to be displayed at the top. Also used to generate your session key
-$config['site_name'] = 'MyWebsite';
+$config['site_name'] = 'De Visionarissen';
 
 // Path to the fuel admin from the web base directory... MUST HAVE TRAILING SLASH!
 $config['fuel_path'] = FUEL_FOLDER.'/';
@@ -56,7 +56,7 @@ $config['login_redirect'] = $config['fuel_path'].'dashboard';
 $config['logout_redirect'] = ':last';
 
 // Used for system emails
-$config['from_email'] = 'admin@'.$config['domain'];
+$config['from_email'] = 'nfo@devisionarissen.nl';//'info@'.$config['domain'];
 
 // Allow for login link to allow forgotten passwords
 $config['allow_forgotten_password'] = TRUE;

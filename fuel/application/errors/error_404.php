@@ -30,5 +30,7 @@ include(APPPATH.'views/_blocks/header.php');
 			</div>
 		</div>
 	</div>
+
+<?php die(); ?>
 	
 <?php include(APPPATH.'views/_blocks/footer.php'); ?>

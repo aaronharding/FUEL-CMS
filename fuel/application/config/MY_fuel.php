@@ -28,6 +28,7 @@ $config['modules_allowed'] = array(
 		'examples',
 		'locations',
 		'access_tokens'
+		,'forms'
 );
 
 // used for system emails

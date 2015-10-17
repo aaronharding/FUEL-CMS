@@ -1,5 +1,6 @@
 	
 	<div class="section footer">
+		<?php if(isset($this->footer_images_model)): ?>
 		<div class="row footer-instagram">
 			<div class="cell cell-full">
 				<h5><a href="https://instagram.com/de_visionarissen/" target="_blank">Instagram</a></h5>
@@ -15,6 +16,7 @@
 				</div>
 			</div>
 		</div>
+		<?php endif; ?>
 		<div class="row footer-meta">
 			<div class="cell cell-half">
 

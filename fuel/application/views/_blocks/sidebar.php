@@ -4,9 +4,19 @@
 		<?php // echo $this->fuel->blog->sidemenu(array('search', 'authors', 'tags', 'categories', 'links', 'archives'))?>
 	</div> -->
 
-	<div class="sidebar-item sidebar-search search">
-		<label for="q"><h5>Search</h5></label>
-		<?php echo $this->fuel->blog->sidemenu(array('search')); ?>
+	<div class="sidebar-item sidebar-newsletter_subscribe">
+		<label for=""><h5>Newsletter</h5></label>
+		<?php 
+			/* $form = $this->fuel->forms->create('newsletter', array(
+				'fields' => array(
+					//'name' => array('required' => TRUE),
+					//'email' => array('required' => TRUE),
+				)
+				//,'return_url' => 'http://devisionarissen.dev/go_here'
+			));
+			echo $form->render(); */
+			$this->load->view('_blocks/newsletter_form');
+		?>
 	</div>
 
 	<?php if(isset($recent_posts) && !empty($recent_posts)): ?>
@@ -44,6 +54,11 @@
 			<p class=""><?=$upcoming_event->date_range?></p>
 		</div>
 	<?php endif; ?>
+
+	<div class="sidebar-item sidebar-search search">
+		<label for="q"><h5>Search</h5></label>
+		<?php echo $this->fuel->blog->sidemenu(array('search')); ?>
+	</div>
 
 	<div class="sidebar-item sidebar-archive">
 		<h5>Archives</h5>

@@ -141,3 +141,12 @@
 			margin-left: 62.5%
 		}
 
+
+@media (max-width: 700px) {
+
+	.section.main .row .cell {
+		width: 100%;
+		float: none;
+	}
+
+}

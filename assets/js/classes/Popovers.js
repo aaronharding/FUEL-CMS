@@ -85,7 +85,6 @@ var Popovers = (function(){
 		var data = JSON.parse(this.$current.attr('data-popover'));
 		var x = Math.round(this.current.getBoundingClientRect().left) - (this.popover.width / 2) + (this.$current.width() / 2);
 		if(e.clientY < this.popover.height + this.popover.margin + 110) {
-			console.log('upsideDown!');
 			this.upsideDown = true;
 			var y = Math.round(this.current.getBoundingClientRect().top) + this.window.scrollTop() + this.$current.height() + this.popover.margin;// - this.popover.height - this.popover.margin;
 		} else {
@@ -118,7 +117,8 @@ var Popovers = (function(){
 		}.bind(this));
 
 		// check to make sure the popover isn't off screen
-		x = (x < 0 ? 0 : x);
+		x = (x < 10 ? 10 : x);
+		x = (x > $(window).width() - this.popover.width ? $(window).width() - this.popover.width - 10 : x );
 
 		// view things
 		currentElement.addClass('popover');

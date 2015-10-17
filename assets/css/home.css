@@ -6,6 +6,7 @@
 	position: relative;
 	z-index: 1;
 	padding-bottom: 2em;
+	padding-top: 1.5rem;
 	/*background: url(/assets/img/logo.png) center center no-repeat;
 	background-size: 16em;*/
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#487fde+0,98c7fc+100 */
@@ -37,7 +38,7 @@
 			/*width: 501px;
 			height: 357px;*/
 			margin: 0 auto;
-			height: 25.0rem;
+			height: 22rem;
 			background: url(/assets/img/clouds_p-fs8.png) center center no-repeat;
 			background-size: 22rem;
 		}
@@ -45,12 +46,16 @@
 	.logo-text {
 		color: #fff;
 		text-align: center;
+		font-family: "Bellerose Light";
 	}
 
 	.logo-text h2 {
 		color: #fff;
 		text-align: center;
-		margin-bottom: 0.5em;
+		letter-spacing: 0.09em;
+		font-size: 64px;
+		font-size: 4rem;
+		text-transform: uppercase;
 	}
 
 		.logo-text h2 span {
@@ -59,7 +64,7 @@
 
 		.logo-text h2 span:after {
 			position: absolute;
-			bottom: 0;
+			bottom: 0.2em;
 			left: 5%;
 			right: 5%;
 			height: 2px;
@@ -70,6 +75,10 @@
 	.logo-text h6 {
 		color: #fff;
 		text-align: center;
+		font-size: 40rem;
+		font-size: 2.5rem;
+		letter-spacing: 0.1em;
+		margin-bottom: 1em;
 	}
 
 .section.home-upcoming_event {
@@ -130,27 +139,18 @@
 
 @media (max-width: 800px) {
 
-	.section.home-upcoming_event .cell {
+	.section.home-upcoming_event .row .cell {
 		width: 100%;
 		float: none;
+	}
+
+	.section.home-upcoming_event .row .cell + .cell {
+		margin-top: 1.5em;
 	}
 
 		.section.home-upcoming_event .home-upcoming_event-timetable {
 			margin-top: 2rem;
 			margin-bottom: 2rem;
-		}
-
-}
-
-@media (max-width: 700px) {
-
-	.section.main .cell {
-		width: 100%;
-		float: none;
-	}
-
-		.section.main .sidebar {
-			margin-top: 3rem;
 		}
 
 }

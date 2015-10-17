@@ -23,6 +23,20 @@
 		margin-top: 0;
 	}
 
+.sidebar-newsletter_subscribe {
+
+}
+
+	.sidebar-newsletter_subscribe input[type="text"],
+	.sidebar-newsletter_subscribe input[type="email"] {
+	    width: 100%;
+   		max-width: 250px;
+	}
+
+	.sidebar-newsletter_subscribe input + input[type="email"] {
+		margin-top: 1em;
+	}
+
 .sidebar-recent_conversations {
 	
 }
@@ -53,4 +67,11 @@
 
 .section.main > .row > .cell.cell-six {
 	padding-right: 60px;
+}
+
+@media (max-width: 700px) {
+
+	.section.main .sidebar {
+		margin-top: 3rem;
+	}
 }
