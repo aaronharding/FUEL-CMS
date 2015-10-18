@@ -24,6 +24,11 @@
 	</div>
 	<?php endif; ?>
 
+	<div class="sidebar-item sidebar-search search">
+		<label for="q"><h5>Search</h5></label>
+		<?php echo $this->fuel->blog->sidemenu(array('search')); ?>
+	</div>
+
 	<?php if(isset($recent_posts) && !empty($recent_posts)): ?>
 		<div class="sidebar-item sidebar-recent_posts recent_posts">
 			<h5>Recent Posts</h5>
@@ -59,11 +64,6 @@
 			<p class=""><?=$upcoming_event->date_range?></p>
 		</div>
 	<?php endif; ?>
-
-	<div class="sidebar-item sidebar-search search">
-		<label for="q"><h5>Search</h5></label>
-		<?php echo $this->fuel->blog->sidemenu(array('search')); ?>
-	</div>
 
 	<div class="sidebar-item sidebar-archive">
 		<h5>Archives</h5>

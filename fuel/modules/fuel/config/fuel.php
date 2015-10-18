@@ -116,7 +116,8 @@ $config['attach'] = array();
 
 // Languages for pages. The key is saved to the page variables
 $config['languages'] = array(
-	'english' => 'English'
+	'english' => 'English',
+	'dutch' => 'Dutch'
 );
 
 // Specifies the method in which to look for pages with different languages.
@@ -259,7 +260,7 @@ $config['num_logins_before_lock'] = 3;
 $config['seconds_to_unlock'] = 60;
 
 // If you set a dev password, the site will require a password to view
-$config['dev_password'] = 'hello';
+$config['dev_password'] = ENVIRONMENT === "production" ? 'hello' : '';
 
 // Will auto search view files. The max_page_params config can also be used for this as well
 // If the URI is about/history and the about/history view does not exist but about does, it will render the about page
