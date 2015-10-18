@@ -56,7 +56,7 @@ $config['login_redirect'] = $config['fuel_path'].'dashboard';
 $config['logout_redirect'] = ':last';
 
 // Used for system emails
-$config['from_email'] = 'nfo@devisionarissen.nl';//'info@'.$config['domain'];
+$config['from_email'] = 'info@devisionarissen.nl';//'info@'.$config['domain'];
 
 // Allow for login link to allow forgotten passwords
 $config['allow_forgotten_password'] = TRUE;
