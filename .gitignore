@@ -1,3 +1,6 @@
 .idea
 .DS_Store
 fuel/application/cache/
+playground/
+node_modules/
+sftp-config.json
