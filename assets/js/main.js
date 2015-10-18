@@ -4,11 +4,11 @@ var logoSection = $('.logo-image, .logo-text'),
 var slickProps = {
 	dots: false,
 	infinite: true,
-	slidesToShow: 1,
+	slidesToShow: 4,
 	speed: 350,
-	variableWidth: true,
 	autoplaySpeed: 2000,
-	autoplay: true
+	autoplay: true,
+    slidesToScroll: 1
 };
 
 function onScroll() {

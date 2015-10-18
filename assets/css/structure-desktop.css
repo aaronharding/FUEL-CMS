@@ -1,0 +1,152 @@
+/*! Responsive structure stylesheet | @author Aaron Harding <aaron.thomas.harding@googlemail.com> */
+
+/* ==========================================================================
+   	Responsive structure
+   ==========================================================================
+
+ 	Based off an 8 column layout, this is a 960px grid with 4px gutters
+
+ 	* Usage
+ 	
+ 		<div class="section">
+ 			<div class="row">
+ 				<div class="cell four"> 4/8 </div>
+ 				<div class="cell four"> 4/8 </div>
+ 			</div>
+ 		</div>
+
+ 	Consider adding a .row elements to split up content, where the .section
+ 	element	would be a container for the whole block content.
+
+ 		<div class="section">
+ 			<div class="row">
+ 				<div class="cell four"> 4/8 </div>
+ 				<div class="cell four"> 4/8 </div>
+ 			</div>
+
+ 			<div class="row">
+ 				<div class="cell two push-two"> 2/8 with a gutter to the right of 2 columns </div>
+ 				<div class="cell four"> 4/8 </div>
+ 			</div>
+
+ 			<div class="row">
+ 				<div class="cell full"> 8/8 </div>
+ 			</div>
+ 		</div>
+
+ 	Note that all .row elements contain full rows here, this is not necessary
+ 	as one .row element could hold two, three, or infinite amount of rows
+ 	within them.
+
+   ========================================================================== */
+
+.section {
+
+}
+
+.section.section-full {
+	background: #EDF1F7;
+}
+
+	.section .row {
+		width: 100%;
+		max-width: 1140px;
+		margin: 0 auto;
+		overflow: hidden;
+		padding: 0 20px;
+	}
+
+	.section .cell {
+		float: left;
+		padding: 0 20px;
+	}
+
+		.section .cell.cell-no_padding {
+			padding: 0 !important
+		}
+
+		.section .cell-one.cell {
+			width: 12.5%
+		}
+
+		.section .cell-two.cell {
+			width: 25%
+		}
+
+		.section .cell-three.cell {
+			width: 37.5%
+		}
+
+		.section .cell-four.cell,
+		.section .cell-half.cell {
+			width: 50%
+		}
+
+		.section .cell-five.cell {
+			width: 62.5%
+		}
+
+		.section .cell-six.cell {
+			width: 75%;
+		}
+
+		.section .cell-seven.cell {
+			width: 87.5%
+		}
+
+		.section .cell-eight.cell,
+		.section .cell-full.cell {
+			width: 100%
+		}
+	
+		/* pull */
+		.section .cell-pull-one.cell {
+			margin-right: 12.5%
+		}
+
+		.section .cell-pull-two.cell {
+			margin-right: 25%
+		}
+
+		.section .cell-pull-three.cell {
+			margin-right: 37.5%
+		}
+
+		.section .cell-pull-four.cell {
+			margin-right: 50%
+		}
+
+		.section .cell-pull-five.cell {
+			margin-right: 62.5%
+		}
+	
+		/* push */
+		.section .cell-push-one.cell {
+			margin-left: 12.5%
+		}
+
+		.section .cell-push-two.cell {
+			margin-left: 25%
+		}
+
+		.section .cell-push-three.cell {
+			margin-left: 50%
+		}
+
+		.section .cell-push-four.cell {
+			margin-left: 37.5%
+		}
+
+		.section .cell-push-five.cell {
+			margin-left: 62.5%
+		}
+
+
+@media (max-width: 700px) {
+
+	.section.main .row .cell {
+		width: 100%;
+		float: none;
+	}
+
+}

@@ -14,3 +14,7 @@
 .header-logo span {
 	display: none;
 }
+
+.header-nav li.last a {
+	margin-right: 0;
+}

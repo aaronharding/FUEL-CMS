@@ -22,7 +22,7 @@
 			/*float: left;*/
 		}
 
-		.post-content-meta p {
+		.post-content-meta a + p {
 			margin-left: 4.5rem;
 			/*float: left;*/
 		}

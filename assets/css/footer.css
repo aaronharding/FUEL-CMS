@@ -10,7 +10,7 @@
 
 .footer-meta .cell {
 	display: table-cell;
-	width: 50%;
+	width: 50% !important;
 	float: none;
 	position: relative;
 }
@@ -42,12 +42,12 @@
 	}
 
 	.footer-instagram-image {
-		width: 190px;
+		/*width: 190px;*/
 	}
 
 	.footer-instagram-image a {
 		display: block;
-		width: 150px;
+		/*width: 150px;*/
 	}
 
 	.footer-instagram-image img[src=""] {

@@ -4,6 +4,7 @@
 		<?php // echo $this->fuel->blog->sidemenu(array('search', 'authors', 'tags', 'categories', 'links', 'archives'))?>
 	</div> -->
 
+	<?php if(function_exists('form')): ?>
 	<div class="sidebar-item sidebar-newsletter_subscribe">
 		<label for=""><h5>Newsletter</h5></label>
 		<?php 
@@ -14,10 +15,14 @@
 				)
 				//,'return_url' => 'http://devisionarissen.dev/go_here'
 			));
-			echo $form->render(); */
-			$this->load->view('_blocks/newsletter_form');
+			// echo $form->render(); *///
+			//$form = $this->fuel->forms->create('newsletter');
+			//echo $form->render();
+			//$this->load->view('_blocks/newsletter_form');
+			echo form('newsletter');
 		?>
 	</div>
+	<?php endif; ?>
 
 	<?php if(isset($recent_posts) && !empty($recent_posts)): ?>
 		<div class="sidebar-item sidebar-recent_posts recent_posts">

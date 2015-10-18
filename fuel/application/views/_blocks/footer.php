@@ -8,9 +8,11 @@
 					<?php foreach($this->footer_images_model->get_images()->data as $image): ?>
 						<?php if($image->type !== "image"): continue; endif ;?>
 						<div class="footer-instagram-image">
-							<?php
-								echo "<a href=\"{$image->link}\" target=\"_blank\"><img src=\"{$image->images->thumbnail->url}\" alt=\"{$image->caption->text}\"></a>";
-							?>
+							<div class="footer-instagram-image_content">
+								<?php
+									echo "<a href=\"{$image->link}\" target=\"_blank\"><img src=\"{$image->images->thumbnail->url}\" width=\"150\" height=\"150\" alt=\"{$image->caption->text}\"></a>";
+								?>
+							</div>
 						</div>
 					<?php endforeach; ?>
 				</div>
@@ -30,7 +32,6 @@
 		</div>
 	</div>
 
-	<?=jquery()?>
 	<?php echo js($js['main']); ?>
 
 	<?php echo "<!-- comment-reply -->"; ?>

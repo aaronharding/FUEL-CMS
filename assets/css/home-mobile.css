@@ -1,0 +1,16 @@
+.logo-text h2 {
+	font-size: 9vw;
+}
+
+.logo-text h6 {
+	font-size: 6.5vw;
+}
+
+.logo-image {
+	height: 10em;
+	background-size: 10em;
+}
+
+.logo {
+	padding-bottom: 1vw;
+}

@@ -50,6 +50,11 @@
 			/*margin-left: 4.5rem;*/
 		}
 
+		.post-sub > a {
+			display: inline-block;
+			float: left;
+		}
+
 		.post-sub-avatar {
 			margin-right: 1.5em;
 		}

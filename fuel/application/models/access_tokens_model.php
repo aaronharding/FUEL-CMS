@@ -19,6 +19,22 @@ class Access_Tokens_model extends Base_module_model {
         parent::__construct('access_tokens');
     }
 
+	function list_items($limit = NULL, $offset = NULL, $col = 'name', $order = 'asc', $just_count = FALSE)
+	{
+		// do not show access token in list
+		$this->db->select('id, name, user_id', FALSE);
+        $data = parent::list_items($limit, $offset, $col, $order, $just_count);
+        return $data;
+	}
+
+	function form_fields($values = array(), $related = array())
+	{
+		// do not show access token in form
+		$fields = parent::form_fields($values, $related);
+		unset($fields['access_token']);
+		return $fields;
+	}
+
     // short hand to get a token
 	public function get_token($name = 'instagram')
 	{

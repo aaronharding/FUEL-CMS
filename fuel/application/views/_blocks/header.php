@@ -5,7 +5,7 @@
 	<head>
 	<meta charset="utf-8">
 	
-	<!-- ᶘ ᵒᴥᵒᶅ by Aaron Harding http://aharding.co.uk/ -->
+	<!-- ᶘ ᵒᴥᵒᶅ with help from Aaron Harding http://aharding.co.uk/ -->
 
  	<title><?php 
 			if (!empty($is_blog)):
@@ -50,12 +50,16 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
+	<link rel="shortcut icon" type="image/png" href="favicon.ico">
 
 	<script>
 		var DV = DV || {};
 		DV.device = '<?=$device?>';
 		<?php if(!empty($is_homepage)): ?>DV.is_homepage = <?=$is_homepage?><?php endif; ?>
 	</script>
+
+	<!-- :( -->
+	<?=jquery()?>
 
 </head>
 <body class="<?php echo fuel_var('body_class', '');?><?php if(!empty($is_homepage) && $is_homepage): echo " homepage"; endif; ?>">

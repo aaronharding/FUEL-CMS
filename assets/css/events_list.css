@@ -17,6 +17,7 @@
 
 		.events_list-event-title p {
 			text-align: right;
+			line-height: 3.5rem;
 		}
 
 	/* spacing between each event */
