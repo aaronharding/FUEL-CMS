@@ -39,8 +39,8 @@ class Sidebar_model extends Base_module_record {
 
 		// return empty array if nothing was found
 		// or if the upcoming event is on the same page as the event 
-		if(empty($event) || ($id != null) || ($event->id != $id)):
-			return array();
+		if(!isset($event->name) || ($id !== null && $event->id != $id)):
+			return null;
 		else:
 			return $event;
 		endif;
