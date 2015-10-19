@@ -444,7 +444,7 @@ class Fuel_form extends Fuel_base_library {
 			$this->CI->form_builder->display_errors = TRUE;
 			$this->CI->form_builder->required_text = lang('forms_required');
 			$this->CI->form_builder->set_params($this->form_builder);
-			$output .= $this->CI->form_builder->render();
+			$output .= $this->CI->form_builder->render_divs();
 		}
 		
 
