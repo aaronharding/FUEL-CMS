@@ -33,8 +33,17 @@
    		max-width: 250px;
 	}
 
-	.sidebar-newsletter_subscribe input + input[type="email"] {
+	.sidebar-newsletter_subscribe input[type="email"] {
 		margin-top: 1em;
+		margin-bottom: 1.2em;
+	}
+
+	.sidebar-newsletter_subscribe span.label {
+		display: none;
+	}
+
+	.sidebar-newsletter_subscribe .required {
+		display: none;
 	}
 
 .sidebar-recent_conversations {
