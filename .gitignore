@@ -1,7 +1,11 @@
 .idea
 .DS_Store
+<<<<<<< HEAD
 fuel/application/cache/
 playground/
 node_modules/
 sftp-config.json
 fuel/application/config/database.php
+=======
+fuel/application/cache/
+>>>>>>> upstream/develop
