@@ -9,15 +9,6 @@
 	padding-top: 1.5rem;
 	/*background: url(/assets/img/logo.png) center center no-repeat;
 	background-size: 16em;*/
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#487fde+0,98c7fc+100 */
-	background: #487fde; /* Old browsers */
-	background: -moz-linear-gradient(top,  #487fde 0%, #98c7fc 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#487fde), color-stop(100%,#98c7fc)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #487fde 0%,#98c7fc 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #487fde 0%,#98c7fc 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #487fde 0%,#98c7fc 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #487fde 0%,#98c7fc 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#487fde', endColorstr='#98c7fc',GradientType=0 ); /* IE6-9 */
 }
 
 	/*.logo .cell {
@@ -38,9 +29,7 @@
 			/*width: 501px;
 			height: 357px;*/
 			margin: 0 auto;
-			height: 22rem;
 			background: url(/assets/img/clouds_p-fs8.png) center center no-repeat;
-			background-size: 22rem;
 		}
 
 	.logo-text {

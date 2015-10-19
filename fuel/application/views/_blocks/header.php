@@ -33,6 +33,30 @@
 		endif;
 	?>
 
+	<?php
+		$frontpage_header_colour_gradient_start = isset($frontpage_header_colour_gradient_start) ? $frontpage_header_colour_gradient_start : '#487fde';
+		$frontpage_header_colour_gradient_end = isset($frontpage_header_colour_gradient_end) ? $frontpage_header_colour_gradient_end : '#98c7fc';
+		$frontpage_header_height = isset($frontpage_header_height) ? $frontpage_header_height : '22rem';
+		$frontpage_header_background_size = isset($frontpage_header_background_size) ? $frontpage_header_background_size : '22rem';
+
+	?>
+	<style type="text/css">
+		.logo {
+			background: <?=$frontpage_header_colour_gradient_start?>; /* Old browsers */
+			background: -moz-linear-gradient(top,  <?=$frontpage_header_colour_gradient_start?> 0%, <?=$frontpage_header_colour_gradient_end?> 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,<?=$frontpage_header_colour_gradient_start?>), color-stop(100%,<?=$frontpage_header_colour_gradient_end?>)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  <?=$frontpage_header_colour_gradient_start?> 0%,<?=$frontpage_header_colour_gradient_end?> 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  <?=$frontpage_header_colour_gradient_start?> 0%,<?=$frontpage_header_colour_gradient_end?> 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  <?=$frontpage_header_colour_gradient_start?> 0%,<?=$frontpage_header_colour_gradient_end?> 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  <?=$frontpage_header_colour_gradient_start?> 0%,<?=$frontpage_header_colour_gradient_end?> 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?=$frontpage_header_colour_gradient_start?>', endColorstr='<?=$frontpage_header_colour_gradient_end?>',GradientType=0 ); /* IE6-9 */
+		}
+		.logo-image {
+			height: <?=$frontpage_header_height?>;
+			background-size: <?=$frontpage_header_background_size?>;
+		}
+	</style>
+
 	<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
@@ -69,7 +93,7 @@
 	<div class="logo">
 		<div class="logo-image"></div>
 		<div class="logo-text">
-			<h2><span>De Visionarissen</span></h2>
+			<h2><span><?=$frontpage_title?></span></h2>
 			<h6><?=$frontpage_subtitle?></h6>
 		</div>
 	</div>
@@ -79,7 +103,7 @@
 <div class="section header<?php if(!empty($is_homepage) && $is_homepage): echo " header-hidden"; endif; ?>">
 	<div class="header-logo">
 		<a href="/">
-			<img src="/assets/img/clouds-fs8.png" alt="De Visionarissen" width="42" height="30"> <span>De Visionarissen</span>
+			<img src="/assets/img/clouds-fs8.png" alt="De Visionarissen" width="42" height="30"> <span><?=$header_title?></span>
 		</a>
 	</div>
 	<div class="row">
