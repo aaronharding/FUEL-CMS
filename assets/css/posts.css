@@ -4,11 +4,11 @@
 	
     .post + .post,
     .post + span + .post {
-        margin-top: 3rem;
+        margin-top: 5em;
     }
 
     .post h4 {
-        margin-bottom: 1em;
+        margin-bottom: 0.5em;
     }
 
     .post-sub {
