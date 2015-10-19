@@ -48,7 +48,7 @@ class Home extends CI_Controller {
 
 		// set up sidebar
 		$sidebar_model = $this->sidebar_model;
-		$vars['sidebar'] = $sidebar_model->get_sidebar(true);
+		$vars['sidebar'] = $sidebar_model->get_sidebar();
 
 		$this->fuel->pages->render('home', $vars);
 
