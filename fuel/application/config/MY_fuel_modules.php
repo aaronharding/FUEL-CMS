@@ -31,16 +31,16 @@ $config['module_overwrites']['tags']['hidden'] = TRUE; // change to FALSE if you
 /*********************** /OVERWRITES ************************************/
 
 $config['modules']['locations'] = array(
-    'module_name' => 'Locations',
-    'module_uri' => 'locations',
+    'module_name' => 'Locaties',
+    'module_uri' => 'locatie',
     'model_name' => 'locations_model',
     'model_location' => '',
     'display_field' => 'title',
-    'preview_path' => 'locations/{slug}',
-    'permission' => 'locations',
+    'preview_path' => 'locaties/{slug}',
+    'permission' => 'locaties',
     'instructions' => 'Here you can manage the locations for your site.',
     'archivable' => TRUE,
-    'nav_selected' => 'locations'
+    'nav_selected' => 'locaties'
 );
 
 $config['modules']['events'] = array(
