@@ -22,17 +22,17 @@
 				<div class="cell cell-half">
 					<img class="home-upcoming_event-image" src="assets/images/<?=$upcoming_event->image?>">
 					<h6><?=$upcoming_event->description?></h6>
-					<p class="home-upcoming_event-more_information_link"><?=$upcoming_event->get_clickable_name(true, "More information");?></p>
+					<p class="home-upcoming_event-more_information_link"><?=$upcoming_event->get_clickable_name(true, "Meer informatie");?></p>
 				</div><div class="cell cell-half">
 					<?php if(count($upcoming_event->locations) > 0): ?>
 						<div class="home-upcoming_event-meta-about-section">
-							<h5>Location</h5>
+							<h5>Locatie</h5>
 							<p><?=implode(', ', $upcoming_event->get_locations_formatted(true))?></p>
 						</div>
 					<?php endif; ?>
 					<?php if(count($upcoming_event->speakers) > 0): ?>
 						<div class="home-upcoming_event-meta-about-section">
-							<h5>Speakers</h5>
+							<h5>Sprekers</h5>
 							<p><?=implode(', ', $upcoming_event->get_speakers_formatted(true))?></p>
 						</div>
 					<?php endif; ?>
@@ -53,10 +53,10 @@
 						<?php endif; ?>
 						<h6><?=$upcoming_event->description?></h6>
 						<?php if(count($upcoming_event->locations) > 0): ?>
-							<p>at <?=implode(', ', $upcoming_event->get_locations_formatted(true))?></p>
+							<p>bij <?=implode(', ', $upcoming_event->get_locations_formatted(true))?></p>
 						<?php endif; ?>
 						<?php if(count($upcoming_event->speakers) > 0): ?>
-							<p>with <?=implode(', ', $upcoming_event->get_speakers_formatted(true))?></p>
+							<p>met <?=implode(', ', $upcoming_event->get_speakers_formatted(true))?></p>
 						<?php endif; ?>
 					</div>
 				</div><div class="cell cell-three home-upcoming_event-timetable">

@@ -18,8 +18,8 @@
 			</div>
 			<div class="cell cell-five">
 				<h6><?=$event->description?></h6>
-				<p>at <?=implode(', ', $event->get_locations_formatted(true))?></p>
-				<p>with <?=implode(', ', $event->get_speakers_formatted(true))?></p>
+				<p>bij <?=implode(', ', $event->get_locations_formatted(true))?></p>
+				<p>met <?=implode(', ', $event->get_speakers_formatted(true))?></p>
 			</div>
 		<?php else: ?>
 			<div class="cell cell-full">
@@ -36,7 +36,7 @@
 		<div class="cell cell-six">
 
 			<div class="event-timetable">
-				<h4>Timetable</h4>
+				<h4>Dienstregeling</h4>
 				<?php $this->load->view('_blocks/event-timetable', array(
 					'timetable_formatted' => $event->get_timetable_formatted(),
 					'class' => 'event-timetable-time',
@@ -46,7 +46,7 @@
 
 			<?php if(count($event->speakers) > 0): ?>
 				<div class="event-speakers">
-					<h4>Speakers</h4>
+					<h4>Sprekers</h4>
 					<?php foreach($event->speakers as $speaker): ?>
 						<h5><?=$speaker->clickable_name?></h5>			
 						<?php if(isset($speaker->about) && $speaker->about !== ""): ?><p><?=$speaker->about_first_sentence?></p><?php endif; ?>				

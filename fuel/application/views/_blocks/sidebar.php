@@ -6,7 +6,7 @@
 
 	<?php if(function_exists('form')): ?>
 	<div class="sidebar-item sidebar-newsletter_subscribe">
-		<label for=""><h5>Newsletter</h5></label>
+		<label for=""><h5>Nieuwsbrief</h5></label>
 		<?php 
 			/* $form = $this->fuel->forms->create('newsletter', array(
 				'fields' => array(
@@ -25,18 +25,18 @@
 	<?php endif; ?>
 
 	<div class="sidebar-item sidebar-search search">
-		<label for="q"><h5>Search</h5></label>
+		<label for="q"><h5>Zoekken</h5></label>
 		<?php echo $this->fuel->blog->sidemenu(array('search')); ?>
 	</div>
 
 	<?php if(isset($recent_posts) && !empty($recent_posts)): ?>
 		<div class="sidebar-item sidebar-recent_posts recent_posts">
-			<h5>Recent Posts</h5>
+			<h5>Recente berichten</h5>
 			<ul>
 			<ul>
 				<?php foreach ($recent_posts as $post): ?>
 					<li>
-						<p><?=$post->link_title?></a> by <?php echo $post->author_link; ?></span></p>
+						<p><?=$post->link_title?></a> door <?php echo $post->author_link; ?></span></p>
 					</li>
 				<?php endforeach; ?>
 			</ul>
@@ -45,11 +45,11 @@
 
 	<?php if(isset($recent_comments) && !empty($recent_comments)): ?>
 		<div class="sidebar-item sidebar-recent_conversations recent_conversations">
-			<h5>Recent Conversations</h5>
+			<h5>Recente gesprekken</h5>
 			<ul>
 				<?php foreach ($recent_comments as $comment): ?>
 					<li>
-						<p><?=$comment->author_name?> on <?=$comment->post_link_title?></p>
+						<p><?=$comment->author_name?> op <?=$comment->post_link_title?></p>
 					</li>
 				<?php endforeach; ?>
 			</ul>
@@ -66,12 +66,12 @@
 	<?php endif; ?>
 
 	<div class="sidebar-item sidebar-archive">
-		<h5>Archives</h5>
+		<h5>Archief</h5>
 		<?php echo $this->fuel->blog->sidemenu(array('archives')); ?>
 	</div>
 
 	<div class="sidebar-item sidebar-authors">
-		<h5>Authors</h5>
+		<h5>Auteurs</h5>
 		<?php echo $this->fuel->blog->sidemenu(array('authors')); ?>
 	</div>
 
@@ -80,7 +80,7 @@
 		<ul>
 			<?php if($this->fuel->auth->is_logged_in()): ?>
 				<li><a href="/admin">Dashboard</a></li>
-				<li><a href="/admin/logout">Log out</a></li>
+				<li><a href="/admin/logout">Log uit</a></li>
 			<?php else: ?>
 				<li><a href="/admin">Dashboard</a></li>
 			<?php endif; ?>
