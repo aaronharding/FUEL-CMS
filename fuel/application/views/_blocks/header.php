@@ -50,7 +50,7 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="shortcut icon" type="image/png" href="favicon.ico">
+	<link rel="shortcut icon" type="image/png" href="favicon.ico?v=2">
 
 	<script>
 		var DV = DV || {};

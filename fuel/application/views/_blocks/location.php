@@ -6,7 +6,7 @@
 	<?php endif; ?>
 	<p><?=$location->excerpt?></p>
 	<?php if($show_map): ?>
-		<p><?php echo $location->get_clickable("More information"); ?></p>
+		<p><?php echo $location->get_clickable("Meer informatie"); ?></p>
 		<?php $this->load->view('_blocks/location-map', array(
 			'address' => $location->google_map_address,
 			'lat' => $location->lat,
@@ -16,6 +16,6 @@
 			'height' => 400
 		)); ?>
 	<?php else: ?>
-		<p><?php echo $location->get_clickable("More information and directions", '', false); ?></p>
+		<p><?php echo $location->get_clickable("Meer informatie en routebeschrijving", '', false); ?></p>
 	<?php endif; ?>
 </div>	

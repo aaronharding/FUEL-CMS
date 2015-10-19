@@ -97,7 +97,7 @@ class Event_model extends Base_module_record {
 
 	public function get_url()
 	{
-		return "events/" . $this->slug;
+		return "evenementen/" . $this->slug;
 	}
 
 	function get_clickable_name($popover = true, $text = null)
@@ -126,8 +126,8 @@ class Event_model extends Base_module_record {
 	{
 		$data = array();
 
-		$speakers = array( 'title' => 'with ' . implode(', ', $this->get_speakers_formatted(true, false)));
-		$locations = array( 'title' => 'at ' . implode(', ', $this->get_locations_formatted(true, false)));
+		$speakers = array( 'title' => 'met ' . implode(', ', $this->get_speakers_formatted(true, false)));
+		$locations = array( 'title' => 'bij ' . implode(', ', $this->get_locations_formatted(true, false)));
 
 		array_push($data, $speakers);
 		array_push($data, $locations);

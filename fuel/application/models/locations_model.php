@@ -83,7 +83,7 @@ class Location_model extends Base_module_record {
 	
 	public function get_url()
 	{
-		return "locations/" . strtolower(url_title($this->title));
+		return "locaties/" . strtolower(url_title($this->title));
 	}
 
 	function get_clickable_title($popover = true)

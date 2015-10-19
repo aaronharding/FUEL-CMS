@@ -9,12 +9,12 @@
 	<div class="events_list-event-meta <?=$class?>-event-meta">	
 		<?php if($is_events_page): ?>
 			<?php if(count($event->locations) > 0): ?>
-				<p>at <?=implode(', ', $event->get_locations_formatted(true))?></p>
+				<p>bij <?=implode(', ', $event->get_locations_formatted(true))?></p>
 			<?php endif; ?>
 			<?php if(count($event->speakers) > 0): ?>
-				<p>with <?=implode(', ', $event->get_speakers_formatted(true))?></p>
+				<p>met <?=implode(', ', $event->get_speakers_formatted(true))?></p>
 			<?php endif; ?>
 		<?php endif; ?>
-		<p><a href="<?=$event->get_url()?>">More information</a></p>
+		<p><a href="<?=$event->get_url()?>">Meer informatie</a></p>
 	</div>
 </div>

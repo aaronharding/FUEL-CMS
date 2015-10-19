@@ -16,6 +16,6 @@
 			&q=<?=$q?>"
 		allowfullscreen>
 	</iframe>
-	<h6><a href="http://maps.google.com/maps?z=12&t=m&q=<?=$q?>" target="_blank">Get directions here</a></h6>
+	<h6><a href="http://maps.google.com/maps?z=12&t=m&q=<?=$q?>" target="_blank">Vind de routebeschrijving hier</a></h6>
 	
 <?php endif; ?>

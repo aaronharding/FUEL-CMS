@@ -6,7 +6,7 @@ $archives_by_month = $CI->fuel->posts->get_post_archives(); ?>
 <?php if (!empty($archives_by_month)) : ?>
 <div class="post_archives">
 	<select name="archives" id="archives" class="go">
-		<option>Archives</option>
+		<option>Archief</option>
 		<?php foreach($archives_by_month as $month => $archives) : 
 			$month_str = date('F Y', strtotime(str_replace('/', '-', $month).'-01'));
 			?>
