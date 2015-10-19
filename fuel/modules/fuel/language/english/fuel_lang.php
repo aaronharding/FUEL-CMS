@@ -5,7 +5,7 @@
 | General
 |--------------------------------------------------------------------------
 */
-$lang['fuel_page_title'] = 'FUEL CMS';
+$lang['fuel_page_title'] = 'DV';
 $lang['logged_in_as'] = 'Logged in as:';
 $lang['logout'] = 'Logout';
 $lang['fuel_developed_by'] = 'FUEL CMS version %1s is developed by <a href="http://www.thedaylightstudio.com" target="_blank">Daylight Studio</a> and built upon the <a href="http://www.codeigniter.com" target="_blank">CodeIgniter</a> framework.';

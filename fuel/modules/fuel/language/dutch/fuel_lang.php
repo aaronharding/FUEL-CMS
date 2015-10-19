@@ -5,7 +5,7 @@
 | General
 |--------------------------------------------------------------------------
 */
-$lang['fuel_page_title'] = 'FUEL CMS';
+$lang['fuel_page_title'] = 'DV';
 $lang['logged_in_as'] = 'Aangemeld als:';
 $lang['logout'] = 'Afmelden';
 $lang['fuel_developed_by'] = 'FUEL CMS versie %1s is ontwikkeld door <a href="http://www.thedaylightstudio.com" target="_blank">Daylight Studio</a> en gebouwd op het <a href="http://www.codeigniter.com" target="_blank">CodeIgniter</a> framewerk. Nederlandse vertaling: <a href="http://www.pdriessen.nl">PDriessen.nl</a>';
