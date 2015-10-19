@@ -41,11 +41,11 @@
 $route['default_controller'] = 'home';//fuel/page_router';
 $route['404_override'] = 'fuel/page_router';
 
-$route['events'] = 'events/index';
-$route['locations'] = 'locations/index';
+$route['evenementen'] = 'events/index';
+$route['locaties'] = 'locations/index';
 
-$route['events/(:any)'] = 'events/single/$1';
-$route['locations/(:any)'] = 'locations/single/$1';
+$route['evenementen/(:any)'] = 'events/single/$1';
+$route['locaties/(:any)'] = 'locations/single/$1';
 
 $route['access_tokens/authed/([a-z]+)\/?'] = 'access_tokens/index/$1';
 
