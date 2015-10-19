@@ -50,6 +50,14 @@
 		margin-top: 0.5em;
 	}
 
+.sidebar-upcoming_event {
+
+}
+
+	.sidebar-upcoming_event p + p {
+		margin-top: 1em;
+	}
+
 .sidebar-recent_posts {
 	
 }
